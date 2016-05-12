@@ -58,7 +58,7 @@ return [
             'port'      => '',
             'database'  => 'minorjet',
             'username'  => 'minorjet',
-            'password'  => 'get^&go2day',
+            'password'  => '7HxcB46gWaeNZeac',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
