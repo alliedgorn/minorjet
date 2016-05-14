@@ -1,0 +1,52 @@
+title = "Home"
+url = "/home"
+layout = "main"
+description = "MAHL homepage"
+is_hidden = 0
+
+[form subscribeForm]
+
+[posts newsposts]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+postPage = "home"
+==
+<div class="container">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active">
+      <center><img class="img-fluid" src="{{ 'assets/images/aircrafts/001.png'|theme }}" alt="First slide" ></center>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="icon-prev" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="icon-next" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+<div class="container">
+    {% partial 'about.htm' %}
+</div>
+<div class="container">
+    <div class="col-md-8">
+        <div class="underline">
+        <h3>LASTEST NEWS</h3>
+        </div>
+        {% partial 'newslist.htm' %}
+    </div>
+    <div class="col-md-4">
+        <h3>SUBSCRIBE AND GET LASTEST UPDATE NOW!</h3>
+        {% component 'subscribeForm' %}
+    </div>
+    
+    
+</div>
