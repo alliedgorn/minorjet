@@ -1,0 +1,12 @@
+[viewBag]
+
+[staticMenu headerNav]
+code = "header-nav"
+==
+<div class="collapse navbar-collapse navbar-main-collapse">
+    {% if headerNav.menuItems %}
+        <ul class="nav navbar-nav navbar-menu navbar-right">
+            {% partial headerNav ~ "::items" items=headerNav.menuItems %}
+        </ul>
+    {% endif %}
+</div>
