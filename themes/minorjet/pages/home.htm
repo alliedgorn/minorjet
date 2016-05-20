@@ -14,13 +14,13 @@ sortOrder = "published_at desc"
 postPage = "home"
 ==
 <div class="container">
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<div id="carousel-example-generic" class="carousel slide col-xs-12" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active">
-      <center><img class="img-fluid" src="{{ 'assets/images/aircrafts/001.png'|theme }}" alt="First slide" ></center>
+      <center><img class="img-fluid" src="{{ 'assets/images/carousel/001.jpg'|theme }}" alt="First slide" ></center>
     </div>
   </div>
   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -37,16 +37,17 @@ postPage = "home"
     {% partial 'about.htm' %}
 </div>
 <div class="container">
-    <div class="col-md-8">
-        <div class="underline">
-        <h3>LASTEST NEWS</h3>
-        </div>
-        {% partial 'newslist.htm' %}
+    <div class="row">
+      <div class="col-md-8">
+          <div class="underline">
+          <h3>LASTEST NEWS</h3>
+          </div>
+          {% partial 'newslist.htm' %}
+      </div>
+      <div class="col-md-4">
+          <h3>SUBSCRIBE AND GET LASTEST UPDATE NOW!</h3>
+          {% component 'subscribeForm' %}
+      </div>
     </div>
-    <div class="col-md-4">
-        <h3>SUBSCRIBE AND GET LASTEST UPDATE NOW!</h3>
-        {% component 'subscribeForm' %}
-    </div>
-    
     
 </div>
