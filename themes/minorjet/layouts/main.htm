@@ -12,13 +12,42 @@
         {% styles %}
         <link href="{{ [
             'assets/vendor/bootstrap/less/bootstrap.less',
-            'assets/css/minorjet.css'
+            'assets/less/minorjet.less'
         ]|theme }}" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Racing+Sans+One' rel='stylesheet' type='text/css'>
     </head>
     <body>
         
-        {% partial "header" %}
-        
+	<header id="layout-header">
+            <div class="container header-tab">
+                <div><h3>M A H L<br/><small>put logo here</small></h3></div>
+            </div>
+        </header>
+        <!-- Nav -->
+        <nav id="layout-nav" class="navbar navbar-minor" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse navbar-main-collapse">
+                    <ul class="nav navbar-nav navbar-menu">
+                        <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">HOME</a></li>
+						<li class="{% if this.page.id == 'news' %}active{% endif %}"><a href="{{ 'main'|page }}">NEWS</a></li>
+                        <li class="{% if this.page.id == 'aircraft' %}active{% endif %}"><a href="{{ 'main'|page }}">AIRCRAFT</a></li>
+                        <li class="{% if this.page.id == 'parts' %}active{% endif %}"><a href="{{ 'ajax'|page }}">PARTS</a></li>
+                        <li class="{% if this.page.id == 'contactus' %}active{% endif %}"><a href="{{ 'plugins'|page }}">CONTACT US</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
         <!-- Content -->
         <section id="layout-content">
             {% page %}
@@ -48,6 +77,12 @@
         ]|theme }}"></script>
         {% framework extras %}
         {% scripts %}
-
+<script>
+    $('nav').affix({
+      offset: {
+        top: $('header').height()
+      }
+    });
+</script>
     </body>
 </html>
