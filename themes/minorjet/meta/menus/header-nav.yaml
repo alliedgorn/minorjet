@@ -1,0 +1,27 @@
+name: 'Header Nav'
+items:
+    -
+        title: Home
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: home
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Aircrafts
+        nesting: '1'
+        type: blog-category
+        code: ''
+        reference: '1'
+        cmsPage: aircraft-subcategory
+        replace: '1'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
