@@ -6,22 +6,76 @@
         background: -o-linear-gradient(@header_gradient_color1, @header_gradient_color2); /* For Opera 11.1 to 12.0 */
         background: -moz-linear-gradient(@header_gradient_color1, @header_gradient_color2); /* For Firefox 3.6 to 15 */
         background: linear-gradient(@header_gradient_color1, @header_gradient_color2); /* Standard syntax */
-        box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.8);
+        box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.3), 0px 0px 10px 0px rgba(35, 35, 35, 0.8) inset ;
+        
+    }
+    .navbar {
+        position: absolute;
+        z-index: 1000;
+        border: 0;
+        font-family: @secondary-font;
+        color: @primary-font-color;
+        width: 100%;
+        .container {    
+            background: @menu_gradient_color1; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* Standard syntax */
+            box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
+            -webkit-border-bottom-right-radius: 10px;
+            -webkit-border-bottom-left-radius: 10px;
+            -moz-border-radius-bottomright: 10px;
+            -moz-border-radius-bottomleft: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        li {
+            &.active {
+                a {
+                    color: @button-hover-font-color;
+                    background-color: @button-hover-bg-color;
+                }
+            }
+            a {
+                color: @secondary-font-color;
+                &:hover {
+                    color: @button-hover-font-color; 
+                }
+            }
+        }
+        &.affix {
+            position: fixed;
+            top: 0;
+            .logo {
+                display: block;
+            }
+        }
+        
+        .navbar-toggle {
+            color: #ffffff;
+            border: 2px solid rgba(255,255,255,1);
+            border-radius: 8px;
+        }
+        
+        .logo {
+            display: none;
+        }
     }
 }
 
 
 
-
 footer {
     border-top: solid 1px #555555;
-    margin-top:20px;
-    padding-top:10px;
-    font-size:80%;
-    color:#838383;
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 80%;
+    color: #838383;
 }
 
-.affix
-{
-    top: 0;
-}
+
+
+
+
+

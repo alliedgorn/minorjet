@@ -19,25 +19,22 @@
     <body>
         
 	<header id="layout-header">
-            <div class="container header-tab">
-                <div><h3>M A H L<br/><small>put logo here</small></h3></div>
-            </div>
-        </header>
-        <!-- Nav -->
-        <nav id="layout-nav" class="navbar navbar-minor" role="navigation">
+        <div class="container header-tab">
+            <div><h3>M A H L<br/><small>put logo here</small></h3></div>
+        </div>
+        <nav id="layout-nav" class="navbar" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <div class="logo pull-left"><h3>M A H L<small>put logo here</small></h3></div>
+                    <button type="button pull-right" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        MENU
                     </button>
                 </div>
                 <div class="collapse navbar-collapse navbar-main-collapse">
                     <ul class="nav navbar-nav navbar-menu">
                         <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">HOME</a></li>
-						<li class="{% if this.page.id == 'news' %}active{% endif %}"><a href="{{ 'main'|page }}">NEWS</a></li>
+    					<li class="{% if this.page.id == 'news' %}active{% endif %}"><a href="{{ 'main'|page }}">NEWS</a></li>
                         <li class="{% if this.page.id == 'aircraft' %}active{% endif %}"><a href="{{ 'main'|page }}">AIRCRAFT</a></li>
                         <li class="{% if this.page.id == 'parts' %}active{% endif %}"><a href="{{ 'ajax'|page }}">PARTS</a></li>
                         <li class="{% if this.page.id == 'contactus' %}active{% endif %}"><a href="{{ 'plugins'|page }}">CONTACT US</a></li>
@@ -45,44 +42,40 @@
                 </div>
             </div>
         </nav>
+    </header>
 
 
+    <!-- Content -->
+    <section id="layout-content">
+        {% page %}
+    </section>
 
-        <!-- Content -->
-        <section id="layout-content">
-            {% page %}
-        </section>
+    <!-- Footer -->
+    <footer id="layout-footer">
+        {% partial "footer" %}
+    </footer>
 
-        <!-- Footer -->
-        <footer id="layout-footer">
-            {% partial "footer" %}
-        </footer>
+    <!-- Scripts -->
+    <script src="{{ [
+        'assets/javascript/jquery.js',
+        'assets/vendor/bootstrap/js/transition.js',
+        'assets/vendor/bootstrap/js/alert.js',
+        'assets/vendor/bootstrap/js/button.js',
+        'assets/vendor/bootstrap/js/carousel.js',
+        'assets/vendor/bootstrap/js/collapse.js',
+        'assets/vendor/bootstrap/js/dropdown.js',
+        'assets/vendor/bootstrap/js/modal.js',
+        'assets/vendor/bootstrap/js/tooltip.js',
+        'assets/vendor/bootstrap/js/popover.js',
+        'assets/vendor/bootstrap/js/scrollspy.js',
+        'assets/vendor/bootstrap/js/tab.js',
+        'assets/vendor/bootstrap/js/affix.js',
+        'assets/javascript/app.js'
+    ]|theme }}"></script>
+    
+    {% framework extras %}
+    
+    {% scripts %}
 
-        <!-- Scripts -->
-        <script src="{{ [
-            'assets/javascript/jquery.js',
-            'assets/vendor/bootstrap/js/transition.js',
-            'assets/vendor/bootstrap/js/alert.js',
-            'assets/vendor/bootstrap/js/button.js',
-            'assets/vendor/bootstrap/js/carousel.js',
-            'assets/vendor/bootstrap/js/collapse.js',
-            'assets/vendor/bootstrap/js/dropdown.js',
-            'assets/vendor/bootstrap/js/modal.js',
-            'assets/vendor/bootstrap/js/tooltip.js',
-            'assets/vendor/bootstrap/js/popover.js',
-            'assets/vendor/bootstrap/js/scrollspy.js',
-            'assets/vendor/bootstrap/js/tab.js',
-            'assets/vendor/bootstrap/js/affix.js',
-            'assets/javascript/app.js'
-        ]|theme }}"></script>
-        {% framework extras %}
-        {% scripts %}
-<script>
-    $('nav').affix({
-      offset: {
-        top: $('header').height()
-      }
-    });
-</script>
     </body>
 </html>
