@@ -2,7 +2,23 @@
     #layout-header {
         .navbar {
             .container {
-                width: 80%;
+                background: none;
+                box-shadow: none;
+                .row {
+                    width: 90%;
+                    background: @menu_gradient_color1; /* For browsers that do not support gradients */
+                    background: -webkit-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Safari 5.1 to 6.0 */
+                    background: -o-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Opera 11.1 to 12.0 */
+                    background: -moz-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Firefox 3.6 to 15 */
+                    background: linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* Standard syntax */
+                    box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
+                    -webkit-border-bottom-right-radius: 10px;
+                    -webkit-border-bottom-left-radius: 10px;
+                    -moz-border-radius-bottomright: 10px;
+                    -moz-border-radius-bottomleft: 10px;
+                    border-bottom-right-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
             }
             &.affix {
                 .logo {

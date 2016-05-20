@@ -1,6 +1,6 @@
 #layout-header {
     background-image: url('../images/header_bg.jpg');
-    .container {
+    .header-tab {
         background: @header_gradient_color1; /* For browsers that do not support gradients */
         background: -webkit-linear-gradient(@header_gradient_color1, @header_gradient_color2); /* For Safari 5.1 to 6.0 */
         background: -o-linear-gradient(@header_gradient_color1, @header_gradient_color2); /* For Opera 11.1 to 12.0 */
@@ -16,13 +16,12 @@
         font-family: @secondary-font;
         color: @primary-font-color;
         width: 100%;
-        .container {    
-            width: 100%;
-            background: @menu_gradient_color1; /* For browsers that do not support gradients */
-            background: -webkit-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Safari 5.1 to 6.0 */
-            background: -o-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Opera 11.1 to 12.0 */
-            background: -moz-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Firefox 3.6 to 15 */
-            background: linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* Standard syntax */
+        .container { 
+            background: #131315;
+            background: -webkit-linear-gradient(#131315, #1b1b1d);
+            background: -o-linear-gradient(#131315, #1b1b1d);
+            background: -moz-linear-gradient(#131315, #1b1b1d);
+            background: linear-gradient(#131315, #1b1b1d);
             box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
             -webkit-border-bottom-right-radius: 10px;
             -webkit-border-bottom-left-radius: 10px;
@@ -30,6 +29,10 @@
             -moz-border-radius-bottomleft: 10px;
             border-bottom-right-radius: 10px;
             border-bottom-left-radius: 10px;
+            .row {
+                width: 100%;
+                margin: 0 auto;
+            }
         }
         li {
             &.active {
