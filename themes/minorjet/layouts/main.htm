@@ -21,7 +21,11 @@
         
 	<header id="layout-header">
         <div class="container header-tab hidden-xs">
-            <div><h3>M A H L<br/><small>put logo here</small></h3></div>
+            <div class="pull-left"><h3>M A H L<br/><small>put logo here</small></h3></div>
+            <div class="pull-right header-right">
+                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><span> 662-792-9400 </span><br/>
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><span> kae_ru@mjets.com </span>
+            </div>
         </div>
         <nav id="layout-nav" class="navbar" role="navigation">
             <div class="container">
@@ -33,7 +37,7 @@
                             MENU
                         </button>
                     </div>
-                    <div class="collapse navbar-collapse navbar-main-collapse">
+                    <div class="collapse navbar-collapse navbar-main-collapse pull-left">
                         <ul class="nav navbar-nav navbar-menu">
                             <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">HOME</a></li>
         					<li class="{% if this.page.id == 'news' %}active{% endif %}"><a href="{{ 'main'|page }}">NEWS</a></li>
@@ -41,6 +45,13 @@
                             <li class="{% if this.page.id == 'parts' %}active{% endif %}"><a href="{{ 'ajax'|page }}">PARTS</a></li>
                             <li class="{% if this.page.id == 'contactus' %}active{% endif %}"><a href="{{ 'plugins'|page }}">CONTACT US</a></li>
                         </ul>
+                    </div>
+                    <div class="social pull-right hidden-xs">
+                           <img class="social_icon" src="{{ 'assets/images/social_icon/xicon-facebook.png'|theme }}" alt="Facebook" >
+                           <img class="social_icon" src="{{ 'assets/images/social_icon/xicon-twitter.png'|theme }}" alt="Twitter" >
+                           <img class="social_icon" src="{{ 'assets/images/social_icon/xicon-line.png'|theme }}" alt="Line" >
+                           <img class="social_icon" src="{{ 'assets/images/social_icon/xicon-linkedin.png'|theme }}" alt="Linkedin" >
+                           <img class="social_icon" src="{{ 'assets/images/social_icon/xicon-mail.png'|theme }}" alt="mail" >
                     </div>
                 </div>
             </div>

@@ -13,25 +13,18 @@ noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 postPage = "home"
 ==
-<div class="container home">
+<div class="container-fluid home">
     <div class="row">
-        <div id="carousel-example-generic" class="carousel slide col-xs-12" data-ride="carousel">
+        <div id="banner" class="carousel slide col-xs-12" data-ride="carousel">
           <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#banner" data-slide-to="0" class="active"></li>
           </ol>
           <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <center><img class="img-fluid" src="{{ 'assets/images/carousel/002.jpg'|theme }}" alt="First slide" ></center>
+            <div class="carousel-item active col-xs-12">
+              <center><img class="img-fluid" src="{{ 'assets/images/carousel/002.jpg'|theme }}" alt="" ></center>
             </div>
           </div>
-          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-            <span class="icon-prev" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-            <span class="icon-next" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+
         </div>
     </div>
 </div>
