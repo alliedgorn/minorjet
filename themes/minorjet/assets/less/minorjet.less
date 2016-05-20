@@ -4,6 +4,7 @@
 body {
     background-color: @bg-color;
     color: @primary-font-color;
+    font-family: @primary-font;
 }
   
 h3 {
@@ -46,16 +47,24 @@ h3 {
         text-overflow: ellipsis;
         overflow: hidden;
         height: 95px;
-        font-size: 10pt;
+        font-size: 12px;
     }
     
 }
 
 .about {
     margin-top: 20px;
-    .contentbox {
+    margin-bottom: 20px;
+    .about-img {
+        width:100%;
+    }
+    
+    .about-contentbox {
+        padding: 0 10px 10px 10px;
+        width:100%;
         background-color: @box-bg-color;
     }
+
 }
 
 
@@ -66,5 +75,5 @@ h3 {
 
 @import "480";
 @import "768";
-@import "960";
+@import "992";
 @import "1200"; 
