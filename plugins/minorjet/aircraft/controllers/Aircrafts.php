@@ -19,7 +19,7 @@ class Aircrafts extends Controller
     public $listConfig = 'config_list.yaml';
     public $importExportConfig = 'config_import_export.yaml';
 
-    public $requiredPermissions = ['minorjet.blog.access_other_aircrafts', 'rainlab.blog.access_aircrafts'];
+    public $requiredPermissions = ['minorjet.aircraft.access_other_aircrafts', 'minorjet.aircraft.access_aircrafts'];
 
     public function __construct()
     {
@@ -39,11 +39,11 @@ class Aircrafts extends Controller
 
     public function create()
     {
-        BackendMenu::setContextSideMenu('new_post');
+        BackendMenu::setContextSideMenu('new_aircraft');
 
         $this->bodyClass = 'compact-container';
-        $this->addCss('/plugins/rainlab/blog/assets/css/rainlab.blog-preview.css');
-        $this->addJs('/plugins/rainlab/blog/assets/js/post-form.js');
+        $this->addCss('/plugins/minorjet/aircraft/assets/css/rainlab.blog-preview.css');
+        $this->addJs('/plugins/minorjet/aircraft/assets/js/post-form.js');
 
         return $this->asExtension('FormController')->create();
     }
@@ -51,22 +51,22 @@ class Aircrafts extends Controller
     public function update($recordId = null)
     {
         $this->bodyClass = 'compact-container';
-        $this->addCss('/plugins/rainlab/blog/assets/css/rainlab.blog-preview.css');
-        $this->addJs('/plugins/rainlab/blog/assets/js/post-form.js');
+        $this->addCss('/plugins/minorjet/aircraft/assets/css/rainlab.blog-preview.css');
+        $this->addJs('/plugins/minorjet/aircraft/assets/js/post-form.js');
 
         return $this->asExtension('FormController')->update($recordId);
     }
 
     public function listExtendQuery($query)
     {
-        if (!$this->user->hasAnyAccess(['rainlab.blog.access_other_posts'])) {
+        if (!$this->user->hasAnyAccess(['minorjet.aircraft.access_other_aircrafts'])) {
             $query->where('user_id', $this->user->id);
         }
     }
 
     public function formExtendQuery($query)
     {
-        if (!$this->user->hasAnyAccess(['rainlab.blog.access_other_posts'])) {
+        if (!$this->user->hasAnyAccess(['minorjet.aircraft.access_other_aircrafts'])) {
             $query->where('user_id', $this->user->id);
         }
     }
@@ -76,13 +76,13 @@ class Aircrafts extends Controller
         if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
 
             foreach ($checkedIds as $postId) {
-                if ((!$post = Post::find($postId)) || !$post->canEdit($this->user))
+                if ((!$post = Aircraft::find($postId)) || !$post->canEdit($this->user))
                     continue;
 
                 $post->delete();
             }
 
-            Flash::success('Successfully deleted those posts.');
+            Flash::success('Successfully deleted items.');
         }
 
         return $this->listRefresh();
@@ -104,9 +104,9 @@ class Aircrafts extends Controller
 
     public function onRefreshPreview()
     {
-        $data = post('Post');
+        $data = post('Aircraft');
 
-        $previewHtml = Post::formatHtml($data['content'], true);
+        $previewHtml = Aircraft::formatHtml($data['content'], true);
 
         return [
             'preview' => $previewHtml

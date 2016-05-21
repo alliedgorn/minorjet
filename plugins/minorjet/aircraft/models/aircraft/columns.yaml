@@ -5,7 +5,7 @@
 columns:
 
     title:
-        label: rainlab.blog::lang.post.title
+        label: minorjet.aircraft::lang.aircraft.title
         searchable: true
 
     # author:
@@ -15,22 +15,22 @@ columns:
     #   searchable: true
 
     categories:
-        label: rainlab.blog::lang.post.categories
+        label: minorjet.aircraft::lang.aircraft.categories
         relation: categories
         select: name
         searchable: true
         sortable: false
 
     created_at:
-        label: rainlab.blog::lang.post.created
+        label: minorjet.aircraft::lang.aircraft.created
         type: date
         invisible: true
 
     updated_at:
-        label: rainlab.blog::lang.post.updated
+        label: minorjet.aircraft::lang.aircraft.updated
         type: date
         invisible: true
 
     published_at:
-        label: rainlab.blog::lang.post.published
+        label: minorjet.aircraft::lang.aircraft.published
         type: date

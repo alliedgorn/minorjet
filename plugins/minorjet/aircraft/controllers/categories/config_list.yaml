@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: ~/plugins/rainlab/blog/models/category/columns.yaml
+list: ~/plugins/minorjet/aircraft/models/category/columns.yaml
 
 # Model Class name
-modelClass: RainLab\Blog\Models\Category
+modelClass: Minorjet\Aircraft\Models\Category
 
 # List Title
-title: rainlab.blog::lang.categories.list_title
+title: minorjet.aircraft::lang.categories.list_title
 
 # Link URL for each record
-recordUrl: rainlab/blog/categories/update/:id
+recordUrl: minorjet/aircraft/categories/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

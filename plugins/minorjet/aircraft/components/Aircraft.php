@@ -1,10 +1,10 @@
-<?php namespace RainLab\Blog\Components;
+<?php namespace Minorjet\Aircraft\Components;
 
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
-use RainLab\Blog\Models\Post as BlogPost;
+use Minorjet\Aircraft\Models\Aircraft as AircraftModel;
 
-class Post extends ComponentBase
+class Aircraft extends ComponentBase
 {
     /**
      * @var RainLab\Blog\Models\Post The post model used for display.
@@ -19,8 +19,8 @@ class Post extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'rainlab.blog::lang.settings.post_title',
-            'description' => 'rainlab.blog::lang.settings.post_description'
+            'name'        => 'minorjet.aircraft::lang.settings.post_title',
+            'description' => 'minorjet.aircraft::lang.settings.post_description'
         ];
     }
 
@@ -28,16 +28,16 @@ class Post extends ComponentBase
     {
         return [
             'slug' => [
-                'title'       => 'rainlab.blog::lang.settings.post_slug',
-                'description' => 'rainlab.blog::lang.settings.post_slug_description',
+                'title'       => 'minorjet.aircraft::lang.settings.post_slug',
+                'description' => 'minorjet.aircraft::lang.settings.post_slug_description',
                 'default'     => '{{ :slug }}',
                 'type'        => 'string'
             ],
             'categoryPage' => [
-                'title'       => 'rainlab.blog::lang.settings.post_category',
-                'description' => 'rainlab.blog::lang.settings.post_category_description',
+                'title'       => 'minorjet.aircraft::lang.settings.post_category',
+                'description' => 'minorjet.aircraft::lang.settings.post_category_description',
                 'type'        => 'dropdown',
-                'default'     => 'blog/category',
+                'default'     => 'aircraft/category',
             ],
         ];
     }
@@ -56,7 +56,7 @@ class Post extends ComponentBase
     protected function loadPost()
     {
         $slug = $this->property('slug');
-        $post = BlogPost::isPublished()->where('slug', $slug)->first();
+        $post = AircraftModel::isPublished()->where('slug', $slug)->first();
 
         /*
          * Add a "url" helper attribute for linking to each category

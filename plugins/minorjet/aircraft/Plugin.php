@@ -23,8 +23,8 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Minorjet\Aircraft\Components\Post'       => 'aircraft',
-            'Minorjet\Aircraft\Components\Posts'      => 'aircraftList',
+            'Minorjet\Aircraft\Components\Aircraft'       => 'aircraft',
+            'Minorjet\Aircraft\Components\Aircrafts'      => 'aircraftList',
             'Minorjet\Aircraft\Components\Categories' => 'aircraftCategories'
         ];
     }
@@ -32,18 +32,18 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'minorjet.blog.access_aircrafts'        => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_aircrafts'],
-            'minorjet.blog.access_features'         => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_features'],
-            'minorjet.blog.access_categories'       => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_categories'],
-            'minorjet.blog.access_other_aircrafts'  => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_other_aircrafts'],
-            'minorjet.blog.access_import_export'    => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_import_export']
+            'minorjet.aircraft.access_aircrafts'        => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_aircrafts'],
+            'minorjet.aircraft.access_features'         => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_features'],
+            'minorjet.aircraft.access_categories'       => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_categories'],
+            'minorjet.aircraft.access_other_aircrafts'  => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_other_aircrafts'],
+            'minorjet.aircraft.access_import_export'    => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_import_export']
         ];
     }
 
     public function registerNavigation()
     {
         return [
-            'blog' => [
+            'aircraft' => [
                 'label'       => 'minorjet.aircraft::lang.blog.menu_label',
                 'url'         => Backend::url('minorjet/aircraft/aircrafts'),
                 'icon'        => 'icon-plane',
@@ -52,7 +52,7 @@ class Plugin extends PluginBase
 
                 'sideMenu' => [
                     'new_aircraft' => [
-                        'label'       => 'minorjet.aircraft::lang.posts.new_aircraft',
+                        'label'       => 'minorjet.aircraft::lang.aircrafts.new_aircraft',
                         'icon'        => 'icon-plus',
                         'url'         => Backend::url('minorjet/aircraft/aircrafts/create'),
                         'permissions' => ['minorjet.aircraft.access_aircrafts']
@@ -71,7 +71,7 @@ class Plugin extends PluginBase
                     ],
                     'features' => [
                         'label'       => 'minorjet.aircraft::lang.blog.features',
-                        'icon'        => 'icon-superscript',
+                        'icon'        => 'icon-cubes',
                         'url'         => Backend::url('minorjet/aircraft/features'),
                         'permissions' => ['minorjet.aircraft.access_features']
                     ]

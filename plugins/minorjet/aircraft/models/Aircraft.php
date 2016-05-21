@@ -7,7 +7,7 @@ use Lang;
 use Model;
 use Markdown;
 use ValidationException;
-use Mirnorjet\Aircraft\Classes\TagProcessor;
+use Minorjet\Aircraft\Classes\TagProcessor;
 use Backend\Models\User;
 use Carbon\Carbon;
 use DB;
@@ -81,7 +81,7 @@ class Aircraft extends Model
     {
         if ($this->published && !$this->published_at) {
             throw new ValidationException([
-               'published_at' => Lang::get('minorjet.aircraft::lang.post.published_validation')
+               'published_at' => Lang::get('minorjet.aircraft::lang.aircraft.published_validation')
             ]);
         }
     }

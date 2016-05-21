@@ -1,10 +1,10 @@
-<?php namespace RainLab\Blog\FormWidgets;
+<?php namespace Minorjet\Aircraft\FormWidgets;
 
 use Lang;
 use Input;
 use Response;
 use Validator;
-use RainLab\Blog\Models\Post as PostModel;
+use Minorjet\Aircraft\Models\Aircraft as AircraftModel;
 use Backend\Classes\FormWidgetBase;
 use Backend\FormWidgets\MarkdownEditor;
 use System\Models\File;
@@ -40,7 +40,7 @@ class BlogMarkdown extends MarkdownEditor
     {
         $content = post($this->formField->getName());
 
-        $previewHtml = PostModel::formatHtml($content, true);
+        $previewHtml = AircraftModel::formatHtml($content, true);
 
         return [
             'preview' => $previewHtml

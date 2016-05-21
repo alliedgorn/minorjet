@@ -6,10 +6,10 @@ scopes:
     category:
 
         # Filter name
-        label: rainlab.blog::lang.posts.category
+        label: minorjet.aircraft::lang.aircrafts.category
 
         # Model Class name
-        modelClass: RainLab\Blog\Models\Category
+        modelClass: Minorjet\Aircraft\Models\Category
 
         # Model attribute to display for the name
         nameFrom: name
@@ -20,7 +20,7 @@ scopes:
     published:
 
         # Filter name
-        label: rainlab.blog::lang.posts.hide_published
+        label: minorjet.aircraft::lang.aircrafts.hide_published
 
         # Filter type
         type: checkbox

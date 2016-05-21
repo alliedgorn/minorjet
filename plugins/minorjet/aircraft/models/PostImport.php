@@ -1,4 +1,4 @@
-<?php namespace RainLab\Blog\Models;
+<?php namespace Minorjet\Aircraft\Models;
 
 use Backend\Models\ImportModel;
 use Backend\Models\User as AuthorModel;
@@ -9,7 +9,7 @@ use ApplicationException;
  */
 class PostImport extends ImportModel
 {
-    public $table = 'rainlab_blog_posts';
+    public $table = 'minorjet_aircraft_aircrafts';
 
     /**
      * Validation rules
@@ -51,14 +51,14 @@ class PostImport extends ImportModel
             try {
 
                 if (!$title = array_get($data, 'title')) {
-                    $this->logSkipped($row, 'Missing post title');
+                    $this->logSkipped($row, 'Missing aircraft title');
                     continue;
                 }
 
                 /*
                  * Find or create
                  */
-                $post = Post::make();
+                $post = Aircraft::make();
 
                 if ($this->update_existing) {
                     $post = $this->findDuplicatePost($data) ?: $post;
@@ -118,11 +118,11 @@ class PostImport extends ImportModel
     protected function findDuplicatePost($data)
     {
         if ($id = array_get($data, 'id')) {
-            return Post::find($id);
+            return Aircraft::find($id);
         }
 
         $title = array_get($data, 'title');
-        $post = Post::where('title', $title);
+        $post = Aircraft::where('title', $title);
 
         if ($slug = array_get($data, 'slug')) {
             $post->orWhere('slug', $slug);

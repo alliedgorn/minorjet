@@ -1,11 +1,11 @@
-<?php namespace RainLab\Blog\Components;
+<?php namespace Minorjet\Aircraft\Components;
 
 use Db;
 use App;
 use Request;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
-use RainLab\Blog\Models\Category as BlogCategory;
+use Minorjet\Aircraft\Models\Category as CategoryModel;
 
 class Categories extends ComponentBase
 {
@@ -27,8 +27,8 @@ class Categories extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'rainlab.blog::lang.settings.category_title',
-            'description' => 'rainlab.blog::lang.settings.category_description'
+            'name'        => 'minorjet.aircraft::lang.settings.category_title',
+            'description' => 'minorjet.aircraft::lang.settings.category_description'
         ];
     }
 
@@ -36,22 +36,22 @@ class Categories extends ComponentBase
     {
         return [
             'slug' => [
-                'title'       => 'rainlab.blog::lang.settings.category_slug',
-                'description' => 'rainlab.blog::lang.settings.category_slug_description',
+                'title'       => 'minorjet.aircraft::lang.settings.category_slug',
+                'description' => 'minorjet.aircraft::lang.settings.category_slug_description',
                 'default'     => '{{ :slug }}',
                 'type'        => 'string'
             ],
             'displayEmpty' => [
-                'title'       => 'rainlab.blog::lang.settings.category_display_empty',
-                'description' => 'rainlab.blog::lang.settings.category_display_empty_description',
+                'title'       => 'minorjet.aircraft::lang.settings.category_display_empty',
+                'description' => 'minorjet.aircraft::lang.settings.category_display_empty_description',
                 'type'        => 'checkbox',
                 'default'     => 0
             ],
             'categoryPage' => [
-                'title'       => 'rainlab.blog::lang.settings.category_page',
-                'description' => 'rainlab.blog::lang.settings.category_page_description',
+                'title'       => 'minorjet.aircraft::lang.settings.category_page',
+                'description' => 'minorjet.aircraft::lang.settings.category_page_description',
                 'type'        => 'dropdown',
-                'default'     => 'blog/category',
+                'default'     => 'aircraft/category',
                 'group'       => 'Links',
             ],
         ];
@@ -71,15 +71,15 @@ class Categories extends ComponentBase
 
     protected function loadCategories()
     {
-        $categories = BlogCategory::orderBy('name');
+        $categories = CategoryModel::orderBy('name');
         if (!$this->property('displayEmpty')) {
             $categories->whereExists(function($query) {
                 $query->select(Db::raw(1))
-                ->from('rainlab_blog_posts_categories')
-                ->join('rainlab_blog_posts', 'rainlab_blog_posts.id', '=', 'rainlab_blog_posts_categories.post_id')
-                ->whereNotNull('rainlab_blog_posts.published')
-                ->where('rainlab_blog_posts.published', '=', 1)
-                ->whereRaw('rainlab_blog_categories.id = rainlab_blog_posts_categories.category_id');
+                ->from('minorjet_aircraft_aircrafts_categories')
+                ->join('minorjet_aircraft_aircrafts', 'minorjet_aircraft_aircrafts.id', '=', 'minorjet_aircraft_aircrafts_categories.aircraft_id')
+                ->whereNotNull('minorjet_aircraft_aircrafts.published')
+                ->where('minorjet_aircraft_aircrafts.published', '=', 1)
+                ->whereRaw('minorjet_aircraft_categories.id = minorjet_aircraft_aircrafts_categories.category_id');
             });
         }
 

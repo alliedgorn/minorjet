@@ -8,7 +8,7 @@ return [
     'blog' => [
         'menu_label' => 'Aircraft',
         'menu_description' => 'Manage Aircraft Contents',
-        'posts' => 'Aircraft',
+        'aircrafts' => 'Aircraft',
         'create_aircraft' => 'aircraft',
         'categories' => 'Categories',
         'create_category' => 'aircraft category',
@@ -21,13 +21,14 @@ return [
         'delete_confirm' => 'Are you sure?',
         'chart_published' => 'Published',
         'chart_drafts' => 'Drafts',
-        'chart_total' => 'Total'
+        'chart_total' => 'Total',
+        'features' => 'Aircraft Features'
     ],
-    'posts' => [
+    'aircrafts' => [
         'list_title' => 'Manage the aircrafts',
         'category' => 'Category',
         'hide_published' => 'Hide published',
-        'new_post' => 'New aircraft'
+        'new_aircraft' => 'New aircraft'
     ],
     'aircraft' => [
         'title' => 'Title',

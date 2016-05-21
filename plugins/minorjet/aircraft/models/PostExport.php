@@ -1,4 +1,4 @@
-<?php namespace RainLab\Blog\Models;
+<?php namespace Minorjet\Aircraft\Models;
 
 use Backend\Models\ExportModel;
 use ApplicationException;
@@ -8,23 +8,23 @@ use ApplicationException;
  */
 class PostExport extends ExportModel
 {
-    public $table = 'rainlab_blog_posts';
+    public $table = 'minorjet_aircraft_aircrafts';
 
     /**
      * @var array Relations
      */
     public $belongsTo = [
-        'post_user' => [
+        'aircraft_user' => [
             'Backend\Models\User',
             'key' => 'user_id'
         ]
     ];
 
     public $belongsToMany = [
-        'post_categories' => [
-            'RainLab\Blog\Models\Category',
-            'table' => 'rainlab_blog_posts_categories',
-            'key' => 'post_id',
+        'aircraft_categories' => [
+            'Minorjet\Aircraft\Models\Category',
+            'table' => 'minorjet_aircraft_aircrafts_categories',
+            'key' => 'aircraft_id',
             'otherKey' => 'category_id'
         ]
     ];
@@ -42,8 +42,8 @@ class PostExport extends ExportModel
     {
         $result = self::make()
             ->with([
-                'post_user',
-                'post_categories'
+                'aircraft_user',
+                'aircraft_categories'
             ])
             ->get()
             ->toArray()
@@ -54,13 +54,13 @@ class PostExport extends ExportModel
 
     public function getAuthorEmailAttribute()
     {
-        if (!$this->post_user) return '';
-        return $this->post_user->email;
+        if (!$this->aircraft_user) return '';
+        return $this->aircraft_user->email;
     }
 
     public function getCategoriesAttribute()
     {
-        if (!$this->post_categories) return '';
-        return $this->encodeArrayValue($this->post_categories->lists('name'));
+        if (!$this->aircraft_categories) return '';
+        return $this->encodeArrayValue($this->aircraft_categories->lists('name'));
     }
 }

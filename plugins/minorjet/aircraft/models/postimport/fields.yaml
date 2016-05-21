@@ -5,8 +5,8 @@
 fields:
 
     update_existing:
-        label: Update existing posts
-        comment: Check this box to update posts that have exactly the same ID, title or slug.
+        label: Update existing aircrafts
+        comment: Check this box to update aircrafts that have exactly the same ID, title or slug.
         type: checkbox
         default: true
         span: left
@@ -20,7 +20,7 @@ fields:
 
     post_categories:
         label: Categories
-        commentAbove: Select the categories that imported posts will belong to (optional).
+        commentAbove: Select the categories that imported aircrafts will belong to (optional).
         type: checkboxlist
         span: right
         cssClass: field-indent
@@ -30,7 +30,7 @@ fields:
             condition: checked
 
     default_author:
-        label: Default post author (optional)
+        label: Default author (optional)
         comment: The import will try to use an existing author if you match the Author Email column, otherwise the author specified above is used.
         type: dropdown
         placeholder: -- Select author --

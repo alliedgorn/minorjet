@@ -5,12 +5,12 @@
 fields:
 
     name:
-        label: rainlab.blog::lang.category.name
-        placeholder: rainlab.blog::lang.category.name_placeholder
+        label: minorjet.aircraft::lang.category.name
+        placeholder: minorjet.aircraft::lang.category.name_placeholder
         span: left
 
     slug:
-        label: rainlab.blog::lang.category.slug
+        label: minorjet.aircraft::lang.category.slug
         span: right
-        placeholder: rainlab.blog::lang.category.slug_placeholder
+        placeholder: minorjet.aircraft::lang.category.slug_placeholder
         preset: name

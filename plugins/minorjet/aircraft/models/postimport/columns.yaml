@@ -5,12 +5,12 @@
 columns:
 
     id: ID
-    title: rainlab.blog::lang.post.title
-    content: rainlab.blog::lang.post.content
-    excerpt: rainlab.blog::lang.post.excerpt
-    slug: rainlab.blog::lang.post.slug
-    categories: rainlab.blog::lang.post.categories
-    author_email: rainlab.blog::lang.post.author_email
-    created_at: rainlab.blog::lang.post.created_date
-    updated_at: rainlab.blog::lang.post.updated_date
-    published_at: rainlab.blog::lang.post.published_date
+    title: minorjet.aircraft::lang.aircraft.title
+    content: minorjet.aircraft::lang.aircraft.content
+    excerpt: minorjet.aircraft::lang.aircraft.excerpt
+    slug: minorjet.aircraft::lang.aircraft.slug
+    categories: minorjet.aircraft::lang.aircraft.categories
+    author_email: minorjet.aircraft::lang.aircraft.author_email
+    created_at: minorjet.aircraft::lang.aircraft.created_date
+    updated_at: minorjet.aircraft::lang.aircraft.updated_date
+    published_at: minorjet.aircraft::lang.aircraft.published_date

@@ -1,12 +1,12 @@
-<?php namespace RainLab\Blog\Components;
+<?php namespace Minorjet\Aircraft\Components;
 
 use Redirect;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
-use RainLab\Blog\Models\Post as BlogPost;
-use RainLab\Blog\Models\Category as BlogCategory;
+use Minorjet\Aircraft\Models\Aircraft as AircraftModel;
+use Minorjet\Aircraft\Models\Category as CategoryModel;
 
-class Posts extends ComponentBase
+class Aircrafts extends ComponentBase
 {
     /**
      * A collection of posts to display
@@ -53,8 +53,8 @@ class Posts extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'rainlab.blog::lang.settings.posts_title',
-            'description' => 'rainlab.blog::lang.settings.posts_description'
+            'name'        => 'minorjet.aircraft::lang.settings.posts_title',
+            'description' => 'minorjet.aircraft::lang.settings.posts_description'
         ];
     }
 
@@ -62,47 +62,47 @@ class Posts extends ComponentBase
     {
         return [
             'pageNumber' => [
-                'title'       => 'rainlab.blog::lang.settings.posts_pagination',
-                'description' => 'rainlab.blog::lang.settings.posts_pagination_description',
+                'title'       => 'minorjet.blog::lang.settings.posts_pagination',
+                'description' => 'minorjet.blog::lang.settings.posts_pagination_description',
                 'type'        => 'string',
                 'default'     => '{{ :page }}',
             ],
             'categoryFilter' => [
-                'title'       => 'rainlab.blog::lang.settings.posts_filter',
-                'description' => 'rainlab.blog::lang.settings.posts_filter_description',
+                'title'       => 'minorjet.blog::lang.settings.posts_filter',
+                'description' => 'minorjet.blog::lang.settings.posts_filter_description',
                 'type'        => 'string',
                 'default'     => ''
             ],
             'postsPerPage' => [
-                'title'             => 'rainlab.blog::lang.settings.posts_per_page',
+                'title'             => 'minorjet.blog::lang.settings.posts_per_page',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'rainlab.blog::lang.settings.posts_per_page_validation',
+                'validationMessage' => 'minorjet.blog::lang.settings.posts_per_page_validation',
                 'default'           => '10',
             ],
             'noPostsMessage' => [
-                'title'        => 'rainlab.blog::lang.settings.posts_no_posts',
-                'description'  => 'rainlab.blog::lang.settings.posts_no_posts_description',
+                'title'        => 'minorjet.blog::lang.settings.posts_no_posts',
+                'description'  => 'minorjet.blog::lang.settings.posts_no_posts_description',
                 'type'         => 'string',
                 'default'      => 'No posts found',
                 'showExternalParam' => false
             ],
             'sortOrder' => [
-                'title'       => 'rainlab.blog::lang.settings.posts_order',
-                'description' => 'rainlab.blog::lang.settings.posts_order_description',
+                'title'       => 'minorjet.blog::lang.settings.posts_order',
+                'description' => 'minorjet.blog::lang.settings.posts_order_description',
                 'type'        => 'dropdown',
                 'default'     => 'published_at desc'
             ],
             'categoryPage' => [
-                'title'       => 'rainlab.blog::lang.settings.posts_category',
-                'description' => 'rainlab.blog::lang.settings.posts_category_description',
+                'title'       => 'minorjet.blog::lang.settings.posts_category',
+                'description' => 'minorjet.blog::lang.settings.posts_category_description',
                 'type'        => 'dropdown',
                 'default'     => 'blog/category',
                 'group'       => 'Links',
             ],
             'postPage' => [
-                'title'       => 'rainlab.blog::lang.settings.posts_post',
-                'description' => 'rainlab.blog::lang.settings.posts_post_description',
+                'title'       => 'minorjet.blog::lang.settings.posts_post',
+                'description' => 'minorjet.blog::lang.settings.posts_post_description',
                 'type'        => 'dropdown',
                 'default'     => 'blog/post',
                 'group'       => 'Links',
@@ -122,7 +122,7 @@ class Posts extends ComponentBase
 
     public function getSortOrderOptions()
     {
-        return BlogPost::$allowedSortingOptions;
+        return AircraftModel::$allowedSortingOptions;
     }
 
     public function onRun()
@@ -162,7 +162,7 @@ class Posts extends ComponentBase
         /*
          * List all the posts, eager load their categories
          */
-        $posts = BlogPost::with('categories')->listFrontEnd([
+        $posts = AircraftModel::with('categories')->listFrontEnd([
             'page'       => $this->property('pageNumber'),
             'sort'       => $this->property('sortOrder'),
             'perPage'    => $this->property('postsPerPage'),
@@ -188,7 +188,7 @@ class Posts extends ComponentBase
         if (!$categoryId = $this->property('categoryFilter'))
             return null;
 
-        if (!$category = BlogCategory::whereSlug($categoryId)->first())
+        if (!$category = CategoryModel::whereSlug($categoryId)->first())
             return null;
 
         return $category;

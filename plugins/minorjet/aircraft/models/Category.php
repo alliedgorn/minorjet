@@ -1,9 +1,9 @@
-<?php namespace RainLab\Blog\Models;
+<?php namespace Minorjet\Aircraft\Models;
 
 use Str;
 use Model;
 use URL;
-use RainLab\Blog\Models\Post;
+use Minorjet\Aircraft\Models\Aircraft;
 use October\Rain\Router\Helper as RouterHelper;
 use Cms\Classes\Page as CmsPage;
 use Cms\Classes\Theme;
@@ -13,22 +13,22 @@ class Category extends Model
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\NestedTree;
 
-    public $table = 'rainlab_blog_categories';
+    public $table = 'minorjet_aircraft_categories';
 
     /*
      * Validation
      */
     public $rules = [
         'name' => 'required',
-        'slug' => 'required|between:3,64|unique:rainlab_blog_categories',
-        'code' => 'unique:rainlab_blog_categories',
+        'slug' => 'required|between:3,64|unique:minorjet_aircraft_categories',
+        'code' => 'unique:minorjet_aircraft_categories',
     ];
 
     protected $guarded = [];
 
     public $belongsToMany = [
-        'posts' => ['RainLab\Blog\Models\Post',
-            'table' => 'rainlab_blog_posts_categories',
+        'posts' => ['Minorjet\Aircraft\Models\Aircraft',
+            'table' => 'minorjet_aircraft_aircrafts_categories',
             'order' => 'published_at desc',
             'scope' => 'isPublished'
         ]
@@ -87,7 +87,7 @@ class Category extends Model
     {
         $result = [];
 
-        if ($type == 'blog-category') {
+        if ($type == 'aircraft-category') {
             $result = [
                 'references'   => self::listSubCategoryOptions(),
                 'nesting'      => true,
@@ -95,7 +95,7 @@ class Category extends Model
             ];
         }
 
-        if ($type == 'all-blog-categories') {
+        if ($type == 'all-aircraft-categories') {
             $result = [
                 'dynamicItems' => true
             ];
@@ -107,7 +107,7 @@ class Category extends Model
             $pages = CmsPage::listInTheme($theme, true);
             $cmsPages = [];
             foreach ($pages as $page) {
-                if (!$page->hasComponent('blogPosts')) {
+                if (!$page->hasComponent('aircraftList')) {
                     continue;
                 }
 
@@ -115,7 +115,7 @@ class Category extends Model
                  * Component must use a category filter with a routing parameter
                  * eg: categoryFilter = "{{ :somevalue }}"
                  */
-                $properties = $page->getComponentProperties('blogPosts');
+                $properties = $page->getComponentProperties('aircraftList');
                 if (!isset($properties['categoryFilter']) || !preg_match('/{{\s*:/', $properties['categoryFilter'])) {
                     continue;
                 }
@@ -175,7 +175,7 @@ class Category extends Model
     {
         $result = null;
 
-        if ($item->type == 'blog-category') {
+        if ($item->type == 'aircraft-category') {
             if (!$item->reference || !$item->cmsPage)
                 return;
 
@@ -220,7 +220,7 @@ class Category extends Model
                 $result['items'] = $iterator($categories);
             }
         }
-        elseif ($item->type == 'all-blog-categories') {
+        elseif ($item->type == 'all-aircraft-categories') {
             $result = [
                 'items' => []
             ];
@@ -250,7 +250,7 @@ class Category extends Model
         $page = CmsPage::loadCached($theme, $pageCode);
         if (!$page) return;
 
-        $properties = $page->getComponentProperties('blogPosts');
+        $properties = $page->getComponentProperties('aircraftList');
         if (!isset($properties['categoryFilter'])) {
             return;
         }

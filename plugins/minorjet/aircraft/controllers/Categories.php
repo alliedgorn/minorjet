@@ -1,8 +1,8 @@
-<?php namespace RainLab\Blog\Controllers;
+<?php namespace Minorjet\Aircraft\Controllers;
 
 use BackendMenu;
 use Backend\Classes\Controller;
-use RainLab\Blog\Models\Category;
+use Minorjet\Aircraft\Models\Category;
 use Flash;
 
 class Categories extends Controller
@@ -17,13 +17,13 @@ class Categories extends Controller
     public $listConfig = 'config_list.yaml';
     public $reorderConfig = 'config_reorder.yaml';
 
-    public $requiredPermissions = ['rainlab.blog.access_categories'];
+    public $requiredPermissions = ['minorjet.aircraft.access_categories'];
 
     public function __construct()
     {
         parent::__construct();
 
-        BackendMenu::setContext('RainLab.Blog', 'blog', 'categories');
+        BackendMenu::setContext('Minorjet.Aircraft', 'aircraft', 'categories');
     }
 
     public function index_onDelete()
