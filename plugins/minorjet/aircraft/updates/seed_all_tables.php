@@ -10,25 +10,25 @@ class SeedAllTables extends Seeder
 
     public function run()
     {
-        Post::create([
-            'title' => 'First post',
-            'slug' => 'first-post',
-            'content' => '
-This is your first ever **post**! It might be a good idea to update this post with some more relevant content.
+//         Aircraft::create([
+//             'title' => 'First post',
+//             'slug' => 'first-post',
+//             'content' => '
+// This is your first ever **post**! It might be a good idea to update this post with some more relevant content.
 
-You can edit this content by selecting **Aricraft** from the administration back-end menu.
+// You can edit this content by selecting **Aricraft** from the administration back-end menu.
 
-*Enjoy the good times!*
-            ',
-            'excerpt' => 'The first ever post is here. It might be a good idea to update this post with some more relevant content.',
-            'published_at' => Carbon::now(),
-            'published' => true
-        ]);
+// *Enjoy the good times!*
+//             ',
+//             'excerpt' => 'The first ever post is here. It might be a good idea to update this post with some more relevant content.',
+//             'published_at' => Carbon::now(),
+//             'published' => true
+//         ]);
 
-        Category::create([
-            'name' => trans('minorjet.aircraft::lang.categories.uncategorized'),
-            'slug' => 'uncategorized',
-        ]);
+//         Category::create([
+//             'name' => trans('minorjet.aircraft::lang.categories.uncategorized'),
+//             'slug' => 'uncategorized',
+//         ]);
     }
 
 }

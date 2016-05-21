@@ -23,7 +23,13 @@ class CreatePostsTable extends Migration
             $table->timestamps();
         });
 
-
+        Schema::create('minorjet_aircraft_aircrafts_features', function($table)
+        {
+            $table->engine = 'InnoDB';
+            $table->integer('aircraft_id')->unsigned();
+            $table->integer('feature_id')->unsigned();
+            $table->primary(['aircraft_id', 'feature_id'], 'minorjet_aircraft_aircrafts_features_id');
+        });
     }
 
     public function down()

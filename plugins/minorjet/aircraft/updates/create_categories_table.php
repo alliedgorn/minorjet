@@ -28,7 +28,7 @@ class CreateCategoriesTable extends Migration
             $table->engine = 'InnoDB';
             $table->integer('aircraft_id')->unsigned();
             $table->integer('category_id')->unsigned();
-            $table->primary(['aircraft_id', 'category_id']);
+            $table->primary(['aircraft_id', 'category_id'], 'minorjet_aircraft_aircrafts_categories_id');
         });
     }
 
