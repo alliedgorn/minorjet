@@ -1,13 +1,20 @@
 @import "header-footer";
 @import "variables";
+@import "newspost";
 
 body {
     background-color: @bg-color;
     color: @primary-font-color;
     font-family: @primary-font;
+    font-size: 14px;
+    a {
+        &:hover {
+            color:@link-font-hover-color;
+        }
+    }
 }
-  
-h3 {
+
+h1,h2,h3 {
   font-family: @secondary-font;
   color: @secondary-font-color;
 }
@@ -16,7 +23,7 @@ h3 {
     .newsthumb {
         border-left: solid 8px @box-highlight-color;
         padding: 10px;
-        height: 150px; 
+        height: 170px; 
         width:25%;
         margin-bottom:10px;
         background-color: @box-image-bg-color;
@@ -29,11 +36,9 @@ h3 {
     }  
     .contentbox { 
         background-color: @box-bg-color;
-        height: 150px;
-        width: 75%;
+        width: 100%;
         margin-bottom: 20px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 0px 20px 20px 20px;
         h3 {
             padding-top: 10px;
             padding-bottom: 5px;
@@ -42,14 +47,18 @@ h3 {
             white-space: nowrap;
             overflow: hidden;
             color: @link-font-color;
+            a {
+                &:hover {
+                    color:@link-font-hover-color;
+                }
+            }
         }
     }
     
     .content {
         text-overflow: ellipsis;
         overflow: hidden;
-        height: 95px;
-        font-size: 12px;
+        font-size: 13px;
     }
     
 }
@@ -68,6 +77,81 @@ h3 {
     }
 
 }
+
+.subscribe {
+    padding: 23px 30px 0px 30px;
+    
+    .subscribe-head {
+
+        padding: 10px 15px 10px 15px;
+        margin-top: 5px;
+        background: #9E0A09 url('../images/envelope.png') no-repeat right top;
+
+
+        -webkit-border-top-right-radius: 10px;
+        -webkit-border-top-left-radius: 10px;
+        -moz-border-radius-topright: 10px;
+        -moz-border-radius-topleft: 10px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        h3 {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        
+    }
+    .subscribe-body {
+        padding: 10px 15px 15px 15px;
+        background-color: #ffffff;
+        color: #000000;
+        font-family: @secondary-font;
+        -webkit-border-bottom-right-radius: 10px;
+        -webkit-border-bottom-left-radius: 10px;
+        -moz-border-radius-bottomright: 10px;
+        -moz-border-radius-bottomleft: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        label {
+            color: #333333;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-default{
+            border: none;
+            width: 100%;
+            background-color: #333333;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+        
+    }
+    
+}
+
+.preview-aircraft {
+    .list-aircraft {
+        /*
+        background: -webkit-linear-gradient(#242424, #555555);
+        background: -o-linear-gradient(#242424, #555555);
+        background: -moz-linear-gradient(#242424, #555555);
+        background: linear-gradient(#242424, #555555);
+        */
+        background-image: url('../images/header_bg.jpg');
+        box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
+        padding-bottom: 40px;
+        margin-bottom: 20px;
+        text-align: center;
+        .pic-aircraft {
+            padding-top:40px;
+            margin-left:20px;
+            width:260px;
+        }
+    }
+}
+
+
 
 
 .underline {

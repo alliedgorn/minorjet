@@ -1,0 +1,38 @@
+title = "News"
+url = "/news/:page?"
+layout = "main"
+is_hidden = 0
+
+[carousel]
+id = 1
+
+[posts newsposts]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+postPage = "aircraft"
+==
+<div class="container news">
+    <div class="row">
+        <div id="banner" class="carousel slide col-xs-12">
+            {% component 'carousel' %}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-8">
+          <div class="underline">
+          <h3>NEWS</h3>
+          </div>
+          {% partial 'latestnews.htm' %}
+          {% partial 'newspage/newspagination.htm' %}
+      </div>
+      <div class="col-md-4 subscribe">
+          {% partial 'subscribebox' %}
+      </div>
+    </div>
+    
+</div>

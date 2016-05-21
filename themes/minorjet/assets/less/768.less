@@ -1,6 +1,7 @@
 @media (min-width: 768px) {
     #layout-header {
         .navbar {
+            position: absolute;
             .container {
                 background: none;
                 box-shadow: none;
@@ -20,6 +21,9 @@
                     border-bottom-left-radius: 10px;
                 }
             }
+            .navbar-collapse {
+                width :auto;
+            }
             .logo {
                 display: none;
             }
@@ -38,5 +42,38 @@
             height: 240px;
         }
     }
+
+
+    .post-list {
+        .contentbox { 
+            height: 170px;
+            width: 75%;
+        }
+        .content {
+            height: 120px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-size: 13px;
+        }
+    }
+    
+    footer {
+        .footer-text {
+            width: 550px;
+            .address {
+                width:60%;
+                padding: 0px 0px 20px 40px;
+            }
+            .telephone {
+                width:40%;
+                padding: 0px 0px 20px 20px;
+            }
+        }
+    }
+    
+    .main-content {
+        padding-top:50px;
+    }
+    
 
 }

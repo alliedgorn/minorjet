@@ -1,0 +1,37 @@
+title = "NewsPost"
+url = "/news/post/:slug"
+layout = "main"
+is_hidden = 0
+
+[carousel]
+id = 1
+
+[post newspost]
+slug = "{{ :slug }}"
+==
+<div class="container home">
+    <div class="row">
+        <div id="banner" class="carousel slide col-xs-12">
+            {% component 'carousel' %}
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="newspost col-md-8">
+            {% partial 'newspage/newspost' %}
+        </div>
+        <div class="othernews col-md-4">
+            <div class="subscribe">
+                {% partial 'subscribebox' %}
+            </div>
+            <div class="newslist">
+                <div class="underline">
+                    <h3>OTHER NEWS</h3>
+                </div>
+                {% partial 'newspage/newslist' %}
+            </div>
+        </div>
+    </div>
+</div>

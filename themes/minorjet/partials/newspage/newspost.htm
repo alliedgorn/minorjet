@@ -1,0 +1,16 @@
+[viewBag]
+
+[post newspost]
+slug = "{{ :slug }}"
+==
+{% set post = newspost.post %}
+
+<div class="news-header">
+   <div class="underline"><h2>{{ post.title|raw }}</h2></div>
+</div>
+<div class="published-date">
+    Posted on {{ post.published_at|date('d M Y') }}
+</div>
+<div class="content">
+    <p> {{ post.introductory|raw }} {{ post.content|raw }}</p>
+</div>

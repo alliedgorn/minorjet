@@ -4,44 +4,57 @@ layout = "main"
 description = "MAHL homepage"
 is_hidden = 0
 
-[form subscribeForm]
-
 [posts newsposts]
 pageNumber = "{{ :page }}"
 postsPerPage = 3
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 postPage = "home"
-==
-<div class="container-fluid home">
-    <div class="row">
-        <div id="banner" class="carousel slide col-xs-12" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#banner" data-slide-to="0" class="active"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active col-xs-12">
-              <center><img class="img-fluid" src="{{ 'assets/images/carousel/002.jpg'|theme }}" alt="" ></center>
-            </div>
-          </div>
 
+[carousel]
+id = 1
+==
+<div class="container home">
+    <div class="row">
+        <div id="banner" class="carousel slide col-xs-12">
+            {% component 'carousel' %}
         </div>
     </div>
 </div>
+
 <div class="container about">
     {% partial 'about.htm' %}
 </div>
+
+<div class="container preview-aircraft">
+    <div class="row">
+        <div class="col-xs-12">
+              <div class="underline"><h3>OUR AIRCRAFTS</h3></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="list-aircraft">
+                <a href="#"><img class="pic-aircraft" src="{{ 'assets/images/aircrafts/CXplus_34_dark.png'|theme }}" ></a>
+                <a href="#"><img class="pic-aircraft" src="{{ 'assets/images/aircrafts/Skyhawk_172_34_dark.png'|theme }}" ></a>
+                <a href="#"><img class="pic-aircraft" src="{{ 'assets/images/aircrafts/Stationair_206_34_dark.png'|theme }}" ></a>
+                <a href="#"><img class="pic-aircraft" src="{{ 'assets/images/aircrafts/TTx_T240_34_dark.png'|theme }}" ></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="container">
     <div class="row">
       <div class="col-md-8">
           <div class="underline">
-          <h3>LASTEST NEWS</h3>
+          <h3>LATEST NEWS</h3>
           </div>
-          {% partial 'newslist.htm' %}
+          {% partial 'latestnews.htm' %}
       </div>
-      <div class="col-md-4">
-          <h3>SUBSCRIBE AND GET LASTEST UPDATE NOW!</h3>
-          {% component 'subscribeForm' %}
+      <div class="col-md-4 subscribe">
+          {% partial 'subscribebox' %}
       </div>
     </div>
     
