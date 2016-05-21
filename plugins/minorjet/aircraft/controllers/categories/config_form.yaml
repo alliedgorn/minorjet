@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: minorjet.aircraft::lang.blog.create_category
+form: ~/plugins/minorjet/aircraft/models/category/fields.yaml
+modelClass: Minorjet\Aircraft\Models\Category
+defaultRedirect: minorjet/aircraft/categories
+
+create:
+    redirect: minorjet/aircraft/categories/update/:id
+    redirectClose: minorjet/aircraft/categories
+
+update:
+    redirect: minorjet/aircraft/categories
+    redirectClose: minorjet/aircraft/categories

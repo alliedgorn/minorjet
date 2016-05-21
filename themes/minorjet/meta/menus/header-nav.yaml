@@ -16,7 +16,7 @@ items:
     -
         title: Aircrafts
         nesting: '1'
-        type: blog-category
+        type: aircraft-category
         code: ''
         reference: '1'
         cmsPage: aircraft-subcategory

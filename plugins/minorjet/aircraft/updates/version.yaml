@@ -1,0 +1,6 @@
+1.0.1:
+    - Initialize plugin.
+    - create_features_table.php
+    - create_posts_table.php
+    - create_categories_table.php
+    - categories_add_nested_fields.php

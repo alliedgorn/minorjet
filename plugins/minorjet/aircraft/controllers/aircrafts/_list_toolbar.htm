@@ -1,0 +1,37 @@
+<div data-control="toolbar">
+    <a
+        href="<?= Backend::url('minorjet/aircraft/aircrafts/create') ?>"
+        class="btn btn-primary oc-icon-plus">
+        <?= e(trans('minorjet.aircraft::lang.aircrafts.new_aircraft')) ?>
+    </a>
+    <button
+        class="btn btn-default oc-icon-trash-o"
+        disabled="disabled"
+        onclick="$(this).data('request-data', {
+            checked: $('.control-list').listWidget('getChecked')
+        })"
+        data-request="onDelete"
+        data-request-confirm="<?= e(trans('minorjet.aircraft::lang.blog.delete_confirm')) ?>"
+        data-trigger-action="enable"
+        data-trigger=".control-list input[type=checkbox]"
+        data-trigger-condition="checked"
+        data-request-success="$(this).prop('disabled', true)"
+        data-stripe-load-indicator>
+        <?= e(trans('backend::lang.list.delete_selected')) ?>
+    </button>
+
+    <?php if ($this->user->hasAnyAccess(['minorjet.aircraft.access_import_export'])): ?>
+        <div class="btn-group">
+            <a
+                href="<?= Backend::url('minorjet/aircraft/aircrafts/export') ?>"
+                class="btn btn-default oc-icon-download">
+                Export data
+            </a>
+            <a
+                href="<?= Backend::url('minorjet/aircraft/aircrafts/import') ?>"
+                class="btn btn-default oc-icon-upload">
+                Import data
+            </a>
+        </div>
+    <?php endif ?>
+</div>

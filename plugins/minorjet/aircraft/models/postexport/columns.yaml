@@ -1,0 +1,17 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id: ID
+    title: minorjet.aircraft::lang.aircraft.title
+    content: minorjet.aircraft::lang.aircraft.content
+    content_html: minorjet.aircraft::lang.aircraft.content_html
+    excerpt: minorjet.aircraft::lang.aircraft.excerpt
+    slug: minorjet.aircraft::lang.aircraft.slug
+    categories: minorjet.aircraft::lang.aircraft.categories
+    author_email: minorjet.aircraft::lang.aircraft.author_email
+    created_at: minorjet.aircraft::lang.aircraft.created_date
+    updated_at: minorjet.aircraft::lang.aircraft.updated_date
+    published_at: minorjet.aircraft::lang.aircraft.published_date

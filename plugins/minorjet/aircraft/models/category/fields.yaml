@@ -1,0 +1,16 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    name:
+        label: minorjet.aircraft::lang.category.name
+        placeholder: minorjet.aircraft::lang.category.name_placeholder
+        span: left
+
+    slug:
+        label: minorjet.aircraft::lang.category.slug
+        span: right
+        placeholder: minorjet.aircraft::lang.category.slug_placeholder
+        preset: name
