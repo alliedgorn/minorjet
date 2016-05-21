@@ -5,10 +5,9 @@ use Redirect;
 use BackendMenu;
 use Backend\Classes\Controller;
 use ApplicationException;
-use Minorjet\Aircraft\Models\Content;
-use RainLab\Blog\Controllers\Posts;
+use Minorjet\Aircraft\Models\Aircraft;
 
-class Contents extends Posts
+class Aircrafts extends Controller
 {
     public $implement = [
         'Backend.Behaviors.FormController',
@@ -20,19 +19,19 @@ class Contents extends Posts
     public $listConfig = 'config_list.yaml';
     public $importExportConfig = 'config_import_export.yaml';
 
-    public $requiredPermissions = ['rainlab.blog.access_other_posts', 'rainlab.blog.access_posts'];
+    public $requiredPermissions = ['minorjet.blog.access_other_aircrafts', 'rainlab.blog.access_aircrafts'];
 
     public function __construct()
     {
         parent::__construct();
 
-        BackendMenu::setContext('Minorjet.Aircraft', 'aircraft', 'contents');
+        BackendMenu::setContext('Minorjet.Aircraft', 'aircraft', 'aircrafts');
     }
 
     public function index()
     {
-        $this->vars['postsTotal'] = Content::count(); 
-        $this->vars['postsPublished'] = Content::isPublished()->count();
+        $this->vars['postsTotal'] = Aircraft::count();
+        $this->vars['postsPublished'] = Aircraft::isPublished()->count();
         $this->vars['postsDrafts'] = $this->vars['postsTotal'] - $this->vars['postsPublished'];
 
         $this->asExtension('ListController')->index();

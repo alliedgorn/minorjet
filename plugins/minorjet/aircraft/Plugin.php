@@ -3,8 +3,8 @@
 use Backend;
 use Controller;
 use System\Classes\PluginBase;
-use RainLab\Blog\Classes\TagProcessor;
-use Minorjet\Blog\Models\Category;
+use Minorjet\Aircraft\Classes\TagProcessor; 
+use Minorjet\Aircraft\Models\Category;
 use Event;
 
 class Plugin extends PluginBase
@@ -13,8 +13,8 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'minorjet.aircraft::lang.plugin.name',
-            'description' => 'rainlab.blog::lang.plugin.description',
-            'author'      => 'Wutthikorn Kongprasopkij',
+            'description' => 'minorjet.aircraft::lang.plugin.description',
+            'author'      => 'Wutthikorn Kongprasopkij, Nuttapong Surasathien',
             'icon'        => 'icon-plane',
             'homepage'    => 'https://bearpowr.com'
         ];
@@ -23,50 +23,57 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'RainLab\Blog\Components\Post'       => 'blogPost', 
-            'RainLab\Blog\Components\Posts'      => 'blogPosts',
-            'RainLab\Blog\Components\Categories' => 'blogCategories'
-        ]; 
-    } 
+            'Minorjet\Aircraft\Components\Post'       => 'aircraft',
+            'Minorjet\Aircraft\Components\Posts'      => 'aircraftList',
+            'Minorjet\Aircraft\Components\Categories' => 'aircraftCategories'
+        ];
+    }
 
     public function registerPermissions()
-    { 
+    {
         return [
-            'minorjet.aircraft.access_contents'      => ['tab' => 'minorjet.aircraft::lang.aircraft.tab', 'label' => 'minorjet.aircraft::lang.aircraft.access_contents'],
-            'minorjet.aircraft.access_categories'    => ['tab' => 'minorjet.aircraft::lang.aircraft.tab', 'label' => 'minorjet.aircraft::lang.aircraft.access_categories'],
-            'minorjet.aircraft.access_other_posts'   => ['tab' => 'minorjet.aircraft::lang.aircraft.tab', 'label' => 'minorjet.aircraft::lang.aircraft.access_other_posts'],
-            'minorjet.aircraft.access_import_export' => ['tab' => 'minorjet.aircraft::lang.aircraft.tab', 'label' => 'minorjet.aircraft::lang.aircraft.access_import_export']
+            'minorjet.blog.access_aircrafts'        => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_aircrafts'],
+            'minorjet.blog.access_features'         => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_features'],
+            'minorjet.blog.access_categories'       => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_categories'],
+            'minorjet.blog.access_other_aircrafts'  => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_other_aircrafts'],
+            'minorjet.blog.access_import_export'    => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_import_export']
         ];
     }
 
     public function registerNavigation()
-    { 
+    {
         return [
-            'aircraft' => [
-                'label'       => 'minorjet.aircraft::lang.aircraft.menu_label',
-                'url'         => Backend::url('minorjet/aircraft/contents'),
+            'blog' => [
+                'label'       => 'minorjet.aircraft::lang.blog.menu_label',
+                'url'         => Backend::url('minorjet/aircraft/aircrafts'),
                 'icon'        => 'icon-plane',
                 'permissions' => ['minorjet.aircraft.*'],
                 'order'       => 500,
 
                 'sideMenu' => [
-                    'new_content' => [
-                        'label'       => 'minorjet.aircraft::lang.contents.new_content',
+                    'new_aircraft' => [
+                        'label'       => 'minorjet.aircraft::lang.posts.new_aircraft',
                         'icon'        => 'icon-plus',
-                        'url'         => Backend::url('minorjet/aircraft/contents/create'),
-                        'permissions' => ['minorjet.aircraft.access_contents']
+                        'url'         => Backend::url('minorjet/aircraft/aircrafts/create'),
+                        'permissions' => ['minorjet.aircraft.access_aircrafts']
                     ],
-                    'contents' => [
-                        'label'       => 'minorjet.aircraft::lang.aircraft.contents',
-                        'icon'        => 'icon-copy',
-                        'url'         => Backend::url('minorjet/aircraft/contents'),
-                        'permissions' => ['minorjet.aircraft.access_contents']
+                    'aircrafts' => [
+                        'label'       => 'minorjet.aircraft::lang.blog.aircrafts',
+                        'icon'        => 'icon-plane',
+                        'url'         => Backend::url('minorjet/aircraft/aircrafts'),
+                        'permissions' => ['minorjet.aircraft.access_aircrafts']
                     ],
                     'categories' => [
-                        'label'       => 'minorjet.aircraft::lang.aircraft.categories',
+                        'label'       => 'minorjet.aircraft::lang.blog.categories',
                         'icon'        => 'icon-list-ul',
                         'url'         => Backend::url('minorjet/aircraft/categories'),
                         'permissions' => ['minorjet.aircraft.access_categories']
+                    ],
+                    'features' => [
+                        'label'       => 'minorjet.aircraft::lang.blog.features',
+                        'icon'        => 'icon-superscript',
+                        'url'         => Backend::url('minorjet/aircraft/features'),
+                        'permissions' => ['minorjet.aircraft.access_features']
                     ]
                 ]
             ]
@@ -76,7 +83,7 @@ class Plugin extends PluginBase
     public function registerFormWidgets()
     {
         return [
-            'RainLab\Blog\FormWidgets\Preview' => [
+            'Minorjet\Aircraft\FormWidgets\Preview' => [
                 'label' => 'Preview',
                 'code'  => 'preview'
             ]

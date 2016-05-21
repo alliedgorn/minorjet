@@ -1,19 +1,19 @@
-<?php namespace RainLab\Blog\Updates;
+<?php namespace Minorjet\Aircraft\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;
-use RainLab\Blog\Models\Category as CategoryModel;
+use Minorjet\Aircraft\Models\Category as CategoryModel;
 
 class CategoriesAddNestedFields extends Migration
 {
 
     public function up()
     {
-        if (Schema::hasColumn('rainlab_blog_categories', 'parent_id')) {
+        if (Schema::hasColumn('minorjet_aircraft_categories', 'parent_id')) {
             return;
         }
 
-        Schema::table('rainlab_blog_categories', function($table)
+        Schema::table('minorjet_aircraft_categories', function($table)
         {
             $table->integer('parent_id')->unsigned()->index()->nullable();
             $table->integer('nest_left')->nullable();
