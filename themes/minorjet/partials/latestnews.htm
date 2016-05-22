@@ -4,7 +4,7 @@
     {% for post in posts %}
     <div class="row">
         <div class="col-xs-12">
-            <div class="newsthumb pull-left" style="background-image:url(' {% if post.image  %}/storage/app/media{{ post.image }} {% else %} {{'assets/images/news-icon.png'|theme}} {% endif %}')">
+            <div class="newsthumb pull-left hidden-xs" style="background-image:url(' {% if post.image  %}/storage/app/media{{ post.image }} {% else %} {{'assets/images/news-icon.png'|theme}} {% endif %}')">
             </div>
             <div class="contentbox pull-left">
                 <h3><a href="{{ '/news/post'|app }}/{{ post.slug }}" title="{{post.title}}" >{{ post.title }}</a></h3>
