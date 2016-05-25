@@ -7,6 +7,8 @@
         background: -moz-linear-gradient(@header_gradient_color1, @header_gradient_color2); /* For Firefox 3.6 to 15 */
         background: linear-gradient(@header_gradient_color1, @header_gradient_color2); /* Standard syntax */
         box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.3), 0px 0px 10px 0px rgba(35, 35, 35, 0.8) inset ;
+        -moz-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.3), 0px 0px 10px 0px rgba(35, 35, 35, 0.8) inset;
+        -webkit-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.3), 0px 0px 10px 0px rgba(35, 35, 35, 0.8) inset;
         
     }
     .navbar {
@@ -16,12 +18,14 @@
         color: @primary-font-color;
         width: 100%;
         .container { 
-            background: #131315;
-            background: -webkit-linear-gradient(#131315, #1b1b1d);
-            background: -o-linear-gradient(#131315, #1b1b1d);
-            background: -moz-linear-gradient(#131315, #1b1b1d);
-            background: linear-gradient(#131315, #1b1b1d);
+            background: @menu_gradient_color1;
+            background: -webkit-linear-gradient(@menu_gradient_color1, @menu_gradient_color2);
+            background: -o-linear-gradient(@menu_gradient_color1, @menu_gradient_color2);
+            background: -moz-linear-gradient(@menu_gradient_color1, @menu_gradient_color2);
+            background: linear-gradient(@menu_gradient_color1, @menu_gradient_color2);
             box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
+            -moz-box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
+            -webkit-box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
             -webkit-border-bottom-right-radius: 10px;
             -webkit-border-bottom-left-radius: 10px;
             -moz-border-radius-bottomright: 10px;
@@ -34,7 +38,7 @@
             }
         }
         .navbar-collapse{
-            width:100%;
+            width: 100%;
         }
         li {
             &.active {
@@ -56,7 +60,7 @@
         }
         
         .navbar-toggle {
-            color: #ffffff;
+            color: @secondary-font-color;
             border: 2px solid rgba(255,255,255,1);
             border-radius: 8px;
             margin-right: 0px;
@@ -136,12 +140,12 @@
 
 
 footer {
-    border-top: solid 1px #555555;
+    border-top: solid 1px @footer-line-color;
     margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 12px;
-    color: #838383;
+    color: @footer-font-color;
     background-image: url('../images/header_bg.jpg');
     text-align: center;
     .social_icon {
