@@ -17,13 +17,22 @@ body {
 h1,h2,h3 {
   font-family: @secondary-font;
   color: @secondary-font-color;
+  a {
+      color: @secondary-font-color;
+      &:hover {
+          text-decoration: none;
+          color: @secondary-font-color;
+      }
+  }
 }
+
+
 
 .post-list {
     .newsthumb {
         border-left: solid 8px @box-highlight-color;
         padding: 10px;
-        height: 170px; 
+        height: 180px; 
         width:25%;
         margin-bottom:10px;
         background-color: @box-image-bg-color;
@@ -35,6 +44,8 @@ h1,h2,h3 {
       font-size: 70%;
     }  
     .contentbox { 
+        position: relative;
+        box-shadow: 0px 0px 20px 0px rgb(10, 10, 10) inset;
         background-color: @box-bg-color;
         width: 100%;
         margin-bottom: 20px;
@@ -44,22 +55,28 @@ h1,h2,h3 {
             padding-bottom: 5px;
             margin: 0;
             text-overflow: ellipsis;
+            font-size: 20px;
             white-space: nowrap;
             overflow: hidden;
             color: @link-font-color;
             a {
+                color: @link-font-color;
                 &:hover {
                     color:@link-font-hover-color;
                 }
             }
         }
+        .content {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            font-size: 14px;
+        }
+        .read-more {
+            float: right;
+        }
     }
     
-    .content {
-        text-overflow: ellipsis;
-        overflow: hidden;
-        font-size: 13px;
-    }
+
     
 }
 
@@ -79,7 +96,7 @@ h1,h2,h3 {
 }
 
 .subscribe {
-    padding: 23px 30px 0px 30px;
+    margin-top: 23px;
     
     .subscribe-head {
 
