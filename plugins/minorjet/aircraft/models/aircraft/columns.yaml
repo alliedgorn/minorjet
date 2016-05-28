@@ -21,6 +21,13 @@ columns:
         searchable: true
         sortable: false
 
+    features:
+        label: minorjet.aircraft::lang.aircraft.features
+        relation: features
+        select: concat (title, ' (ID: ', id, ')')
+        searchable: true
+        sortable: false
+
     created_at:
         label: minorjet.aircraft::lang.aircraft.created
         type: date

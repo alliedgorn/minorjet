@@ -1,100 +1,88 @@
-@media (min-width: 768px) {
-    #layout-header {
-        .navbar {
+#layout-header {
+    .navbar {
+        position: absolute;
+        .container {
+            background: none;
+            box-shadow: none;
+            .row {
+                width: 90%;
+                background: @menu_gradient_color1; /* For browsers that do not support gradients */
+                background: -webkit-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Safari 5.1 to 6.0 */
+                background: -o-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Firefox 3.6 to 15 */
+                background: linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* Standard syntax */
+                box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
+                -moz-box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
+                -webkit-box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
+                -webkit-border-bottom-right-radius: 10px;
+                -webkit-border-bottom-left-radius: 10px;
+                -moz-border-radius-bottomright: 10px;
+                -moz-border-radius-bottomleft: 10px;
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+        }
+        .navbar-collapse {
+            width : auto;
+        }
+        .logo {
+            display: none;
+        }
+    }
+}
+
+
+.about {
+    .about-img {
+        width: 45%;
+        height: 240px;
+    }
+    
+    .about-contentbox {
+        width: 55%;
+        height: 240px;
+    }
+}
+
+
+.post-list {
+    .contentbox { 
+        height: 180px;
+        width: 75%;
+        .content {
+            height: 125px;
+        }
+        .fade-overlay {
+            width: 100%;
+            background: -webkit-gradient(linear,left top,left bottom,color-stop(0, transparent),color-stop(0.8, #1D1D1D));
+            background: -moz-linear-gradient(top, rgba(29,29,29,0) 0%, rgba(19,19,19,1) 80%);
+            background: -webkit-linear-gradient(top,rgba(29,29,29,0) 0%,rgba(19,19,19,1) 80%);
+            background: linear-gradient(to bottom,rgba(29,29,29,0) 0%,rgba(19,19,19,1) 80%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001d1d1d', endColorstr='#131313',GradientType=0 );
+            height: 40%;
             position: absolute;
-            .container {
-                background: none;
-                box-shadow: none;
-                .row {
-                    width: 90%;
-                    background: @menu_gradient_color1; /* For browsers that do not support gradients */
-                    background: -webkit-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Safari 5.1 to 6.0 */
-                    background: -o-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Opera 11.1 to 12.0 */
-                    background: -moz-linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* For Firefox 3.6 to 15 */
-                    background: linear-gradient(@menu_gradient_color1, @menu_gradient_color2); /* Standard syntax */
-                    box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
-                    -moz-box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
-                    -webkit-box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
-                    -webkit-border-bottom-right-radius: 10px;
-                    -webkit-border-bottom-left-radius: 10px;
-                    -moz-border-radius-bottomright: 10px;
-                    -moz-border-radius-bottomleft: 10px;
-                    border-bottom-right-radius: 10px;
-                    border-bottom-left-radius: 10px;
-                }
-            }
-            .navbar-collapse {
-                width : auto;
-            }
-            .logo {
-                display: none;
-            }
+            bottom: 0;
+            left: 0;
+        }
+        .read-more {
+            position: absolute;
+            bottom: 5px;
+            right: 20px;
+            clear: right;
         }
     }
-    
-    
-    .about {
-        .about-img {
-            width: 45%;
-            height: 240px;
-        }
-        
-        .about-contentbox {
-            width: 55%;
-            height: 240px;
-        }
-    }
+}
 
-
-    .post-list {
-        .contentbox { 
-            height: 180px;
-            width: 75%;
-            .content {
-                height: 125px;
-            }
-            .fade-overlay {
-                width: 100%;
-                background: -webkit-gradient(linear,left top,left bottom,color-stop(0, transparent),color-stop(0.8, #1D1D1D));
-                background: -moz-linear-gradient(top, rgba(29,29,29,0) 0%, rgba(19,19,19,1) 80%);
-                background: -webkit-linear-gradient(top,rgba(29,29,29,0) 0%,rgba(19,19,19,1) 80%);
-                background: linear-gradient(to bottom,rgba(29,29,29,0) 0%,rgba(19,19,19,1) 80%);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001d1d1d', endColorstr='#131313',GradientType=0 );
-                height: 40%;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-            }
-            .read-more {
-                position: absolute;
-                bottom: 5px;
-                right: 20px;
-                clear: right;
-            }
+footer {
+    .footer-text {
+        width: 550px;
+        .address {
+            width: 60%;
+            padding: 0px 0px 20px 40px;
         }
-    }
-    
-    footer {
-        .footer-text {
-            width: 550px;
-            .address {
-                width: 60%;
-                padding: 0px 0px 20px 40px;
-            }
-            .telephone {
-                width: 40%;
-                padding: 0px 0px 20px 20px;
-            }
-        }
-    }
-    
-    .main-content {
-        padding-top: 50px;
-    }
-    
-    .news-post {
-        .subscribe {
-            margin-top: 30px;
+        .telephone {
+            width: 40%;
+            padding: 0px 0px 20px 20px;
         }
     }
     
@@ -113,3 +101,22 @@
         }
     }
 }
+
+.main-content {
+    padding-top: 50px;
+}
+
+.news-post {
+    .subscribe {
+        margin-top: 30px;
+    }
+}
+
+.aircraft-page {
+    .features-list {
+        .feature-box {
+            width: 33.33333333%;
+        }
+    }
+}
+

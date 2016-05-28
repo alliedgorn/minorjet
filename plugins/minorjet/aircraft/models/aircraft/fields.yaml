@@ -38,6 +38,13 @@ secondaryTabs:
             commentAbove: minorjet.aircraft::lang.aircraft.categories_comment
             placeholder: minorjet.aircraft::lang.aircraft.categories_placeholder
 
+        features:
+            tab: minorjet.aircraft::lang.aircraft.tab_features
+            type: relation
+            commentAbove: minorjet.aircraft::lang.aircraft.features_comment
+            placeholder: minorjet.aircraft::lang.aircraft.features_placeholder
+            select: concat ( title, ' | ', ' ID: ', id, ' (Created at: ', created_at, ')' ) 
+
         published:
             tab: minorjet.aircraft::lang.aircraft.tab_manage
             label: minorjet.aircraft::lang.aircraft.published

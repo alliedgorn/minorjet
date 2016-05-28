@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: minorjet.aircraft::lang.blog.feature
+form: ~/plugins/minorjet/aircraft/models/feature/fields.yaml
+modelClass: Minorjet\Aircraft\Models\Feature
+defaultRedirect: minorjet/aircraft/features
+
+create:
+    redirect: minorjet/aircraft/features/update/:id
+    redirectClose: minorjet/aircraft/features
+
+update:
+    redirect: minorjet/aircraft/features
+    redirectClose: minorjet/aircraft/features

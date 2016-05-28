@@ -1,0 +1,41 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    # Page title
+    title: Import posts
+
+    # Import List Column configuration
+    list: $/minorjet/aircraft/models/postimport/columns.yaml
+
+    # Import Form Field configuration
+    form: $/minorjet/aircraft/models/postimport/fields.yaml
+
+    # Import Model class
+    modelClass: Minorjet\Aircraft\Models\PostImport
+
+    # Redirect when finished
+    redirect: minorjet/aircraft/aircrafts
+
+    # Required permissions
+    permissions: minorjet.aircraft.access_import_export
+
+export:
+    # Page title
+    title: Export posts
+
+    # Output file name
+    fileName: posts.csv
+
+    # Export List Column configuration
+    list: $/minorjet/aircraft/models/postexport/columns.yaml
+
+    # Export Model class
+    modelClass: Minorjet\Aircraft\Models\PostExport
+
+    # Redirect when finished
+    redirect: minorjet/aircraft/aircrafts
+
+    # Required permissions
+    permissions: minorjet.aircraft.access_import_export

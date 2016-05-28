@@ -1,0 +1,30 @@
+{% set post = __SELF__.post %}
+<div class="container aircraft-page">
+
+    {% partial 'carousel' item=post module='aircraft' imageKey='featured_images' %}
+
+    <div class="content">{{ post.content_html|raw }}</div>
+
+    {% if post.features.count %}
+    <div class="row features-list">
+        {% for feature in post.features %}
+        <div class="feature-box col-md-3 col-sm-4">
+            <div class="feature-image">
+                {% if feature.featured_images %}
+                    {% set image = feature.featured_images %}
+                    <img
+                        data-src="{{ image.filename }}"
+                        src="{{ image.path }}"
+                        alt="{{ image.description }}"
+                        style="max-width: 100%" />
+                {% endif %}
+            </div>
+            <div class="feature-content">
+                <span class="title"><h4>{{ feature.title }}</h4></span>
+                <p class="content">{{ feature.content }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
