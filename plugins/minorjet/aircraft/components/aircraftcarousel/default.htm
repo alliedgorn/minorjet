@@ -2,7 +2,7 @@
 {% set carouselId = "carousel-aircraft" ~ item.id %}
 {% set key = 'featured_images' %}
 {% if item[key].count %}
-    <div id="{{ carouselId }}" class="carousel slide" data-ride="carousel">
+    <div id="{{ carouselId }}" class="carousel slide overlapped" data-ride="carousel">
         {% if item[key]|length > 1 %}
             <ol class="carousel-indicators">
             {% for i, image in item[key] %}

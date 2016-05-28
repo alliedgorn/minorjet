@@ -1,10 +1,12 @@
 @import "variables";
+@import "wysiwyg";
 @import "header-footer";
 @import "newspost";
 @import "contact-us";
 @import "aircraft-page";
 @import "about-us";
 @import "parts";
+
 
 body {
     background-color: @bg-color;
@@ -31,7 +33,9 @@ h1,h2,h3 {
   }
 }
 
-
+section#layout-content {
+    margin-top: 60px;
+}
 
 .post-list {
     .newsthumb {
@@ -195,6 +199,12 @@ h1,h2,h3 {
             border-color: @form-border-color;
         }
     } 
+}
+
+.carousel {
+    &.overlapped {
+        margin-top: -60px;
+    }
 }
 
 

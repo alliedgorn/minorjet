@@ -6,13 +6,13 @@
         {% set colOption = 'col-xs-12' %}
     {% endif %}
     {% if post.content %}
-        <div class="content {{colOption}}">{{ post.content_html|raw }}</div>
+        <div class="content wysiwyg {{colOption}}">{{ post.content_html|raw }}</div>
     {% endif %}
     {% if post.secondary_content %}
-        <div class="content {{colOption}}">{{ post.secondary_content|raw }}</div>
+        <div class="content wysiwyg {{colOption}}">{{ post.secondary_content_html|raw }}</div>
     {% endif %}
 </div>
-
+<hr/>
 {% if post.features.count %}
 <div class="row features-list">
     {% for feature in post.features %}

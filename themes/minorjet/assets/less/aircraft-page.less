@@ -1,8 +1,11 @@
 .aircraft-page {
     .features-list {
+        margin-top: 20px;
         .feature-box {
             width: 100%;
             margin-top: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
             .image {
                 img {
                     height: 193.333333333px;
@@ -29,6 +32,21 @@
                         margin-bottom: 10px;
                         border-color: @box-header-color;
                     }
+                }
+            }
+        }
+    }
+    .wysiwyg {
+        ul {
+            list-style: none;
+            li {
+                &:before {
+                    content: "\E013";
+                    font-family: 'Glyphicons Halflings';
+                    font-size: 9px;
+                    float: left;
+                    margin-top: 3px;
+                    margin-left: -17px;
                 }
             }
         }
