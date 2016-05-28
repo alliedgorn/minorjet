@@ -3,7 +3,10 @@
 # ===================================
 
 columns:
-
+    id:
+        label: minorjet.aircraft::lang.feature.id
+        searchable: true
+        
     title:
         label: minorjet.aircraft::lang.feature.title
         searchable: true

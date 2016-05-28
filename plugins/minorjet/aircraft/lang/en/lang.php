@@ -39,6 +39,7 @@ return [
         'new_aircraft' => 'New aircraft'
     ],
     'feature' => [
+        'id' => 'ID',
         'title' => 'Title',
         'title_placeholder' => 'New feature title',
         'content' => 'Content',
