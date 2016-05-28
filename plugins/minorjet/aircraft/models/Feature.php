@@ -12,20 +12,18 @@ use Backend\Models\User;
 use Carbon\Carbon;
 use DB;
 
-class Aircraft extends Model
+class Feature extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
-    public $table = 'minorjet_aircraft_aircrafts';
+    public $table = 'minorjet_aircraft_features';
 
     /*
      * Validation
      */
     public $rules = [
         'title' => 'required',
-        'slug' => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:minorjet_aircraft_aircrafts'],
-        'content' => 'required',
-        'excerpt' => ''
+        'content' => 'required'
     ];
 
     /**
@@ -58,19 +56,14 @@ class Aircraft extends Model
     ];
 
     public $belongsToMany = [
-        'categories' => [
-            'Minorjet\Aircraft\Models\Category',
-            'table' => 'minorjet_aircraft_aircrafts_categories',
-            'order' => 'name'
-        ],
-        'features' => ['Minorjet\Aircraft\Models\Feature',
+        'aircrafts' => [
+            'Minorjet\Aircraft\Models\Aircraft',
             'table' => 'minorjet_aircraft_aircrafts_features',
-            'order' => 'published_at desc',
-            'scope' => 'isPublished'
+            'order' => 'title'
         ]
     ];
 
-    public $attachMany = [
+    public $attachOne = [
         'featured_images' => ['System\Models\File', 'order' => 'sort_order'],
         'content_images' => ['System\Models\File']
     ];
@@ -86,7 +79,7 @@ class Aircraft extends Model
     {
         if ($this->published && !$this->published_at) {
             throw new ValidationException([
-               'published_at' => Lang::get('minorjet.aircraft::lang.aircraft.published_validation')
+               'published_at' => Lang::get('minorjet.aircraft::lang.feature.published_validation')
             ]);
         }
     }
@@ -108,8 +101,8 @@ class Aircraft extends Model
             'slug' => $this->slug,
         ];
 
-        if (array_key_exists('categories', $this->getRelations())) {
-            $params['category'] = $this->categories->count() ? $this->categories->first()->slug : null;
+        if (array_key_exists('aircrafts', $this->getRelations())) {
+            $params['aircraft'] = $this->aircrafts->count() ? $this->aircrafts->first()->slug : null;
         }
 
         return $this->url = $controller->pageUrl($pageName, $params);
@@ -167,8 +160,8 @@ class Aircraft extends Model
             'page'       => 1,
             'perPage'    => 30,
             'sort'       => 'created_at',
-            'categories' => null,
-            'category'   => null,
+            'aircrafts' => null,
+            'aircraft'   => null,
             'search'     => '',
             'published'  => true
         ], $options));
@@ -210,24 +203,24 @@ class Aircraft extends Model
         }
 
         /*
-         * Categories
+         * Aircrafts
          */
-        if ($categories !== null) {
-            if (!is_array($categories)) $categories = [$categories];
-            $query->whereHas('categories', function($q) use ($categories) {
-                $q->whereIn('id', $categories);
+        if ($aircrafts !== null) {
+            if (!is_array($aircrafts)) $aircrafts = [$aircrafts];
+            $query->whereHas('aircrafts', function($q) use ($aircrafts) {
+                $q->whereIn('id', $aircrafts);
             });
         }
 
         /*
-         * Category, including children
+         * Aircraft, including children
          */
-        if ($category !== null) {
-            $category = Category::find($category);
+        if ($aircraft !== null) {
+            $aircraft = Aircraft::find($aircraft);
 
-            $categories = $category->getAllChildrenAndSelf()->lists('id');
-            $query->whereHas('categories', function($q) use ($categories) {
-                $q->whereIn('id', $categories);
+            $aircrafts = $aircraft->getAllChildrenAndSelf()->lists('id');
+            $query->whereHas('aircrafts', function($q) use ($aircrafts) {
+                $q->whereIn('id', $aircrafts);
             });
         }
 
@@ -235,15 +228,15 @@ class Aircraft extends Model
     }
 
     /**
-     * Allows filtering for specifc categories
+     * Allows filtering for specifc aircrafts
      * @param  Illuminate\Query\Builder  $query      QueryBuilder
-     * @param  array                     $categories List of category ids
+     * @param  array                     $aircrafts List of aircraft ids
      * @return Illuminate\Query\Builder              QueryBuilder
      */
-    public function scopeFilterCategories($query, $categories)
+    public function scopeFilterAircrafts($query, $aircrafts)
     {
-        return $query->whereHas('categories', function($q) use ($categories) {
-            $q->whereIn('id', $categories);
+        return $query->whereHas('aircrafts', function($q) use ($aircrafts) {
+            $q->whereIn('id', $aircrafts);
         });
     }
 

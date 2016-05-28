@@ -24,6 +24,7 @@ class Plugin extends PluginBase
     {
         return [
             'Minorjet\Aircraft\Components\Aircraft'       => 'aircraft',
+            'Minorjet\Aircraft\Components\AircraftWithFeatures'       => 'aircraftWithFeatures',
             'Minorjet\Aircraft\Components\Aircrafts'      => 'aircraftList',
             'Minorjet\Aircraft\Components\Categories' => 'aircraftCategories'
         ];
@@ -33,7 +34,6 @@ class Plugin extends PluginBase
     {
         return [
             'minorjet.aircraft.access_aircrafts'        => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_aircrafts'],
-            'minorjet.aircraft.access_features'         => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_features'],
             'minorjet.aircraft.access_categories'       => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_categories'],
             'minorjet.aircraft.access_other_aircrafts'  => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_other_aircrafts'],
             'minorjet.aircraft.access_import_export'    => ['tab' => 'minorjet.aircraft::lang.blog.tab', 'label' => 'minorjet.aircraft::lang.blog.access_import_export']
@@ -73,7 +73,7 @@ class Plugin extends PluginBase
                         'label'       => 'minorjet.aircraft::lang.blog.features',
                         'icon'        => 'icon-cubes',
                         'url'         => Backend::url('minorjet/aircraft/features'),
-                        'permissions' => ['minorjet.aircraft.access_features']
+                        'permissions' => ['minorjet.aircraft.access_aircrafts']
                     ]
                 ]
             ]

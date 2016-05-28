@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: ~/plugins/minorjet/aircraft/models/aircraft/columns.yaml
+list: ~/plugins/minorjet/aircraft/models/feature/columns.yaml
 
 # Model Class name
-modelClass: Minorjet\Aircraft\Models\Aircraft
+modelClass: Minorjet\Aircraft\Models\Feature
 
 # List Title
-title: minorjet.aircraft::lang.aircrafts.list_title
+title: minorjet.aircraft::lang.feature.list_title
 
 # Link URL for each record
-recordUrl: minorjet/aircraft/aircrafts/update/:id
+recordUrl: minorjet/aircraft/features/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

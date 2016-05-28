@@ -1,0 +1,36 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    title:
+        label: minorjet.aircraft::lang.feature.title
+        searchable: true
+
+    # author:
+    #   label: Author
+    #   relation: user
+    #   select: login
+    #   searchable: true
+
+    aircrafts:
+        label: minorjet.aircraft::lang.feature.aircrafts
+        relation: aircrafts
+        select: title
+        searchable: true
+        sortable: false
+
+    created_at:
+        label: minorjet.aircraft::lang.feature.created
+        type: date
+        invisible: true
+
+    updated_at:
+        label: minorjet.aircraft::lang.feature.updated
+        type: date
+        invisible: true
+
+    published_at:
+        label: minorjet.aircraft::lang.feature.published
+        type: date

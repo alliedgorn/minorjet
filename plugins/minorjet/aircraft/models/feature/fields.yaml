@@ -1,0 +1,58 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    title:
+        label: minorjet.aircraft::lang.feature.title
+        span: left
+        placeholder: minorjet.aircraft::lang.feature.title_placeholder
+
+    toolbar:
+        type: partial
+        path: post_toolbar
+        cssClass: collapse-visible
+
+secondaryTabs:
+    stretch: true
+    fields:
+        content:
+            tab: minorjet.aircraft::lang.feature.tab_edit
+            type: Minorjet\Aircraft\FormWidgets\BlogMarkdown
+            cssClass: field-slim blog-post-preview
+            stretch: true
+            mode: split
+
+        aircrafts:
+            tab: minorjet.aircraft::lang.feature.tab_aircrafts
+            type: relation
+            commentAbove: minorjet.aircraft::lang.feature.features_comment
+            placeholder: minorjet.aircraft::lang.feature.features_placeholder
+            select: concat( title, ' (', slug, ')')
+
+        published:
+            tab: minorjet.aircraft::lang.feature.tab_manage
+            label: minorjet.aircraft::lang.feature.published
+            span: left
+            type: checkbox
+
+        published_at:
+            tab: minorjet.aircraft::lang.feature.tab_manage
+            label: minorjet.aircraft::lang.feature.published_on
+            span: left
+            cssClass: checkbox-align
+            type: datepicker
+            mode: date
+            trigger:
+                action: enable
+                field: published
+                condition: checked
+
+        featured_images:
+            tab: minorjet.aircraft::lang.feature.tab_manage
+            label: minorjet.aircraft::lang.feature.featured_images
+            type: fileupload
+            mode: image
+            imageWidth: 200
+            imageHeight: 200
