@@ -9,23 +9,18 @@ id = 1
 [post newspost]
 slug = "{{ :slug }}"
 ==
-<div class="container home">
+<div class="container news-post">
     <div class="row">
         <div id="banner" class="carousel slide col-xs-12">
             {% component 'carousel' %}
         </div>
     </div>
-</div>
-
-<div class="container">
     <div class="row">
         <div class="newspost col-md-8">
             {% partial 'newspage/newspost' %}
         </div>
         <div class="othernews col-md-4">
-            <div class="subscribe">
-                {% partial 'subscribebox' %}
-            </div>
+            {% partial 'subscribebox' %}
             <div class="newslist">
                 <div class="underline">
                     <h3>OTHER NEWS</h3>
