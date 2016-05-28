@@ -42,12 +42,12 @@
                             <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">HOME</a></li>
         					<li class="{% if (this.page.id == 'news' or this.page.id == 'newspost') %}active{% endif %}"><a href="{{ 'news'|page }}">NEWS</a></li>
                             <li class="{% if this.page.id == 'aircraft' %}active{% endif %}"><a href="{{ 'main'|page }}">AIRCRAFT</a></li>
-                            <li class="{% if this.page.id == 'parts' %}active{% endif %}"><a href="{{ 'ajax'|page }}">PARTS</a></li>
+                            <li class="{% if this.page.id == 'parts' %}active{% endif %}"><a href="{{ 'parts'|page }}">PARTS</a></li>
                             <li class="{% if this.page.id == 'about-us' %}active{% endif %}"><a href="{{ 'about-us'|page }}">ABOUT US</a></li>
                             <li class="{% if this.page.id == 'contact-us' %}active{% endif %}"><a href="{{ 'contact-us'|page }}">CONTACT US</a></li>
                         </ul>
                     </div>
-                    <div class="social pull-right hidden-xs">
+                    <div class="social pull-right hidden-xs hidden-sm">
                            <a href="#"><img class="social_icon" src="{{ 'assets/images/social_icon/xicon-facebook.png'|theme }}" alt="Facebook" ></a>
                            <a href="#"><img class="social_icon" src="{{ 'assets/images/social_icon/xicon-twitter.png'|theme }}" alt="Twitter" ></a>
                            <a href="#"><img class="social_icon" src="{{ 'assets/images/social_icon/xicon-line.png'|theme }}" alt="Line" ></a>

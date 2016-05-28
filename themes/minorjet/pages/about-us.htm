@@ -1,4 +1,4 @@
-title = "about-us"
+title = "About us"
 url = "/about-us"
 layout = "main"
 is_hidden = 0
@@ -13,20 +13,30 @@ id = 1
         </div>
     </div>
     <div class="about">
-        {% partial 'about' %}
+        <center><br/><br/><h1>M A H L<br/><small>logo here</small></h1><br/><br/></center>
     </div>
-    <div class="team">
-        <div class="head-box"><h3>OUR TEAM</h3></div>
-        <div class="underline"></div>
-        <div class="team-area">
-            <div class="person">
+    <div class="row">
+        <div class="team col-xs-12">
+            <div class="head-box"><h3>OUR TEAM</h3></div>
+            <div class="underline"></div>
+            <div class="team-area">
                 <div class="portrait">
-                    
+                    <img class="pic-portrait" src="{{ 'assets/images/about-us/bill_heinecke.jpg'|theme }}" >
+                    <div class="fullname"><span class="name">Bill </span><span class="surname">Heinecke</span></div>
+                    <div class="position">President of Minor Corporation</div>
+                </div>
+                <div class="portrait">
+                    <img class="pic-portrait" src="{{ 'assets/images/about-us/karnchana_whorton.jpg'|theme }}" >
+                    <div class="fullname"><span class="name">Karnchana </span><span class="surname">Whorton</span></div>
+                    <div class="position">Sales Director</div>
+                </div>
+                <div class="portrait">
+                    <img class="pic-portrait" src="{{ 'assets/images/about-us/aksaranan_towiwat.jpg'|theme }}" >
+                    <div class="fullname"><span class="name">Aksaranan </span><span class="surname">Towiwat</span></div>
+                    <div class="position">Director Aircraft Sales & Acquisitions</div>
                 </div>
             </div>
-            
         </div>
     </div>
-    
     
 </div>
