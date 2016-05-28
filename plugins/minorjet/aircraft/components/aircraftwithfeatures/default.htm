@@ -5,11 +5,11 @@
 
     <div class="content">{{ post.content_html|raw }}</div>
 
-
-
     {% if post.features.count %}
-        <div class="features-list text-center">
-            {% for feature in post.features %}
+    <div class="row features-list">
+        {% for feature in post.features %}
+        <div class="feature-box col-md-3 col-sm-4">
+            <div class="feature-image">
                 {% if feature.featured_images %}
                     {% set image = feature.featured_images %}
                     <img
@@ -18,10 +18,13 @@
                         alt="{{ image.description }}"
                         style="max-width: 100%" />
                 {% endif %}
-                <p>
-                    {{ feature.content_html|raw }}
-                </p>
-            {% endfor %}
+            </div>
+            <div class="feature-content">
+                <span class="title"><h4>{{ feature.title }}</h4></span>
+                <p class="content">{{ feature.content }}</p>
+            </div>
         </div>
+        {% endfor %}
+    </div>
     {% endif %}
 </div>
