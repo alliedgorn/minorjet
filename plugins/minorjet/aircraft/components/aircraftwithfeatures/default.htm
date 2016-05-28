@@ -1,30 +1,37 @@
 {% set post = __SELF__.post %}
-<div class="container aircraft-page">
-
-    {% partial 'carousel' item=post module='aircraft' imageKey='featured_images' %}
-
-    <div class="content">{{ post.content_html|raw }}</div>
-
-    {% if post.features.count %}
-    <div class="row features-list">
-        {% for feature in post.features %}
-        <div class="feature-box col-md-3 col-sm-4">
-            <div class="feature-image">
-                {% if feature.featured_images %}
-                    {% set image = feature.featured_images %}
-                    <img
-                        data-src="{{ image.filename }}"
-                        src="{{ image.path }}"
-                        alt="{{ image.description }}"
-                        style="max-width: 100%" />
-                {% endif %}
-            </div>
-            <div class="feature-content">
-                <span class="title"><h4>{{ feature.title }}</h4></span>
-                <p class="content">{{ feature.content }}</p>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+<div class="row">
+    {% if post.content and post.secondary_content %}
+        {% set colOption = 'col-md-6' %}
+    {% else %}
+        {% set colOption = 'col-xs-12' %}
+    {% endif %}
+    {% if post.content %}
+        <div class="content {{colOption}}">{{ post.content_html|raw }}</div>
+    {% endif %}
+    {% if post.secondary_content %}
+        <div class="content {{colOption}}">{{ post.secondary_content|raw }}</div>
     {% endif %}
 </div>
+
+{% if post.features.count %}
+<div class="row features-list">
+    {% for feature in post.features %}
+    <div class="feature-box">
+        <div class="image">
+            {% if feature.featured_images %}
+                {% set image = feature.featured_images %}
+                <img
+                    data-src="{{ image.filename }}"
+                    src="{{ image.path }}"
+                    alt="{{ image.description }}"
+                    style="max-width: 100%" />
+            {% endif %}
+        </div>
+        <div class="feature-content">
+            <span class="title"><h4>{{ feature.title }}</h4><hr/></span>
+            <p class="content">{{ feature.content }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

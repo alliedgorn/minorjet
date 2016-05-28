@@ -2,6 +2,35 @@
     .features-list {
         .feature-box {
             width: 100%;
+            margin-top: 10px;
+            .image {
+                img {
+                    height: 193.333333333px;
+                    width: 100%;
+                    border: 1px solid @box-image-border-color;
+                }
+            }
+            .feature-content {
+                display: inline-block;
+                width: 100%;
+                padding: 10px;
+                box-shadow: 0px 0px 20px 0px #0a0a0a inset;
+                -moz-box-shadow: inset 0px 0px 20px 0px #0a0a0a;
+                -webkit-box-shadow: inset 0px 0px 20px 0px #0a0a0a;
+                background-color: #232323;
+                .title {
+                    color: @box-header-color;
+                    h4 {
+                        margin-bottom: 5px;
+                        cursor: default;
+                    }
+                    hr {
+                        margin-top: 0px;
+                        margin-bottom: 10px;
+                        border-color: @box-header-color;
+                    }
+                }
+            }
         }
     }
 }

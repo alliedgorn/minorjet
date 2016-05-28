@@ -71,8 +71,11 @@ class Aircraft extends Model
     ];
 
     public $attachMany = [
-        'featured_images' => ['System\Models\File', 'order' => 'sort_order'],
-        'content_images' => ['System\Models\File']
+        'featured_images' => ['System\Models\File', 'order' => 'sort_order']
+    ];
+
+    public $attachOne = [
+        'content_image' => ['System\Models\File']
     ];
 
     /**
@@ -94,6 +97,7 @@ class Aircraft extends Model
     public function beforeSave()
     {
         $this->content_html = self::formatHtml($this->content);
+        $this->secondary_content_html = self::formatHtml($this->secondary_content);
     }
 
     /**
@@ -169,6 +173,7 @@ class Aircraft extends Model
             'sort'       => 'created_at',
             'categories' => null,
             'category'   => null,
+            'focusItem'  => false,
             'search'     => '',
             'published'  => true
         ], $options));
@@ -209,6 +214,12 @@ class Aircraft extends Model
             $query->searchWhere($search, $searchableFields);
         }
 
+        /*
+         * Load only focus items
+         */
+        if ($focusItem) {
+            $query->where('focused', '=', '1');
+        }
         /*
          * Categories
          */

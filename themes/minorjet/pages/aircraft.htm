@@ -6,5 +6,31 @@ is_hidden = 0
 [aircraftWithFeatures]
 slug = "{{ :slug }}"
 categoryPage = "aircraft"
+
+[aircraftList]
+pageNumber = "{{ :page }}"
+focusItem = 1
+postsPerPage = 0
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "aircraft-subcategory"
+postPage = "aircraft"
+
+[aircraftCarousel]
+slug = "{{ :slug }}"
 ==
-{% component 'aircraftWithFeatures' %}
+<div class="container aircraft-page">
+    <div class="row">
+        <div class="col-xs-12">
+            {% component 'aircraftCarousel' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            {% component 'aircraftList' %}
+        </div>
+        <div class="col-sm-9">
+            {% component 'aircraftWithFeatures' %}
+        </div>
+    </div>
+</div>

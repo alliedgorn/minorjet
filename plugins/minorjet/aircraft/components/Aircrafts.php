@@ -62,49 +62,55 @@ class Aircrafts extends ComponentBase
     {
         return [
             'pageNumber' => [
-                'title'       => 'minorjet.blog::lang.settings.posts_pagination',
-                'description' => 'minorjet.blog::lang.settings.posts_pagination_description',
+                'title'       => 'minorjet.aircraft::lang.settings.posts_pagination',
+                'description' => 'minorjet.aircraft::lang.settings.posts_pagination_description',
                 'type'        => 'string',
                 'default'     => '{{ :page }}',
             ],
             'categoryFilter' => [
-                'title'       => 'minorjet.blog::lang.settings.posts_filter',
-                'description' => 'minorjet.blog::lang.settings.posts_filter_description',
+                'title'       => 'minorjet.aircraft::lang.settings.posts_filter',
+                'description' => 'minorjet.aircraft::lang.settings.posts_filter_description',
                 'type'        => 'string',
                 'default'     => ''
             ],
+            'focusItem' => [
+                'title'       => 'minorjet.aircraft::lang.settings.aircraft_focus_item',
+                'description' => 'minorjet.aircraft::lang.settings.aircraft_focus_item_description',
+                'type'        => 'checkbox',
+                'default'     => ''
+            ],
             'postsPerPage' => [
-                'title'             => 'minorjet.blog::lang.settings.posts_per_page',
+                'title'             => 'minorjet.aircraft::lang.settings.posts_per_page',
                 'type'              => 'string',
                 'validationPattern' => '^[0-9]+$',
-                'validationMessage' => 'minorjet.blog::lang.settings.posts_per_page_validation',
+                'validationMessage' => 'minorjet.aircraft::lang.settings.posts_per_page_validation',
                 'default'           => '10',
             ],
             'noPostsMessage' => [
-                'title'        => 'minorjet.blog::lang.settings.posts_no_posts',
-                'description'  => 'minorjet.blog::lang.settings.posts_no_posts_description',
+                'title'        => 'minorjet.aircraft::lang.settings.posts_no_posts',
+                'description'  => 'minorjet.aircraft::lang.settings.posts_no_posts_description',
                 'type'         => 'string',
                 'default'      => 'No posts found',
                 'showExternalParam' => false
             ],
             'sortOrder' => [
-                'title'       => 'minorjet.blog::lang.settings.posts_order',
-                'description' => 'minorjet.blog::lang.settings.posts_order_description',
+                'title'       => 'minorjet.aircraft::lang.settings.posts_order',
+                'description' => 'minorjet.aircraft::lang.settings.posts_order_description',
                 'type'        => 'dropdown',
                 'default'     => 'published_at desc'
             ],
             'categoryPage' => [
-                'title'       => 'minorjet.blog::lang.settings.posts_category',
-                'description' => 'minorjet.blog::lang.settings.posts_category_description',
+                'title'       => 'minorjet.aircraft::lang.settings.posts_category',
+                'description' => 'minorjet.aircraft::lang.settings.posts_category_description',
                 'type'        => 'dropdown',
-                'default'     => 'blog/category',
+                'default'     => 'aircraft-subcategory',
                 'group'       => 'Links',
             ],
             'postPage' => [
-                'title'       => 'minorjet.blog::lang.settings.posts_post',
-                'description' => 'minorjet.blog::lang.settings.posts_post_description',
+                'title'       => 'minorjet.aircraft::lang.settings.posts_post',
+                'description' => 'minorjet.aircraft::lang.settings.posts_post_description',
                 'type'        => 'dropdown',
-                'default'     => 'blog/post',
+                'default'     => 'aircraft',
                 'group'       => 'Links',
             ],
         ];
@@ -166,6 +172,7 @@ class Aircrafts extends ComponentBase
             'page'       => $this->property('pageNumber'),
             'sort'       => $this->property('sortOrder'),
             'perPage'    => $this->property('postsPerPage'),
+            'focusItem'    => $this->property('focusItem'),
             'category'   => $category
         ]);
 

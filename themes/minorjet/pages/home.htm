@@ -26,23 +26,7 @@ id = 1
     {% partial 'about.htm' %}
 </div>
 
-<div class="container preview-aircraft">
-    <div class="row">
-        <div class="col-xs-12">
-              <div class="underline"><h3>OUR AIRCRAFTS</h3></div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="list-aircraft">
-                <a href="#"><img class="pic-aircraft" src="{{ 'assets/images/aircrafts/CXplus_34_dark.png'|theme }}" ></a>
-                <a href="#"><img class="pic-aircraft" src="{{ 'assets/images/aircrafts/Skyhawk_172_34_dark.png'|theme }}" ></a>
-                <a href="#"><img class="pic-aircraft" src="{{ 'assets/images/aircrafts/Stationair_206_34_dark.png'|theme }}" ></a>
-                <a href="#"><img class="pic-aircraft" src="{{ 'assets/images/aircrafts/TTx_T240_34_dark.png'|theme }}" ></a>
-            </div>
-        </div>
-    </div>
-</div>
+{% partial 'focused_aircraft' %}
 
 
 <div class="container">

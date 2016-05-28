@@ -158,7 +158,7 @@
     }
 
     PostForm.prototype.initLayout = function() {
-        $('#Form-secondaryTabs .tab-pane.layout-cell:not(:first-child)').addClass('padded-pane')
+        $('#Form-secondaryTabs .tab-pane.layout-cell:not(:first-child):not(:nth-child(2))').addClass('padded-pane')
     }
 
     PostForm.prototype.replacePlaceholder = function(placeholder, placeholderHtmlReplacement, mdCodePlaceholder, mdCodeReplacement) {

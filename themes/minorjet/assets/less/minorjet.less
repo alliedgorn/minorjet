@@ -32,7 +32,7 @@ h1,h2,h3 {
 
 .post-list {
     .newsthumb {
-        border-left: solid 8px @box-highlight-color;
+        border: solid 1px @box-image-border-color;
         padding: 10px;
         height: 180px; 
         width: 25%;
@@ -157,17 +157,22 @@ h1,h2,h3 {
         background: -moz-linear-gradient(#242424, #555555);
         background: linear-gradient(#242424, #555555);
         */
+        margin-left: 0px;
+        margin-right: 0px;
         background-image: url('../images/header_bg.jpg');
         box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
         -moz-box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
         -webkit-box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
-        padding-bottom: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         margin-bottom: 20px;
         text-align: center;
         .pic-aircraft {
-            padding-top: 40px;
-            margin-left: 20px;
             width: 260px;
+        }
+        .title{
+            font-family: 'Source Sans Pro', 'Impact';
+            font-size: 16px;
         }
     }
 }
@@ -181,4 +186,4 @@ h1,h2,h3 {
 @media (min-width: 480px) { @import "480"; };
 @media (min-width: 768px) { @import "768"; };
 @media (min-width: 992px) { @import "992"; };
-@media (min-width: 1200px) { @import "1200"; }; 
+@media (min-width: 1200px) { @import "1200"; };
