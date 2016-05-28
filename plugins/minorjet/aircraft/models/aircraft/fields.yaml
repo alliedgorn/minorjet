@@ -32,6 +32,13 @@ secondaryTabs:
             stretch: true
             mode: split
 
+        secondary_content:
+            tab: minorjet.aircraft::lang.aircraft.tab_edit2
+            type: Minorjet\Aircraft\FormWidgets\BlogMarkdown
+            cssClass: field-slim blog-post-preview
+            stretch: true
+            mode: split
+
         categories:
             tab: minorjet.aircraft::lang.aircraft.tab_categories
             type: relation
@@ -44,6 +51,12 @@ secondaryTabs:
             commentAbove: minorjet.aircraft::lang.aircraft.features_comment
             placeholder: minorjet.aircraft::lang.aircraft.features_placeholder
             select: concat ( title, ' | ', ' ID: ', id, ' (Created at: ', created_at, ')' ) 
+
+        focused:
+            tab: minorjet.aircraft::lang.aircraft.tab_manage
+            label: minorjet.aircraft::lang.aircraft.focused
+            span: left
+            type: checkbox
 
         published:
             tab: minorjet.aircraft::lang.aircraft.tab_manage
@@ -69,10 +82,19 @@ secondaryTabs:
             type: textarea
             size: small
 
+        content_image:
+            tab: minorjet.aircraft::lang.aircraft.tab_manage
+            label: minorjet.aircraft::lang.aircraft.content_image
+            type: fileupload
+            mode: image
+            imageWidth: 200
+            imageHeight: 200
+
         featured_images:
             tab: minorjet.aircraft::lang.aircraft.tab_manage
             label: minorjet.aircraft::lang.aircraft.featured_images
             type: fileupload
             mode: image
-            imageWidth: 200
-            imageHeight: 200
+            imageWidth: 400
+            imageHeight: 133.333333333
+

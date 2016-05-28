@@ -18,8 +18,11 @@ class CreatePostsTable extends Migration
             $table->text('excerpt')->nullable();
             $table->text('content')->nullable();
             $table->text('content_html')->nullable();
+            $table->text('secondary_content')->nullable();
+            $table->text('secondary_content_html')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->boolean('published')->default(false);
+            $table->boolean('focused')->default(false);
             $table->timestamps();
         });
 

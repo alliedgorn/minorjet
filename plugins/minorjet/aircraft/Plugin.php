@@ -23,9 +23,10 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'Minorjet\Aircraft\Components\Aircraft'       => 'aircraft',
-            'Minorjet\Aircraft\Components\AircraftWithFeatures'       => 'aircraftWithFeatures',
-            'Minorjet\Aircraft\Components\Aircrafts'      => 'aircraftList',
+            'Minorjet\Aircraft\Components\Aircraft' => 'aircraft',
+            'Minorjet\Aircraft\Components\AircraftWithFeatures' => 'aircraftWithFeatures',
+            'Minorjet\Aircraft\Components\AircraftCarousel' => 'aircraftCarousel',
+            'Minorjet\Aircraft\Components\Aircrafts' => 'aircraftList',
             'Minorjet\Aircraft\Components\Categories' => 'aircraftCategories'
         ];
     }
