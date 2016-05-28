@@ -1,0 +1,54 @@
+title = "Parts"
+url = "/parts"
+layout = "main"
+is_hidden = 0
+
+[carousel]
+id = 1
+
+[contactForm]
+injectBootstrapAssets = 1
+==
+<div class="container parts">
+    <div class="row">
+        <div id="banner" class="carousel slide col-xs-12">
+            {% component 'carousel' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>Parts</h3>
+            <div class="underline"></div>
+            <div class="col-xs-8">
+                <p>
+                <strong>MAHL support:</strong>
+                <ul>
+                    <li>Parts for all models of Cessna prop and Jet aircraft</li>
+                    <li>Cessna New Aircraft warranty</li>
+                    <li>Parts Factory warranty</li>
+                    <li>Cessna ProAdvantage programs</li>
+                </ul>
+                Contact our expert sales team for a Quote now!<br/>
+                </p>
+                <p>
+                <strong>Mobile:</strong> +(66) 85-484-8773 (Kae)<br/>
+                <strong>Tel:</strong> +(66) 2-792-9400<br/>
+                <strong>Fax:</strong> +(66) 2-792-9450
+                </p>
+                <p>
+                    <strong>Submit enquiry form</strong><br/>
+                    For any enquiries, please use the form below to contact us and in as much details as possible.<br/> 
+                    Our specialists will endeavour to reply as swiftly as possible.
+                </p>
+                <div class="contact-form">
+                    {% partial 'contact-us.htm' %}
+                </div>
+
+            </div>
+            <div class="col-xs-4">
+                <img class="cessna_auth" src="{{ 'assets/images/Cessna-AUTH-SALES-white-colour1.gif'|theme }}" >
+            </div>
+                
+        </div>
+    </div>
+</div>
