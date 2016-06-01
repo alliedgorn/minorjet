@@ -8,15 +8,20 @@ id = 1
 ==
 <div class="container about-us">
     <div class="row">
-        <div id="banner" class="carousel slide col-xs-12">
+        <div id="banner" class="carousel slide col-sm-12">
             {% component 'carousel' %}
         </div>
     </div>
-    <div class="about">
-        <center><br/><br/><h1>M A H L<br/><small>logo here</small></h1><br/><br/></center>
-    </div>
     <div class="row">
-        <div class="team col-xs-12">
+        <div class="col-md-7 col-sm-6">
+            <div class="about">
+                <center><br/><br/><h1>M A H L<br/><small>logo here</small></h1><br/><br/></center>
+                <div class="about-company">
+                    {% content 'about-us.htm' %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 col-sm-6 team">
             <div class="head-box"><h3>OUR TEAM</h3></div>
             <div class="underline"></div>
             <div class="team-area">
@@ -36,6 +41,7 @@ id = 1
                     <div class="position">Director Aircraft Sales & Acquisitions</div>
                 </div>
             </div>
+            
         </div>
     </div>
     

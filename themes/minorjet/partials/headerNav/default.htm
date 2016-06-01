@@ -3,9 +3,9 @@
 [staticMenu headerNav]
 code = "header-nav"
 ==
-<div class="collapse navbar-collapse navbar-main-collapse">
+<div class="collapse navbar-collapse navbar-main-collapse pull-left">
     {% if headerNav.menuItems %}
-        <ul class="nav navbar-nav navbar-menu navbar-right">
+        <ul class="nav navbar-nav navbar-menu ">
             {% partial headerNav ~ "::items" items=headerNav.menuItems %}
         </ul>
     {% endif %}

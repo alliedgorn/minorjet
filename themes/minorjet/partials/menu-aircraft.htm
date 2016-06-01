@@ -1,0 +1,9 @@
+[viewBag]
+==
+{% set categories = aircraftCate.categories %}
+{% set currentCategorySlug = aircraftCate.currentCategorySlug %}
+{% for category in categories %}
+    <li {% if category.slug == currentCategorySlug %}class="active"{% endif %}>
+        <a href="{{ category.url }}">{{ category.name }}</a> 
+    </li>
+{% endfor %}

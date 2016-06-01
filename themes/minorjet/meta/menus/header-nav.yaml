@@ -18,9 +18,45 @@ items:
         nesting: '1'
         type: aircraft-category
         code: ''
-        reference: '1'
+        reference: '6'
         cmsPage: aircraft-subcategory
         replace: '1'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: News
+        type: cms-page
+        code: ''
+        reference: news
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Parts
+        type: cms-page
+        code: ''
+        reference: parts
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'About us'
+        type: cms-page
+        code: ''
+        reference: about-us
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Contact us'
+        type: cms-page
+        code: ''
+        reference: contact-us
         viewBag:
             isHidden: '0'
             cssClass: ''

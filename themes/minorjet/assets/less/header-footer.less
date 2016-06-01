@@ -11,6 +11,7 @@
         -webkit-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.3), 0px 0px 10px 0px rgba(35, 35, 35, 0.8) inset;
         
     }
+    
     .navbar {
         z-index: 1000;
         border: 0;
@@ -40,20 +41,7 @@
         .navbar-collapse{
             width: 100%;
         }
-        li {
-            &.active {
-                a {
-                    color: @button-hover-font-color;
-                    background-color: @button-hover-bg-color;
-                }
-            }
-            a {
-                color: @secondary-font-color;
-                &:hover {
-                    color: @button-hover-font-color; 
-                }
-            }
-        }
+        
         &.affix {
             position: fixed;
             top: 0;
@@ -80,6 +68,39 @@
             &:hover {
                 opacity: 1;
             }
+        }
+        
+        .nav {
+            li {
+                &.active {
+                    a {
+                        color: @button-hover-font-color;
+                        background-color: @button-hover-bg-color;
+                    }
+                }
+                a {
+                    color: @secondary-font-color;
+                    &:hover {
+                        color: @button-hover-font-color; 
+                    }
+                }
+                .dropdown-menu {
+                    background-color: @menu_gradient_color1;
+                    padding-left: 5px;
+                }
+                &.open {
+                    > a {
+                        color: @menu-open-font-color;
+                        &:hover {
+                            color: @menu-open-font-color;
+                        }
+                        &:focus {
+                            color: @menu-open-font-color;
+                        }
+                    }
+                }
+            }
+            
         }
         
     }
