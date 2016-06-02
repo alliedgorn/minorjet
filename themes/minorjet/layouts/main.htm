@@ -1,3 +1,10 @@
+[aircraftCategories aircraftCate]
+slug = "{{ :slug }}"
+displayEmpty = 1
+categoryPage = "aircraft-category"
+
+[staticMenu headerNav]
+code = "header-nav"
 ==
 <!DOCTYPE html>
 <html>
@@ -37,16 +44,18 @@
                             MENU
                         </button>
                     </div>
-                    <div class="collapse navbar-collapse navbar-main-collapse pull-left">
-                        <ul class="nav navbar-nav navbar-menu">
-                            <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">HOME</a></li>
+                    {% component 'headerNav' %}
+                            <!--li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">HOME</a></li>
         					<li class="{% if (this.page.id == 'news' or this.page.id == 'newspost') %}active{% endif %}"><a href="{{ 'news'|page }}">NEWS</a></li>
-                            <li class="{% if this.page.id == 'aircraft' %}active{% endif %}"><a href="{{ 'main'|page }}">AIRCRAFT</a></li>
+                            <li class="{% if this.page.id == 'aircraft' %}active{% endif %} dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">AIRCRAFT <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                  {% partial 'menu-aircraft' %}
+                                </ul>
+                            </li>
+                            
                             <li class="{% if this.page.id == 'parts' %}active{% endif %}"><a href="{{ 'parts'|page }}">PARTS</a></li>
                             <li class="{% if this.page.id == 'about-us' %}active{% endif %}"><a href="{{ 'about-us'|page }}">ABOUT US</a></li>
-                            <li class="{% if this.page.id == 'contact-us' %}active{% endif %}"><a href="{{ 'contact-us'|page }}">CONTACT US</a></li>
-                        </ul>
-                    </div>
+                            <li class="{% if this.page.id == 'contact-us' %}active{% endif %}"><a href="{{ 'contact-us'|page }}">CONTACT US</a></li -->
                     <div class="social pull-right hidden-xs hidden-sm">
                            <a href="#"><img class="social_icon" src="{{ 'assets/images/social_icon/xicon-facebook.png'|theme }}" alt="Facebook" ></a>
                            <a href="#"><img class="social_icon" src="{{ 'assets/images/social_icon/xicon-twitter.png'|theme }}" alt="Twitter" ></a>
