@@ -69,6 +69,7 @@ return [
         'title' => 'Title',
         'title_placeholder' => 'New aircraft title',
         'content' => 'Content',
+        'content_ratio' => 'Content width ratio',
         'content_html' => 'HTML Content',
         'slug' => 'Slug',
         'slug_placeholder' => 'new-aircraft-slug',

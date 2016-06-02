@@ -75,6 +75,13 @@ secondaryTabs:
                 action: enable
                 field: published
                 condition: checked
+        content_ratio:
+            tab: minorjet.aircraft::lang.aircraft.tab_manage
+            label: minorjet.aircraft::lang.aircraft.content_ratio
+            type: Minorjet\Aircraft\FormWidgets\ValueSlider
+            span: left
+            min: 0
+            max: 12
 
         excerpt:
             tab: minorjet.aircraft::lang.aircraft.tab_manage

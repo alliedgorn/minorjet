@@ -87,6 +87,10 @@ class Plugin extends PluginBase
             'Minorjet\Aircraft\FormWidgets\Preview' => [
                 'label' => 'Preview',
                 'code'  => 'preview'
+            ],
+            'Minorjet\Aircraft\FormWidgets\ValueSlider' => [
+                'label' => 'Slider',
+                'code'  => 'slider'
             ]
         ];
     }
