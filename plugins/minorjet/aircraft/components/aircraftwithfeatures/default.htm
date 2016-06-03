@@ -1,15 +1,23 @@
 {% set post = __SELF__.post %}
+{% set primaryContentWidth = post.content_ratio %}
+{% set secondaryContentWidth = 12 - post.content_ratio %}
 <div class="row">
     {% if post.content and post.secondary_content %}
-        {% set colOption = 'col-md-6' %}
+        {% if primaryContentWidth > 0 %}
+            {% set primaryClass = 'col-md-' ~ primaryContentWidth %}
+        {% endif %}
+        {% if primaryContentWidth < 12 %}
+            {% set secondaryClass = 'col-md-' ~ secondaryContentWidth %}
+        {% endif %}
     {% else %}
-        {% set colOption = 'col-xs-12' %}
+        {% set primaryClass = 'col-xs-12' %}
+        {% set secondaryClass = 'col-xs-12' %}
     {% endif %}
-    {% if post.content %}
-        <div class="content wysiwyg {{colOption}}">{{ post.content_html|raw }}</div>
+    {% if post.content and primaryContentWidth > 0 %}
+        <div class="content wysiwyg {{primaryClass}}">{{ post.content_html|raw }}</div>
     {% endif %}
-    {% if post.secondary_content %}
-        <div class="content wysiwyg {{colOption}}">{{ post.secondary_content_html|raw }}</div>
+    {% if post.secondary_content and primaryContentWidth < 12 %}
+        <div class="content wysiwyg {{secondaryClass}}">{{ post.secondary_content_html|raw }}</div>
     {% endif %}
 </div>
 <hr/>

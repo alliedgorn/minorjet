@@ -23,6 +23,7 @@ class CreatePostsTable extends Migration
             $table->timestamp('published_at')->nullable();
             $table->boolean('published')->default(false);
             $table->boolean('focused')->default(false);
+            $table->boolean('content_ratio')->default(6);
             $table->timestamps();
         });
 
