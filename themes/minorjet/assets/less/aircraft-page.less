@@ -52,4 +52,23 @@
             }
         }
     }
+    .breadcrumb {
+        background-color: @box-bg-color;
+        margin: 10px 0px;
+        border: none;
+        .active {
+                color: @primary-font-color;
+        }
+        li {
+            + li {
+                &:before {
+                    content: "> ";
+                }
+            }
+        }
+        
+    }
+
+
+    
 }
