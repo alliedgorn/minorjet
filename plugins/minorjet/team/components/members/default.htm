@@ -1,0 +1,19 @@
+{% set members = __SELF__.members %}
+<div class="team">
+    <div class="team-area">
+        {% for member in members %}
+        <div class="portrait">
+            {% set image = member.member_image %}
+            <img
+                class="pic-portrait"
+                data-src="{{ image.filename }}"
+                src="{{ image.path }}"
+                alt="{{ image.description }}" />
+            <div class="fullname"><span class="name">{{member.firstname}} </span><span class="surname">{{member.lastname}}</span></div>
+            <div class="position">{{member.position}}</div>
+        </div>
+        {% else %}
+            <li class="no-data">{{ noMembersMessage }}</li>
+        {% endfor %}
+    </div>
+</div>

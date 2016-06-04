@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: minorjet.team::lang.team.create_member
+form: ~/plugins/minorjet/team/models/member/fields.yaml
+modelClass: Minorjet\Team\Models\Member
+defaultRedirect: minorjet/team/members
+
+create:
+    redirect: minorjet/team/members/update/:id
+    redirectClose: minorjet/team/members
+
+update:
+    redirect: minorjet/team/members
+    redirectClose: minorjet/team/members
