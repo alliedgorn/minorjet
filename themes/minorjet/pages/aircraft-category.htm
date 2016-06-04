@@ -3,4 +3,41 @@ url = "/aircrafts"
 layout = "main"
 description = "Aircraft category list"
 is_hidden = 0
+
+[aircraftList]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "aircraft-subcategory"
+postPage = "aircraft"
+
+[carousel]
+id = 1
+
+[aircraftCategories]
+displayEmpty = 1
+categoryPage = "about-us"
 ==
+<div class="container aircrafts">
+    <div class="row">
+        <div id="banner" class="carousel slide col-xs-12">
+            {% component 'carousel' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="{{ '/'|app }}">MAHL</a></li>
+                <li class="active">Aircraft</li>
+            </ol>
+        </div>
+        <div class="col-sm-12">
+            {% partial 'aircraft/all-categories' %}
+            <div><h3>{{ category.name }}</h3></div>
+            <div class="underline"></div>
+           
+        </div>
+    </div>
+    
+</div>

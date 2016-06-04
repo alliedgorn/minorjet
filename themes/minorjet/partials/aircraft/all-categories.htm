@@ -1,0 +1,10 @@
+[viewBag]
+==
+{% if aircraftCategories.categories %}
+    <ul class="category-list">
+        {% partial "aircraft/items"
+            categories = aircraftCategories.categories
+            currentCategorySlug = aircraftCategories.currentCategorySlug
+        %}
+    </ul>
+{% endif %}

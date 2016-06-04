@@ -35,11 +35,14 @@ slug = "{{ :slug }}"
             </ol>
         </div>
         <div class="col-sm-3">
-            {% component 'aircraftList' %}
+            {% partial 'aircraft/left-menu' %}
         </div>
         <div class="col-sm-9">
-            <div class="title"><h1>{{ aircraftWithFeatures.post.title }}</h1></div>
-            <div class="underline"></div>
+            <div class="title-header">
+                <div><img class="aircraft-pic" alt="{{ aircraftWithFeatures.post.title }}" src="{{ aircraftWithFeatures.post.content_image.path }}" ></div>
+                <div class="aircraft-title"><h1>{{ aircraftWithFeatures.post.title }}</h1></div>
+                <div class="underline"></div>
+            </div>
             {% component 'aircraftWithFeatures' %}
         </div>
     </div>
