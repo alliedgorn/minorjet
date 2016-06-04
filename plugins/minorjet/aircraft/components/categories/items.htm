@@ -5,7 +5,6 @@
         {% if postCount %}
             <span class="badge">{{ postCount }}</span>
         {% endif %}
-
         {% if category.children %}
             <ul>
                 {% partial __SELF__ ~ "::items"
@@ -13,6 +12,14 @@
                     currentCategorySlug=currentCategorySlug
                 %}
             </ul>
+        {% endif %}
+        {% if category.aircraftList %}
+        <ul>
+            {% partial __SELF__ ~ "::aircrafts"
+                aircrafts=category.aircraftList
+                currentCategorySlug=currentCategorySlug
+            %}
+        </ul>
         {% endif %}
     </li>
 {% endfor %}
