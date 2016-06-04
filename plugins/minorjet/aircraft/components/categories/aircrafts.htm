@@ -1,0 +1,5 @@
+{% for aircraft in aircrafts %}
+    <li {% if aircraft.slug == currentCategorySlug %}class="active"{% endif %}>
+        <a href="{{ aircraft.url }}">{{ aircraft.title }}</a> 
+    </li>
+{% endfor %}

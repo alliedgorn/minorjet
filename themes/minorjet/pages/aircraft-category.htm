@@ -4,9 +4,13 @@ layout = "main"
 description = "Aircraft category list"
 is_hidden = 0
 
-[blogCategories]
-slug = "{{ :slug }}"
-displayEmpty = 0
-categoryPage = "blog/category"
+[aircraftCategories]
+slug = "aircraft"
+categoryFilter = 2
+displayEmpty = 1
+getRoot = 0
+withAircrafts = 1
+categoryPage = "aircraft-subcategory"
+postPage = "aircraft"
 ==
-{% component 'blogCategories' %}
+{% component 'aircraftCategories' %}

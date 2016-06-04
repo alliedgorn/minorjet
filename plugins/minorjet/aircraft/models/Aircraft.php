@@ -111,7 +111,6 @@ class Aircraft extends Model
             'id' => $this->id,
             'slug' => $this->slug,
         ];
-
         if (array_key_exists('categories', $this->getRelations())) {
             $params['category'] = $this->categories->count() ? $this->categories->first()->slug : null;
         }

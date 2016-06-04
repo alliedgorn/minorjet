@@ -6,6 +6,7 @@ use Request;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use Minorjet\Aircraft\Models\Category as CategoryModel;
+use Minorjet\Aircraft\Models\Aircraft as AircraftModel;
 
 class Categories extends ComponentBase
 {
@@ -18,6 +19,11 @@ class Categories extends ComponentBase
      * @var string Reference to the page name for linking to categories.
      */
     public $categoryPage;
+
+    /**
+     * @var string Reference to the page name for linking to posts.
+     */
+    public $postPage;
 
     /**
      * @var string Reference to the current category slug.
@@ -41,9 +47,27 @@ class Categories extends ComponentBase
                 'default'     => '{{ :slug }}',
                 'type'        => 'string'
             ],
+            'categoryFilter' => [
+                'title'       => 'minorjet.aircraft::lang.settings.posts_filter',
+                'description' => 'minorjet.aircraft::lang.settings.posts_filter_description',
+                'type'        => 'string',
+                'default'     => ''
+            ],
             'displayEmpty' => [
                 'title'       => 'minorjet.aircraft::lang.settings.category_display_empty',
                 'description' => 'minorjet.aircraft::lang.settings.category_display_empty_description',
+                'type'        => 'checkbox',
+                'default'     => 0
+            ],
+            'getRoot' => [
+                'title'       => 'minorjet.aircraft::lang.settings.category_get_root',
+                'description' => 'minorjet.aircraft::lang.settings.category_get_root_description',
+                'type'        => 'checkbox',
+                'default'     => 0
+            ],
+            'withAircrafts' => [
+                'title'       => 'minorjet.aircraft::lang.settings.category_with_aircrafts',
+                'description' => 'minorjet.aircraft::lang.settings.category_with_aircrafts_description',
                 'type'        => 'checkbox',
                 'default'     => 0
             ],
@@ -54,7 +78,19 @@ class Categories extends ComponentBase
                 'default'     => 'aircraft/category',
                 'group'       => 'Links',
             ],
+            'postPage' => [
+                'title'       => 'minorjet.aircraft::lang.settings.posts_post',
+                'description' => 'minorjet.aircraft::lang.settings.posts_post_description',
+                'type'        => 'dropdown',
+                'default'     => 'aircraft',
+                'group'       => 'Links',
+            ]
         ];
+    }
+
+    public function getPostPageOptions()
+    {
+        return Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
     }
 
     public function getCategoryPageOptions()
@@ -66,12 +102,16 @@ class Categories extends ComponentBase
     {
         $this->currentCategorySlug = $this->page['currentCategorySlug'] = $this->property('slug');
         $this->categoryPage = $this->page['categoryPage'] = $this->property('categoryPage');
+        $this->postPage = $this->page['postPage'] = $this->property('postPage');
         $this->categories = $this->page['categories'] = $this->loadCategories();
     }
 
     protected function loadCategories()
-    {
-        $categories = CategoryModel::orderBy('name');
+    {   
+        if ( !$this->property('categoryFilter') ) { return false; }
+
+        $categories = CategoryModel::find($this->property('categoryFilter') );
+        
         if (!$this->property('displayEmpty')) {
             $categories->whereExists(function($query) {
                 $query->select(Db::raw(1))
@@ -83,19 +123,42 @@ class Categories extends ComponentBase
             });
         }
 
-        $categories = $categories->getNested();
+        if ( $this->property('getRoot') ) {
+            $categories = $categories->getNested();
+        }else {
+            $categories = $categories->withoutRoot()->get();
+        }
 
+        if ( $this->property('withAircrafts') ) {
+            $categories = $this->getAircrafts($categories);
+        }
         /*
          * Add a "url" helper attribute for linking to each category
          */
         return $this->linkCategories($categories);
+    } 
+    
+    protected function getAircrafts($categories)
+    {
+        return $categories->each(function($category) {
+            $category['aircraftList'] = AircraftModel::with('categories')->listFrontEnd([
+                'categories'   => [$category->id]
+            ]);
+            if ($category->children) {
+                $this->getAircrafts($category->children);
+            }
+        });
     }
 
     protected function linkCategories($categories)
     {
         return $categories->each(function($category) {
             $category->setUrl($this->categoryPage, $this->controller);
-
+            if ($category['aircraftList']) {
+                $category['aircraftList']->each(function($aircraft) {
+                    $aircraft->setUrl($this->postPage, $this->controller);
+                });
+            }
             if ($category->children) {
                 $this->linkCategories($category->children);
             }
