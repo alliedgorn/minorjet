@@ -54,9 +54,10 @@ section#layout-content {
     }  
     .contentbox { 
         position: relative;
-        box-shadow: 0px 0px 20px 0px rgb(10, 10, 10) inset;
-        -moz-box-shadow: inset 0px 0px 20px 0px rgb(10, 10, 10);
-        -webkit-box-shadow: inset 0px 0px 20px 0px rgb(10, 10, 10);
+        background: url('../images/header_bg.jpg');
+        box-shadow: 0px 0px 32px 5px #0a0a0a inset;
+        -moz-box-shadow: inset 0px 0px 32px 5px #0a0a0a;
+        -webkit-box-shadow: inset 0px 0px 32px 5px #0A0A0A;
         background-color: @box-bg-color;
         width: 100%;
         margin-bottom: 20px;
@@ -92,16 +93,21 @@ section#layout-content {
 }
 
 .about {
-    margin-top: 20px;
     margin-bottom: 20px;
     .about-img {
         width: 100%;
+        border-top: 2px solid @content-separation-line-color;
     }
     
     .about-contentbox {
-        padding: 0 10px 10px 10px;
         width: 100%;
         background-color: @box-bg-color;
+        background: url('../images/header_bg.jpg');
+        box-shadow: 0px 0px 32px 5px #0a0a0a inset;
+        -moz-box-shadow: inset 0px 0px 32px 5px #0a0a0a;
+        -webkit-box-shadow: inset 0px 0px 32px 5px #0A0A0A;
+        border-top: 2px solid @content-separation-line-color;
+        padding: 0px 20px;
     }
 
 }
@@ -158,28 +164,38 @@ section#layout-content {
 
 .preview-aircraft {
     .list-aircraft {
-        /*
-        background: -webkit-linear-gradient(#242424, #555555);
-        background: -o-linear-gradient(#242424, #555555);
-        background: -moz-linear-gradient(#242424, #555555);
-        background: linear-gradient(#242424, #555555);
-        */
         margin-left: 0px;
         margin-right: 0px;
-        background-image: url('../images/header_bg.jpg');
-        box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
-        -moz-box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
-        -webkit-box-shadow: inset 15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset -15px 0px 10px -15px rgba(40, 40, 40, 0.8), inset 0px -15px 10px -15px rgba(40, 40, 40, 0.8), 0 0 5px rgba(0, 0, 0, 0.8);
+        background: url('../images/header_bg.jpg');
+        box-shadow: 0px 0px 32px 5px #0a0a0a inset;
+        -moz-box-shadow: inset 0px 0px 32px 5px #0a0a0a;
+        -webkit-box-shadow: inset 0px 0px 32px 5px #0A0A0A;
         padding-top: 10px;
         padding-bottom: 10px;
         margin-bottom: 20px;
         text-align: center;
-        .pic-aircraft {
-            width: 260px;
-        }
-        .title{
-            font-family: 'Source Sans Pro', 'Impact';
-            font-size: 16px;
+        border-radius: 5px;
+        .list-aircraft-box {
+            position: relative;
+            height: 130px;
+            .pic-aircraft {
+                height: 100px;
+                width: 255px;
+            }
+            .title{
+                font-family: 'Source Sans Pro', 'Impact';
+                position: absolute;
+                bottom: 10px;
+                left: 20px;
+                font-size: 25px;
+                a {
+                    &:first-letter {
+                        font-size: 200%;
+                    }
+                    color: white !important;
+                    text-decoration: none;
+                }
+            }
         }
     }
 }
