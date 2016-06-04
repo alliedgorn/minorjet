@@ -26,10 +26,20 @@ slug = "{{ :slug }}"
         </div>
     </div>
     <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="{{ '/'|app }}">MAHL</a></li>
+                <li><a href="{{ '/aircrafts'|app }}">Aircraft</a></li>
+                <li><a href="{{ '/aircrafts/'|app }}/{{  aircraftWithFeatures.post.categories[0].slug }}">{{ aircraftWithFeatures.post.categories[0].name }}</a></li>
+                <li class="active">{{ aircraftWithFeatures.post.title }}</li>
+            </ol>
+        </div>
         <div class="col-sm-3">
             {% component 'aircraftList' %}
         </div>
         <div class="col-sm-9">
+            <div class="title"><h1>{{ aircraftWithFeatures.post.title }}</h1></div>
+            <div class="underline"></div>
             {% component 'aircraftWithFeatures' %}
         </div>
     </div>

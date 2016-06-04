@@ -66,6 +66,13 @@
                         background-color: @button-hover-bg-color;
                     }
                 }
+                &.dropdown{
+                    &:hover {
+                        > ul.dropdown-menu {
+                            display: block;    
+                        }
+                    }
+                }
                 a {
                     color: @secondary-font-color;
                     &:hover {
