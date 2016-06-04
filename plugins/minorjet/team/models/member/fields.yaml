@@ -1,0 +1,51 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    firstname:
+        label: minorjet.team::lang.member.firstname
+        span: left
+        placeholder: minorjet.team::lang.member.firstname_placeholder
+
+    lastname:
+        label: minorjet.team::lang.member.lastname
+        span: right
+        placeholder: minorjet.team::lang.member.lastname_placeholder
+
+    position:
+        label: minorjet.team::lang.member.position
+        span: left
+        placeholder: minorjet.team::lang.member.position_placeholder
+
+    toolbar:
+        type: partial
+        path: post_toolbar
+        cssClass: collapse-visible
+
+secondaryTabs:
+    stretch: true
+    fields:
+        active:
+            tab: minorjet.team::lang.member.tab_manage
+            label: minorjet.team::lang.member.active
+            span: left
+            type: checkbox
+
+        priority:
+            tab: minorjet.team::lang.member.tab_manage
+            label: minorjet.team::lang.member.priority
+            span: left
+            type: text
+            size: small
+
+        member_image:
+            tab: minorjet.team::lang.member.tab_manage
+            label: minorjet.team::lang.member.member_image
+            type: fileupload
+            mode: image
+            imageWidth: 200
+            imageHeight: 200
+
+

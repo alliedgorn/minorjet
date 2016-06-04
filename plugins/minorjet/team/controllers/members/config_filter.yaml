@@ -1,0 +1,15 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+scopes:
+
+    active:
+
+        # Filter name
+        label: minorjet.team::lang.members.hide_active
+
+        # Filter type
+        type: checkbox
+
+        # SQL Conditions
+        conditions: active <> '1'
