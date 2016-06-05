@@ -11,5 +11,41 @@ noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = "aircraft-subcategory"
 postPage = "aircraft"
+
+[carousel]
+id = 1
+
+[aircraftCategories]
+slug = "{{ :slug }}"
+categoryFilter = 6
+displayEmpty = 1
+getRoot = 0
+withAircrafts = 1
+categoryPage = "about-us"
+postPage = "aircraft"
 ==
-{% component 'aircraftList' %}
+<div class="container aircrafts">
+    <div class="row">
+        <div id="banner" class="carousel slide col-xs-12">
+            {% component 'carousel' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="{{ '/'|app }}">MAHL</a></li>
+                <li><a href="{{ '/aircrafts'|app }}">Aircraft</a></li>
+                <li class="active">{{ category.name }}</li>
+            </ol>
+        </div>
+        <div class="col-sm-3">
+            {% partial 'aircraft/left-menu' %}
+        </div>
+        <div class="col-sm-9">
+            <div><h3>{{ category.name }}</h3></div>
+            <div class="underline"></div>
+            {% partial 'aircraft/list-aircrafts' %}
+        </div>
+    </div>
+    
+</div>

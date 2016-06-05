@@ -1,0 +1,26 @@
+[viewBag]
+==
+{% for category in categories %}
+    {% set postCount = category.post_count %}
+    <div class="head">
+        <h3><a href="{{ '/aircrafts'|app }}/{{ category.slug }}">{{ category.name }}</a></h3> 
+    </div>
+    
+        {% if category.children %}
+                {% partial 'aircrafts/category-head'
+                    categories=category.children
+                    currentCategorySlug=currentCategorySlug
+                %}
+        {% endif %}
+        
+        {% if category.aircraftList %}
+        <div class="post-list">
+                {% partial 'aircrafts/aircraft-items'
+                    aircrafts=category.aircraftList
+                    currentCategorySlug=currentCategorySlug
+                %}
+        </div>
+        {% endif %}
+        
+    
+{% endfor %}
