@@ -1,0 +1,7 @@
+[viewBag]
+==
+{% for aircraft in aircrafts %}
+    <li class="{% if aircraft.slug == currentCategorySlug %}active {% endif %} list-group-item">
+        <a href="{{ aircraft.url }}">{{ aircraft.title }} </a> 
+    </li>
+{% endfor %}

@@ -228,7 +228,7 @@ section#layout-content {
 }
 
 .breadcrumb {
-    background-color: @box-bg-color;
+    background-color: @bg-color;
     margin: 10px 0px;
     border: none;
     .active {
@@ -251,6 +251,16 @@ section#layout-content {
             border: none;
             .panel-heading {
                 background-color: @box-bg-color;
+                border-top-right-radius: 0px;
+                border-top-left-radius: 0px;
+                -webkit-border-top-right-radius: 0px;
+                -webkit-border-top-left-radius: 0px;
+                -moz-border-top-bottomright: 0px;
+                -moz-border-top-bottomleft: 0px;
+                a {
+                    color: @primary-font-color;
+                    font-weight: bold;
+                }
             }
             .list-group {
                 border: none;
@@ -264,6 +274,17 @@ section#layout-content {
                         -webkit-border-top-left-radius: 0px;
                         -moz-border-top-bottomright: 0px;
                         -moz-border-top-bottomleft: 0px;
+                    }
+                    &:last-child {
+                        border-bottom-right-radius: 0px;
+                        border-bottom-left-radius: 0px;
+                        -webkit-border-bottom-right-radius: 0px;
+                        -webkit-border-bottom-left-radius: 0px;
+                        -moz-border-bottom-bottomright: 0px;
+                        -moz-border-bottom-bottomleft: 0px;
+                    }
+                    a {
+                        color: @primary-font-color;
                     }
                 }
             }

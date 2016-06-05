@@ -16,8 +16,13 @@ postPage = "aircraft"
 id = 1
 
 [aircraftCategories]
+slug = "{{ :slug }}"
+categoryFilter = 6
 displayEmpty = 1
-categoryPage = "about-us"
+getRoot = 0
+withAircrafts = 1
+categoryPage = "aircraft-subcategory"
+postPage = "aircraft"
 ==
 <div class="container aircrafts">
     <div class="row">
@@ -33,10 +38,8 @@ categoryPage = "about-us"
             </ol>
         </div>
         <div class="col-sm-12">
-            {% partial 'aircraft/all-categories' %}
-            <div><h3>{{ category.name }}</h3></div>
-            <div class="underline"></div>
-           
+            <center><h1>Aircraft</h1></center>
+            {% partial 'aircrafts/all-categories' %}
         </div>
     </div>
     

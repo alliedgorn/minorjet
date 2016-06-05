@@ -3,7 +3,7 @@
 {% for item in items if not item.viewBag.isHidden %}
     {% if item.items %}
         <li role="presentation" class="{{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }} dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ item.title }} <span class="caret"></span></a>
+            <a href="{{ '/aircrafts'|app }}" >{{ item.title }} <span class="caret"></span></a>
         <ul class="dropdown-menu">{% partial headerNav ~ "::items" items=item.items %}</ul>
     {% else %}
         <li role="presentation" class="{{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }}">
