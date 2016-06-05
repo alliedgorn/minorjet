@@ -110,7 +110,7 @@ class Categories extends ComponentBase
     {   
         if ( !$this->property('categoryFilter') ) { return false; }
 
-        $categories = CategoryModel::find($this->property('categoryFilter') );
+        $categories = CategoryModel::whereSlug($this->property('categoryFilter'));
         
         if (!$this->property('displayEmpty')) {
             $categories->whereExists(function($query) {
@@ -123,10 +123,14 @@ class Categories extends ComponentBase
             });
         }
 
+        $categories = $categories->first();
+        
+        if ( !$categories ) { return false; }
+
         if ( $this->property('getRoot') ) {
-            $categories = $categories->getNested();
+            $categories = $categories->getEagerRoot();
         }else {
-            $categories = $categories->withoutRoot()->get();
+            $categories = $categories->getChildren();
         }
 
         if ( $this->property('withAircrafts') ) {
@@ -137,7 +141,7 @@ class Categories extends ComponentBase
          */
         return $this->linkCategories($categories);
     } 
-    
+
     protected function getAircrafts($categories)
     {
         return $categories->each(function($category) {
