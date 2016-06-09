@@ -247,6 +247,7 @@ section#layout-content {
 .aircraft-menu {
     .panel-group {
         margin-bottom: 0px;
+        border: none;
         .panel {
             border: none;
             .panel-heading {
@@ -263,21 +264,28 @@ section#layout-content {
                 background: -moz-linear-gradient(#292929, #242424);
                 border-top: 1px solid rgba(255,255,255,0.1);
                 border-bottom: 1px solid black;
-                
+                padding: 0px;
                 a {
                     color: @primary-font-color;
                     font-weight: bold;
                     text-decoration: none;
+                    padding: 10px 15px;
+                    display: block;
                     &:hover {
                         text-decoration: none;
                     }
+                }
+                .badge {
+                    float: right;
+                    background: #000000;
+                    font-size: 12px;
                 }
             }
             .list-group {
                 border: none;
                 .list-group-item {
                     border: none;
-                    background-color: #4e4e4e;
+                    background-color: #191919;
                     &:first-child {
                         border-top-right-radius: 0px;
                         border-top-left-radius: 0px;
