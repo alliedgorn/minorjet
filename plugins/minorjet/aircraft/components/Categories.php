@@ -121,6 +121,15 @@ class Categories extends ComponentBase
                 ->where('minorjet_aircraft_aircrafts.published', '=', 1)
                 ->whereRaw('minorjet_aircraft_categories.id = minorjet_aircraft_aircrafts_categories.category_id');
             });
+
+            $categories->orWhere(function($query){
+                $query->whereExists(function($query) {
+                    $query->select(Db::raw(1))
+                    ->from('minorjet_aircraft_categories as c')
+                    ->whereRaw('c.nest_left > minorjet_aircraft_categories.nest_left')
+                    ->whereRaw('c.nest_right < minorjet_aircraft_categories.nest_right');
+                });
+            });
         }
 
         $categories = $categories->first();
