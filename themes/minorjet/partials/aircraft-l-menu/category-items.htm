@@ -3,7 +3,8 @@
 {% for category in categories %}
     {% set postCount = category.post_count %}
     <div class="panel-heading">
-        <a data-toggle="collapse" href="#{{ category.name }}" ><h4 class="panel-title">{{ category.name }}
+        <a data-toggle="collapse" href="#{{ category.name }}" >
+            <h4 class="panel-title">{{ category.name }}
         {% if postCount %}
             <span class="badge">{{ postCount }}</span>
         {% endif %}

@@ -2,7 +2,6 @@
     .post-list {
         .aircraft-item {
             background-color: @box-bg-color;
-            cursor: pointer;
             margin-bottom: 30px;
             
             .aircraft-name {
@@ -17,10 +16,19 @@
                 margin: 20px auto;
             }
             .footer {
+                background-image: url('../images/header_bg.jpg');
                 padding: 10px;
                 text-align: right;
                 border-top: 1px solid @footer-font-color;
             }
+            
+            a {
+                color: @primary-font-color;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            
         }
     }
     

@@ -5,10 +5,10 @@
 <div class="post-list">
     {% for post in posts %}
         <div class="col-md-4 col-sm-6">
-            <div class="aircraft-item" onclick="window.location='{{ post.url }}';">
-                <div class="aircraft-name">{{ post.title }}</div>
-                <div><img class="aircraft-pic img-responsive" alt="{{ post.title }}" src="{{ post.content_image.path }}" ></div>
-                <div class="footer">Learn more</div>
+            <div class="aircraft-item">
+                <div class="aircraft-name"><a href="{{ post.url }}">{{ post.title }}</a></div>
+                <div><a href="{{ post.url }}"><img class="aircraft-pic img-responsive" alt="{{ post.title }}" src="{{ post.content_image.path }}" ></a></div>
+                <div class="footer"><a href="{{ post.url }}">Read more</a></div>
             </div>
         </div>
     {% else %}

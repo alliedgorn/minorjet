@@ -117,7 +117,7 @@ section#layout-content {
 }
 
 .subscribe {
-    margin-top: 23px;
+    margin-top: 55px;
     
     .subscribe-head {
 
@@ -191,7 +191,7 @@ section#layout-content {
                 position: absolute;
                 bottom: 10px;
                 left: 20px;
-                font-size: 25px;
+                font-size: 14px;
                 a {
                     &:first-letter {
                         font-size: 200%;
@@ -257,9 +257,20 @@ section#layout-content {
                 -webkit-border-top-left-radius: 0px;
                 -moz-border-top-bottomright: 0px;
                 -moz-border-top-bottomleft: 0px;
+                background: linear-gradient(#292929, #242424);
+                background: -webkit-linear-gradient(#292929, #242424);
+                background: -o-linear-gradient(#292929, #242424);
+                background: -moz-linear-gradient(#292929, #242424);
+                border-top: 1px solid rgba(255,255,255,0.1);
+                border-bottom: 1px solid black;
+                
                 a {
                     color: @primary-font-color;
                     font-weight: bold;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: none;
+                    }
                 }
             }
             .list-group {
@@ -285,6 +296,9 @@ section#layout-content {
                     }
                     a {
                         color: @primary-font-color;
+                        &:hover {
+                            text-decoration: none;
+                        }
                     }
                 }
             }
