@@ -65,8 +65,7 @@ class Aircraft extends Model
         ],
         'features' => ['Minorjet\Aircraft\Models\Feature',
             'table' => 'minorjet_aircraft_aircrafts_features',
-            'order' => 'published_at desc',
-            'scope' => 'isPublished'
+            'order' => 'published_at desc'
         ]
     ];
 
