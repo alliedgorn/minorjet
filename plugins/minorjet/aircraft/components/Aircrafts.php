@@ -172,10 +172,9 @@ class Aircrafts extends ComponentBase
             'page'       => $this->property('pageNumber'),
             'sort'       => $this->property('sortOrder'),
             'perPage'    => $this->property('postsPerPage'),
-            'focusItem'    => $this->property('focusItem'),
+            'focusItem'  => $this->property('focusItem'),
             'category'   => $category
         ]);
-
         /*
          * Add a "url" helper attribute for linking to each post and category
          */

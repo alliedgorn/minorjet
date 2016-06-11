@@ -240,7 +240,6 @@ class Aircraft extends Model
                 $q->whereIn('id', $categories);
             });
         }
-
         return $query->paginate($perPage, $page);
     }
 

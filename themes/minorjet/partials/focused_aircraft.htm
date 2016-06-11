@@ -5,7 +5,7 @@ description = "Show focused aircraft list"
 [aircraftList focusAircraftList]
 pageNumber = "{{ :page }}"
 focusItem = 1
-postsPerPage = 4
+postsPerPage = 0
 noPostsMessage = "No posts found"
 sortOrder = "random"
 categoryPage = "aircraft-subcategory"
@@ -20,19 +20,21 @@ postPage = "aircraft"
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <div class="list-aircraft row">
-                {% for post in posts %}
-                    <div class="col-sm-4 col-md-3">
-                        <div class="list-aircraft-box">
-                            <div class="image">
-                                <a href="{{ post.url }}"><img class="pic-aircraft" alt="{{ post.title }}" src="{{ post.content_image.path }}" ></a>
+            <div id="focused-aircrafts" class="flexslider">
+                <ul class="list-aircraft slides">
+                    {% for post in posts %}
+                        <li>
+                            <div class="list-aircraft-box">
+                                <div class="image">
+                                    <a href="{{ post.url }}"><img class="pic-aircraft" alt="{{ post.title }}" src="{{ post.content_image.path }}" ></a>
+                                </div>
+                                <div class="title">
+                                    <a href="{{ post.url }}">{{ post.title }}</a>
+                                </div>
                             </div>
-                            <div class="title">
-                                <a href="{{ post.url }}">{{ post.title }}</a>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>

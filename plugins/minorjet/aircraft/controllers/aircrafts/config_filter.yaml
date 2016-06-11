@@ -27,3 +27,14 @@ scopes:
 
         # SQL Conditions
         conditions: published <> '1'
+
+    focused:
+
+        # Filter name
+        label: minorjet.aircraft::lang.aircrafts.show_focused
+
+        # Filter type
+        type: checkbox
+
+        # SQL Conditions
+        conditions: focused = '1'

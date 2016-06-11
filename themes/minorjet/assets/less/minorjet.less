@@ -166,41 +166,66 @@ section#layout-content {
     
 }
 
-.preview-aircraft {
-    .list-aircraft {
-        margin-left: 0px;
-        margin-right: 0px;
-        background: url('../images/header_bg.jpg');
-        box-shadow: 0px 0px 32px 5px #0a0a0a inset;
-        -moz-box-shadow: inset 0px 0px 32px 5px #0a0a0a;
-        -webkit-box-shadow: inset 0px 0px 32px 5px #0A0A0A;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        margin-bottom: 20px;
-        text-align: center;
-        border-radius: 5px;
-        .list-aircraft-box {
-            position: relative;
-            height: 130px;
-            .pic-aircraft {
-                height: 100px;
-                width: 255px;
-            }
-            .title{
-                font-family: 'Source Sans Pro', 'Impact';
-                position: absolute;
-                bottom: 10px;
-                left: 20px;
-                font-size: 14px;
-                a {
-                    &:first-letter {
-                        font-size: 200%;
-                    }
-                    color: white !important;
-                    text-decoration: none;
-                }
+.flexslider {
+    .flex-direction-nav {
+        .flex-next, .flex-prev {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            &:before {
+                color: white;
+                font-size: 30px;
+                line-height: 40px;
+                width: 100%;
+                text-align: center;
+                text-shadow: none;
             }
         }
+    }    
+}
+
+.preview-aircraft {
+    .flexslider {
+        background: none;
+        border: none;
+        margin: 0;
+        .list-aircraft {
+            text-align: center;
+            border-radius: 5px;
+            li {
+                .list-aircraft-box {
+                    border: solid 2px @box-image-border-color;
+                    border-radius: 5px;
+                    background: white;
+                    position: relative;
+                    height: 134px;
+                    .pic-aircraft {
+                        height: 110px;
+                        width: 255px;
+                        border-top-left-radius: 2px;
+                        border-top-right-radius: 2px;
+                    }
+                    .title{
+                        background-color: #232323;
+                        background: url('/themes/minorjet/assets/images/bg/dark-stripes.png');
+                        font-family: 'Source Sans Pro', 'Impact';
+                        font-size: 14px;
+                        border-bottom-left-radius: 2px;
+                        border-bottom-right-radius: 2px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        padding: 0px 15px;
+                        a {
+                            &:first-letter {
+                                font-size: 200%;
+                            }
+                            color: white !important;
+                            text-decoration: none;
+                        }
+                    }
+                }   
+            }
+        }   
     }
 }
 

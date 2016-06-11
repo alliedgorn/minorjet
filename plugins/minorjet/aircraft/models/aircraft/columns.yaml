@@ -33,6 +33,12 @@ columns:
         type: date
         invisible: true
 
+    focused:
+        label: minorjet.aircraft::lang.aircraft.focused
+        type: boolean
+        select: if( focused = 1, 'yes', 'no')
+        searchable: true
+
     updated_at:
         label: minorjet.aircraft::lang.aircraft.updated
         type: date

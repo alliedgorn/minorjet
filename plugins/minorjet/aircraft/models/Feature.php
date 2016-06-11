@@ -30,7 +30,6 @@ class Feature extends Model
      * The attributes that should be mutated to dates.
      * @var array
      */
-    protected $dates = ['published_at'];
 
     /**
      * The attributes on which the post list can be ordered
@@ -43,8 +42,6 @@ class Feature extends Model
         'created_at desc' => 'Created (descending)',
         'updated_at asc' => 'Updated (ascending)',
         'updated_at desc' => 'Updated (descending)',
-        'published_at asc' => 'Published (ascending)',
-        'published_at desc' => 'Published (descending)',
         'random' => 'Random'
     );
 
@@ -74,15 +71,6 @@ class Feature extends Model
     protected $appends = ['summary', 'has_summary'];
 
     public $preview = null;
-
-    public function afterValidate()
-    {
-        if ($this->published && !$this->published_at) {
-            throw new ValidationException([
-               'published_at' => Lang::get('minorjet.aircraft::lang.feature.published_validation')
-            ]);
-        }
-    }
 
     public function beforeSave()
     {
@@ -134,17 +122,7 @@ class Feature extends Model
 
     //
     // Scopes
-    //
 
-    public function scopeIsPublished($query)
-    {
-        return $query
-            ->whereNotNull('published')
-            ->where('published', true)
-            ->whereNotNull('published_at')
-            ->where('published_at', '<', Carbon::now())
-        ;
-    }
 
     /**
      * Lists posts for the front end
@@ -162,15 +140,10 @@ class Feature extends Model
             'sort'       => 'created_at',
             'aircrafts' => null,
             'aircraft'   => null,
-            'search'     => '',
-            'published'  => true
+            'search'     => ''
         ], $options));
 
         $searchableFields = ['title', 'slug', 'excerpt', 'content'];
-
-        if ($published) {
-            $query->isPublished();
-        }
 
         /*
          * Sorting
@@ -238,6 +211,11 @@ class Feature extends Model
         return $query->whereHas('aircrafts', function($q) use ($aircrafts) {
             $q->whereIn('id', $aircrafts);
         });
+    }
+
+    public function scopeUnassignedFeature($query)
+    {
+        return $query->has('aircrafts', '<', 1);
     }
 
     //

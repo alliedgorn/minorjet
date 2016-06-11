@@ -1,7 +1,10 @@
 [aircraftCategories aircraftCate]
 slug = "{{ :slug }}"
 displayEmpty = 1
+getRoot = 0
+withAircrafts = 0
 categoryPage = "aircraft-category"
+postPage = "aircraft"
 
 [staticMenu headerNav]
 code = "header-nav"
@@ -19,6 +22,7 @@ code = "header-nav"
         {% styles %}
         <link href="{{ [
             'assets/vendor/bootstrap/less/bootstrap.less',
+            'assets/vendor/flexslider/flexslider.css',
             'assets/less/minorjet.less'
         ]|theme }}" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700italic' rel='stylesheet' type='text/css'>
@@ -78,7 +82,43 @@ code = "header-nav"
     <footer id="layout-footer">
         {% partial "footer" %}
     </footer>
-
+    {% if this.environment == 'dev' %}
+        <script src="{{ 'assets/javascript/jquery.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/transition.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/alert.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/button.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/carousel.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/collapse.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/dropdown.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/modal.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/tooltip.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/popover.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/scrollspy.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/tab.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/affix.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/flexslider/jquery.flexslider.js' |theme }}"></script>
+        <script src="{{ 'assets/javascript/home.js' |theme }}"></script>
+        <script src="{{ 'assets/javascript/app.js' |theme }}"></script>
+    {% else %}
+        <script src="{{ [
+            'assets/javascript/jquery.js',
+            'assets/vendor/bootstrap/js/transition.js',
+            'assets/vendor/bootstrap/js/alert.js',
+            'assets/vendor/bootstrap/js/button.js',
+            'assets/vendor/bootstrap/js/carousel.js',
+            'assets/vendor/bootstrap/js/collapse.js',
+            'assets/vendor/bootstrap/js/dropdown.js',
+            'assets/vendor/bootstrap/js/modal.js',
+            'assets/vendor/bootstrap/js/tooltip.js',
+            'assets/vendor/bootstrap/js/popover.js',
+            'assets/vendor/bootstrap/js/scrollspy.js',
+            'assets/vendor/bootstrap/js/tab.js',
+            'assets/vendor/bootstrap/js/affix.js',
+            'assets/vendor/flexslider/jquery.flexslider.js',
+            'assets/javascript/home.js',
+            'assets/javascript/app.js'
+        ]|theme }}"></script>
+    {% endif %}
     <!-- Scripts -->
     <script src="{{ [
         'assets/javascript/jquery.js',
@@ -94,6 +134,8 @@ code = "header-nav"
         'assets/vendor/bootstrap/js/scrollspy.js',
         'assets/vendor/bootstrap/js/tab.js',
         'assets/vendor/bootstrap/js/affix.js',
+        'assets/vendor/flexslider/jquery.flexslider.js',
+        'assets/javascript/home.js',
         'assets/javascript/app.js'
     ]|theme }}"></script>
     

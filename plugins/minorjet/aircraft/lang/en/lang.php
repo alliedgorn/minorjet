@@ -23,6 +23,8 @@ return [
         'delete_confirm' => 'Are you sure?',
         'chart_published' => 'Published',
         'chart_drafts' => 'Drafts',
+        'chart_assigned' => 'Assigned',
+        'chart_unassigned' => 'Unassigned',
         'chart_total' => 'Total',
         'features' => 'Aircraft Features'
     ],
@@ -36,7 +38,9 @@ return [
         'list_title' => 'Manage the aircrafts',
         'category' => 'Category',
         'hide_published' => 'Hide published',
-        'new_aircraft' => 'New aircraft'
+        'show_focused' => 'Focused items',
+        'new_aircraft' => 'New aircraft',
+        'show_unassigned' => 'Show Unassigned'
     ],
     'feature' => [
         'id' => 'ID',
@@ -80,7 +84,8 @@ return [
         'created_date' => 'Created date',
         'updated' => 'Updated',
         'updated_date' => 'Updated date',
-        'focused' => 'Focus item (This aircraft will show up in Home)',
+        'focused' => 'Focus item',
+        'focused_remark' => 'Focus item (Enable to show this aircraft in home page)',
         'published' => 'Published',
         'published_date' => 'Published date',
         'published_validation' => 'Please specify the published date',

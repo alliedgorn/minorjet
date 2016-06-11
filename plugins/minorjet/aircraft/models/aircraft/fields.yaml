@@ -54,7 +54,7 @@ secondaryTabs:
 
         focused:
             tab: minorjet.aircraft::lang.aircraft.tab_manage
-            label: minorjet.aircraft::lang.aircraft.focused
+            label: minorjet.aircraft::lang.aircraft.focused_remark
             span: left
             type: checkbox
 

@@ -29,8 +29,8 @@ class Features extends Controller
     public function index()
     {
         $this->vars['postsTotal'] = Feature::count();
-        $this->vars['postsPublished'] = Feature::isPublished()->count();
-        $this->vars['postsDrafts'] = $this->vars['postsTotal'] - $this->vars['postsPublished'];
+        $this->vars['postsDrafts'] = Feature::UnassignedFeature()->count();
+        $this->vars['postsPublished'] = $this->vars['postsTotal'] - $this->vars['postsDrafts'];
 
         $this->asExtension('ListController')->index();
     }
@@ -84,15 +84,6 @@ class Features extends Controller
         }
 
         return $this->listRefresh();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function listInjectRowClass($record, $definition = null)
-    {
-        if (!$record->published)
-            return 'safe disabled';
     }
 
     public function formBeforeCreate($model)

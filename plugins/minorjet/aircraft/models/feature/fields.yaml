@@ -31,24 +31,6 @@ secondaryTabs:
             placeholder: minorjet.aircraft::lang.feature.features_placeholder
             select: concat( title, ' (', slug, ')')
 
-        published:
-            tab: minorjet.aircraft::lang.feature.tab_manage
-            label: minorjet.aircraft::lang.feature.published
-            span: left
-            type: checkbox
-
-        published_at:
-            tab: minorjet.aircraft::lang.feature.tab_manage
-            label: minorjet.aircraft::lang.feature.published_on
-            span: left
-            cssClass: checkbox-align
-            type: datepicker
-            mode: date
-            trigger:
-                action: enable
-                field: published
-                condition: checked
-
         featured_images:
             tab: minorjet.aircraft::lang.feature.tab_manage
             label: minorjet.aircraft::lang.feature.featured_images

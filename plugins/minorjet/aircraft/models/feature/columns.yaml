@@ -33,7 +33,3 @@ columns:
         label: minorjet.aircraft::lang.feature.updated
         type: date
         invisible: true
-
-    published_at:
-        label: minorjet.aircraft::lang.feature.published
-        type: date
