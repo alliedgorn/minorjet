@@ -10,7 +10,7 @@ var homeModule = (function($){
         $('#focused-aircrafts').flexslider({ 
             animation: "slide",
             controlNav: false,
-            animationLoop: true,
+            animationLoop: false,
             slideshow: false,
             itemWidth: 259,
             itemMargin: 34,
