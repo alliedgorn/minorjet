@@ -105,3 +105,8 @@ secondaryTabs:
             imageWidth: 400
             imageHeight: 133.333333333
 
+        gallery_images:
+            tab: minorjet.aircraft::lang.aircraft.tab_manage
+            label: minorjet.aircraft::lang.aircraft.gallery_images
+            type: fileupload
+            mode: image

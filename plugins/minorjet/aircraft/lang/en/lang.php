@@ -103,6 +103,7 @@ return [
         'summary' => 'Summary',
         'featured_images' => 'Carousel Images',
         'content_image' => 'Image',
+        'gallery_images' => 'Gallery Images',
         'delete_confirm' => 'Do you really want to delete this aircraft?',
         'close_confirm' => 'The aircraft is not saved.',
         'return_to_posts' => 'Return to aircrafts list'

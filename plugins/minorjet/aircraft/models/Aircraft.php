@@ -70,7 +70,8 @@ class Aircraft extends Model
     ];
 
     public $attachMany = [
-        'featured_images' => ['System\Models\File', 'order' => 'sort_order']
+        'featured_images' => ['System\Models\File', 'order' => 'sort_order'],
+        'gallery_images' => ['System\Models\File', 'order' => 'sort_order']
     ];
 
     public $attachOne = [
