@@ -9,7 +9,7 @@
             </div>
             <div class="contentbox pull-left">
                 <h3><a href="{{ '/news/post'|app }}/{{ post.slug }}" title="{{post.title}}" >{{ post.title }}</a></h3>
-                <div class="content">{% if post.introductory %}{{ post.introductory|striptags }} {% else %}{{ post.content|striptags }}{% endif %}</div>
+                <div class="content">{% if post.introductory %}{{ html_strip(post.introductory) }} {% else %}{{ post.content|striptags }}{% endif %}</div>
                 <div class="fade-overlay hidden-xs"></div>
                 <div class="read-more"><span><a href="{{ '/news/post'|app }}/{{ post.slug }}" title="{{post.title}}" >Read more</a></span></div>
             </div>
