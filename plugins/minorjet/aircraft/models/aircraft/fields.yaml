@@ -58,6 +58,12 @@ secondaryTabs:
             span: left
             type: checkbox
 
+        priority:
+            tab: minorjet.aircraft::lang.aircraft.tab_manage
+            label: minorjet.aircraft::lang.aircraft.priority
+            span: left
+            type: text
+
         published:
             tab: minorjet.aircraft::lang.aircraft.tab_manage
             label: minorjet.aircraft::lang.aircraft.published

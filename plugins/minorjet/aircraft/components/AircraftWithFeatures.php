@@ -58,7 +58,7 @@ class AircraftWithFeatures extends ComponentBase
         $slug = $this->property('slug');
         $post = AircraftModel::isPublished()->where('slug', $slug)->first();
         if ( $post ) {
-            $post['features'] = $post->features()->get();
+            $post['features'] = $post->features()->orderBy('priority', 'asc')->get();
         }
 
         /*

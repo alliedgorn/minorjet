@@ -24,6 +24,7 @@ class CreatePostsTable extends Migration
             $table->boolean('published')->default(false);
             $table->boolean('focused')->default(false);
             $table->boolean('content_ratio')->default(6);
+            $table->integer('priority')->nullable()->default(50);
             $table->timestamps();
         });
 

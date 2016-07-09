@@ -97,7 +97,7 @@ class Aircrafts extends ComponentBase
                 'title'       => 'minorjet.aircraft::lang.settings.posts_order',
                 'description' => 'minorjet.aircraft::lang.settings.posts_order_description',
                 'type'        => 'dropdown',
-                'default'     => 'published_at desc'
+                'default'     => 'priority desc'
             ],
             'categoryPage' => [
                 'title'       => 'minorjet.aircraft::lang.settings.posts_category',

@@ -24,6 +24,9 @@ columns:
         searchable: true
         sortable: false
 
+    priority:
+        label: minorjet.aircraft::lang.feature.priority
+
     created_at:
         label: minorjet.aircraft::lang.feature.created
         type: date

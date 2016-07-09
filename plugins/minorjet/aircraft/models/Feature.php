@@ -42,6 +42,8 @@ class Feature extends Model
         'created_at desc' => 'Created (descending)',
         'updated_at asc' => 'Updated (ascending)',
         'updated_at desc' => 'Updated (descending)',
+        'priority asc' => 'Priority (ascending)',
+        'priority desc' => 'Priority (descending)',
         'random' => 'Random'
     );
 
@@ -137,7 +139,7 @@ class Feature extends Model
         extract(array_merge([
             'page'       => 1,
             'perPage'    => 30,
-            'sort'       => 'created_at',
+            'sort'       => 'priority',
             'aircrafts' => null,
             'aircraft'   => null,
             'search'     => ''

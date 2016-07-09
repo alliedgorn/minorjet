@@ -20,6 +20,8 @@ columns:
         select: name
         searchable: true
         sortable: false
+    priority :
+        label: minorjet.aircraft::lang.feature.priority
 
     features:
         label: minorjet.aircraft::lang.aircraft.features

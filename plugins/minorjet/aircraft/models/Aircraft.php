@@ -47,6 +47,8 @@ class Aircraft extends Model
         'updated_at desc' => 'Updated (descending)',
         'published_at asc' => 'Published (ascending)',
         'published_at desc' => 'Published (descending)',
+        'priority asc' => 'Priority (ascending)',
+        'priority desc' => 'Priority (descending)',
         'random' => 'Random'
     );
 
@@ -65,7 +67,7 @@ class Aircraft extends Model
         ],
         'features' => ['Minorjet\Aircraft\Models\Feature',
             'table' => 'minorjet_aircraft_aircrafts_features',
-            'order' => 'published_at desc'
+            'order' => 'priority asc'
         ]
     ];
 
@@ -169,7 +171,7 @@ class Aircraft extends Model
         extract(array_merge([
             'page'       => 1,
             'perPage'    => 30,
-            'sort'       => 'created_at',
+            'sort'       => 'priority asc',
             'categories' => null,
             'category'   => null,
             'focusItem'  => false,

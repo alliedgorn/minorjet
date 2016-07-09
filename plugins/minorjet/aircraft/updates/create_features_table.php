@@ -18,6 +18,7 @@ class CreateFeaturesTable extends Migration
             $table->text('content_html')->nullable();
             $table->timestamp('published_at')->nullable();
             $table->boolean('published')->default(false);
+            $table->integer('priority')->nullable()->default(50);
             $table->timestamps();
         });
     }

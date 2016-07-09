@@ -29,7 +29,7 @@ class Category extends Model
     public $belongsToMany = [
         'posts' => ['Minorjet\Aircraft\Models\Aircraft',
             'table' => 'minorjet_aircraft_aircrafts_categories',
-            'order' => 'published_at desc',
+            'order' => 'priority asc',
             'scope' => 'isPublished'
         ]
     ];

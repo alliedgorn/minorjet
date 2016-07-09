@@ -155,7 +155,8 @@ class Categories extends ComponentBase
     {
         return $categories->each(function($category) {
             $category['aircraftList'] = AircraftModel::with('categories')->listFrontEnd([
-                'categories'   => [$category->id]
+                'categories'   => [$category->id],
+                'sort'         => 'priority asc'
             ]);
             if ($category->children) {
                 $this->getAircrafts($category->children);
