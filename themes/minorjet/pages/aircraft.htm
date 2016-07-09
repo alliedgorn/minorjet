@@ -55,8 +55,7 @@ slug = "{{ :slug }}"
                 <div class="aircraft-title"><h1>{{ aircraftWithFeatures.post.title }}</h1></div>
                 <div class="underline"></div>
             </div>
-            {% component 'aircraftWithFeatures' %}
-            {% component 'aircraftGallery' %}
+            {% partial 'aircraft/aircraft_features' %}
         </div>
     </div>
 </div>
