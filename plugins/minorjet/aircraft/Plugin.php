@@ -26,6 +26,7 @@ class Plugin extends PluginBase
             'Minorjet\Aircraft\Components\Aircraft' => 'aircraft',
             'Minorjet\Aircraft\Components\AircraftWithFeatures' => 'aircraftWithFeatures',
             'Minorjet\Aircraft\Components\AircraftCarousel' => 'aircraftCarousel',
+            'Minorjet\Aircraft\Components\AircraftGallery' => 'aircraftGallery',
             'Minorjet\Aircraft\Components\Aircrafts' => 'aircraftList',
             'Minorjet\Aircraft\Components\Categories' => 'aircraftCategories'
         ];

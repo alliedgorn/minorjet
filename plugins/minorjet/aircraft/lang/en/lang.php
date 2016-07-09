@@ -140,6 +140,8 @@ return [
         'aircraft_with_features_description' => 'Displays an aircraft on the page with published features.',
         'carousel' => 'Carousel',
         'carousel_description' => 'Displays carousel from aircraft\'s carousel images.',
+        'gallery' => 'Gallery',
+        'gallery_description' => 'Displays gallery from aircraft\'s gallery images.',
         'aircraft_focus_item' => 'Focused items.',
         'aircraft_focus_item_description' => 'Displays only focused items.',
         'post_title' => 'Aircraft',

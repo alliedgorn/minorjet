@@ -27,6 +27,9 @@ getRoot = 0
 withAircrafts = 1
 categoryPage = "about-us"
 postPage = "aircraft"
+
+[aircraftGallery]
+slug = "{{ :slug }}"
 ==
 <div class="container aircraft-page">
     <div class="row">
@@ -53,6 +56,7 @@ postPage = "aircraft"
                 <div class="underline"></div>
             </div>
             {% component 'aircraftWithFeatures' %}
+            {% component 'aircraftGallery' %}
         </div>
     </div>
 </div>
