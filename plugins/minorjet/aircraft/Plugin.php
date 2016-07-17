@@ -28,7 +28,8 @@ class Plugin extends PluginBase
             'Minorjet\Aircraft\Components\AircraftCarousel' => 'aircraftCarousel',
             'Minorjet\Aircraft\Components\AircraftGallery' => 'aircraftGallery',
             'Minorjet\Aircraft\Components\Aircrafts' => 'aircraftList',
-            'Minorjet\Aircraft\Components\Categories' => 'aircraftCategories'
+            'Minorjet\Aircraft\Components\Categories' => 'aircraftCategories',
+            'Minorjet\Aircraft\Components\RequestLog' => 'requestLog'
         ];
     }
 
