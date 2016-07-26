@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'disableCoreUpdates' => false,
+    'disableCoreUpdates' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -136,7 +136,7 @@ return [
     |
     */
 
-    'enableAssetCache' => false,
+    'enableAssetCache' => true,
 
     /*
     |--------------------------------------------------------------------------
