@@ -1,0 +1,84 @@
+.aircraft-page {
+    .features-list {
+        margin-top: 20px;
+        .feature-box {
+            width: 100%;
+            margin-top: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            .image {
+                img {
+                    height: 193.333333333px;
+                    width: 100%;
+                    border: 1px solid @box-image-border-color;
+                }
+            }
+            .feature-content {
+                display: inline-block;
+                width: 100%;
+                padding: 10px 12px;
+                box-shadow: 0px 0px 50px 20px #0a0a0a inset;
+                -moz-box-shadow: inset 0px 0px 50px 20px #0a0a0a;
+                -webkit-box-shadow: inset 0px 0px 50px 20px #0a0a0a;
+                background-color: #232323;
+                background: url('/themes/minorjet/assets/images/bg/dark-stripes.png');
+                .title {
+                    color: @box-header-color;
+                    h4 {
+                        margin-bottom: 5px;
+                        cursor: default;
+                    }
+                    hr {
+                        margin-top: 0px;
+                        margin-bottom: 10px;
+                        border-color: @box-header-color;
+                    }
+                }
+            }
+        }
+    }
+    .wysiwyg {
+        ul {
+            list-style: none;
+            li {
+                &:before {
+                    content: "\E013";
+                    font-family: 'Glyphicons Halflings';
+                    font-size: 9px;
+                    float: left;
+                    margin-top: 3px;
+                    margin-left: -17px;
+                }
+            }
+        }
+    }
+
+    .title-header {
+        width: auto;
+        padding-bottom: 5px;
+        
+        .aircraft-pic {
+            width: 255px;
+            height: 100px;
+            margin: 0 auto;
+            display: block;
+        }
+        
+
+    }
+
+    .aircraft-gallery {
+        margin-top: 10px;
+        figure {
+            float:left;
+            margin-top: 10px;
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+            .gallery_thumb {
+                float:left;
+            }
+        }
+    }
+    
+}

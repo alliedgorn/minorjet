@@ -1,0 +1,37 @@
+title = "About us"
+url = "/about-us"
+layout = "main"
+is_hidden = 0
+
+[carousel]
+id = 1
+
+[members]
+pageNumber = 0
+membersPerPage = 0
+noMembersMessage = "No posts found"
+sortOrder = "priority asc"
+==
+<div class="container about-us">
+    <div class="row">
+        <div id="banner" class="carousel slide col-sm-12">
+            {% component 'carousel' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-7 col-sm-6">
+            <div class="about">
+                <center><img class="img-responsive" src="{{ 'assets/images/logo_main_big.png'|theme }}"></center>
+                <div class="about-company">
+                    {% content 'about-us.htm' %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 col-sm-6">
+            <div class="head-box"><h3>OUR TEAM</h3></div>
+            <div class="underline"></div>
+            {% component 'members' %}
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,21 @@
+[viewBag]
+==
+{% for item in items if not item.viewBag.isHidden %}
+    {% if item.items %}
+        <li role="presentation" class="{{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }} dropdown">
+            <a href="{{ '/aircrafts'|app }}" class="dropdown hidden-xs" >{{ item.title }} <span class="caret"></span></a>
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle visible-xs">{{ item.title }}<span class="caret"></span></a>
+          
+            <ul class="dropdown-menu">{% partial headerNav ~ "::items" items=item.items %}</ul>
+    {% else %}
+        <li role="presentation" class="{{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }}">
+        {% if item.url %}
+            <a href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
+                {{ item.title }}
+            </a>
+        {% else %}
+            <span>{{ item.title }}</span>
+        {% endif %}
+    {% endif %}
+    </li>
+{% endfor %}

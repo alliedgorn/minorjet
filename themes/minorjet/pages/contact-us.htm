@@ -1,0 +1,72 @@
+title = "Contact-Us"
+url = "/contact-us"
+layout = "main"
+is_hidden = 0
+
+[contactForm]
+injectBootstrapAssets = 0
+
+[carousel]
+id = 1
+
+[googleMap minormap]
+latitude = 13.714806
+longitude = 100.585771
+zoom = 17
+width = "100%"
+height = "400px"
+mapTypeId = "TERRAIN"
+showMarker = "true"
+apiKey = "AIzaSyD76W366xIj86_ax6SZTw2yCCyCryTlyAY"
+==
+<div class="container contact-us">
+    <div class="row">
+        <div id="banner" class="carousel slide col-xs-12">
+            {% component 'carousel' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="address col-md-12">
+            <div class="address-box pull-left">
+                <h3><span class="glyphicon glyphicon-map-marker"></span> Head Office</h3>
+                16th Floor, Berli Jucker Building,<br/> 
+                99 Soi Rubia Sukhumvit 42 Road,<br/> 
+                Phrakanong, Klongtoey<br/>
+                Bangkok 10110 Thailand
+            </div>
+            <div class="address-box pull-left">
+                <h3><span class="glyphicon glyphicon-map-marker"></span> Airport Office</h3>
+                Private Jet Terminal,<br/>
+                Don Mueang International Airport<br/>
+                222 Viphavadee-Rangsit Road,<br/> 
+                Don Mueang, Bangkok 10210 Thailand
+            </div>
+            <div class="address-box pull-left">
+                <h3><span class="glyphicon glyphicon-earphone"></span> Call us</h3>
+               Mail: <a href="mailto:salessupport@mjets.com">salessupport@mjets.com</a><br/>
+               Spare part Sales  +(66) 61-398-8548<br/>
+               Aircraft Sales: +(66) 85-484-8773<br/>
+               Fax: +(66) 2-792-9450
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class="contact-form col-md-6">
+            <h3>Enquiry Form</h3>
+            <div class="underline"></div>
+           
+            {% partial 'contact-us.htm' %}
+        </div>
+        <div class="col-md-6">
+            <h3>Map</h3>
+            <div class="underline"></div>
+            <div class="map">
+                {% component 'minormap' %}
+            </div>
+        </div>
+        
+    </div>
+    
+</div>

@@ -1,0 +1,45 @@
+title = "Home"
+url = "/"
+layout = "main"
+description = "MAHL homepage"
+is_hidden = 0
+
+[posts newsposts]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+postPage = "home"
+
+[carousel]
+id = 1
+==
+<div class="container home">
+    <div class="row">
+        <div id="banner" class="carousel slide col-xs-12">
+            {% component 'carousel' %}
+        </div>
+    </div>
+</div>
+
+<div class="container about">
+    {% partial 'about.htm' %}
+</div>
+
+{% partial 'focused_aircraft' %}
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-8">
+          <div class="underline">
+          <h3><a href="{{ 'news'|page }}">LATEST NEWS</a></h3>
+          </div>
+          {% partial 'latestnews.htm' %}
+      </div>
+      <div class="col-md-4">
+          {% partial 'subscribebox' %}
+      </div>
+    </div>
+    
+</div>

@@ -1,0 +1,44 @@
+.aircrafts {
+    .post-list {
+        .aircraft-item {
+            background-color: @box-bg-color;
+            margin-bottom: 30px;
+            
+            .aircraft-name {
+                font-family: @primary-font;
+                background-image: url('../images/header_bg.jpg');
+                font-size: 20px;
+                color: @secondary-font-color;
+                border-bottom: 1px solid @footer-font-color;
+                padding: 5px 10px;
+            }
+            .aircraft-pic {
+                margin: 20px auto;
+            }
+            .footer {
+                background-image: url('../images/header_bg.jpg');
+                padding: 10px;
+                text-align: right;
+                border-top: 1px solid @footer-font-color;
+            }
+            
+            a {
+                color: @primary-font-color;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            
+        }
+    }
+    
+    .head {
+        width: 100%;
+        display: inline-block;
+        margin: 10px auto;
+        padding: 10px;
+        h3 {
+            margin: 0px;
+        }
+    }
+}

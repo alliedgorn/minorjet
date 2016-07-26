@@ -1,0 +1,51 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    title:
+        label: minorjet.aircraft::lang.aircraft.title
+        searchable: true
+
+    # author:
+    #   label: Author
+    #   relation: user
+    #   select: login
+    #   searchable: true
+
+    categories:
+        label: minorjet.aircraft::lang.aircraft.categories
+        relation: categories
+        select: name
+        searchable: true
+        sortable: false
+    priority :
+        label: minorjet.aircraft::lang.feature.priority
+
+    features:
+        label: minorjet.aircraft::lang.aircraft.features
+        relation: features
+        select: concat (title, ' (ID: ', id, ')')
+        searchable: true
+        sortable: false
+
+    created_at:
+        label: minorjet.aircraft::lang.aircraft.created
+        type: date
+        invisible: true
+
+    focused:
+        label: minorjet.aircraft::lang.aircraft.focused
+        type: boolean
+        select: if( focused = 1, 'yes', 'no')
+        searchable: true
+
+    updated_at:
+        label: minorjet.aircraft::lang.aircraft.updated
+        type: date
+        invisible: true
+
+    published_at:
+        label: minorjet.aircraft::lang.aircraft.published
+        type: date

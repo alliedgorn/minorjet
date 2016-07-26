@@ -1,0 +1,16 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: minorjet.aircraft::lang.blog.create_aircraft
+form: ~/plugins/minorjet/aircraft/models/aircraft/fields.yaml
+modelClass: Minorjet\Aircraft\Models\Aircraft
+defaultRedirect: minorjet/aircraft/aircrafts
+
+create:
+    redirect: minorjet/aircraft/aircrafts/update/:id
+    redirectClose: minorjet/aircraft/aircrafts
+
+update:
+    redirect: minorjet/aircraft/aircrafts
+    redirectClose: minorjet/aircraft/aircrafts

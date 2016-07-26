@@ -1,0 +1,13 @@
+<div class="scoreboard">
+    <div data-control="toolbar">
+        <div class="scoreboard-item control-chart" data-control="chart-pie">
+            <ul>
+                <li data-color="#95b753"><?= e(trans('minorjet.team::lang.team.chart_active')) ?> <span><?= $membersActive ?></span></li>
+                <li data-color="#e5a91a"><?= e(trans('minorjet.team::lang.team.chart_inactive')) ?> <span><?= $membersInactive ?></span></li>
+                <li data-color="#cccccc"><?= e(trans('minorjet.team::lang.team.chart_total')) ?> <span><?= $membersTotal ?></span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<?= $this->listRender() ?>

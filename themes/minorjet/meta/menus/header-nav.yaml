@@ -1,0 +1,79 @@
+name: 'Header Nav'
+items:
+    -
+        title: Home
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: home
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Aircrafts
+        nesting: '1'
+        type: aircraft-category
+        code: ''
+        reference: '6'
+        cmsPage: aircraft-subcategory
+        replace: '1'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: News
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: news
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Parts
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: parts
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'About us'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: about-us
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Contact us'
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: contact-us
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

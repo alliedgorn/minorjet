@@ -1,0 +1,38 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    firstname:
+        label: minorjet.team::lang.member.firstname
+        searchable: true
+
+    # author:
+    #   label: Author
+    #   relation: user
+    #   select: login
+    #   searchable: true
+
+    lastname:
+        label: minorjet.team::lang.member.lastname
+        searchable: true
+
+    position:
+        label: minorjet.team::lang.member.position
+        searchable: true
+
+    priority:
+        label: minorjet.team::lang.member.priority
+        searchable: false
+
+    created_at:
+        label: minorjet.team::lang.member.created
+        type: date
+        invisible: true
+
+    updated_at:
+        label: minorjet.team::lang.member.updated
+        type: date
+        invisible: true
+

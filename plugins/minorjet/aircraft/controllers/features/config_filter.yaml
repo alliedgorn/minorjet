@@ -1,0 +1,29 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+scopes:
+
+    aircraft:
+
+        # Filter name
+        label: minorjet.aircraft::lang.features.aircraft
+
+        # Model Class name
+        modelClass: Minorjet\Aircraft\Models\Aircraft
+
+        # Model attribute to display for the name
+        nameFrom: title
+
+        # Apply query scope
+        scope: FilterAircrafts
+
+    unassigned:
+
+        # Filter name
+        label: minorjet.aircraft::lang.aircrafts.show_unassigned
+
+        # Filter type
+        type: checkbox
+
+        # SQL Conditions
+        scope: UnassignedFeature

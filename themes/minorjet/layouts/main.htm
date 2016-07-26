@@ -1,0 +1,129 @@
+[aircraftCategories aircraftCate]
+slug = "{{ :slug }}"
+displayEmpty = 1
+getRoot = 0
+withAircrafts = 0
+categoryPage = "aircraft-category"
+postPage = "aircraft"
+
+[staticMenu headerNav]
+code = "header-nav"
+
+[requestLog]
+slug = "{{ :slug }}"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>M A H L - {{ this.page.title }}</title>
+        <meta name="description" content="{{ this.page.meta_description }}">
+        <meta name="title" content="{{ this.page.meta_title }}">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="generator" content="">
+        {% styles %}
+        <link href="{{ [
+            'assets/vendor/bootstrap/less/bootstrap.less',
+            'assets/vendor/flexslider/flexslider.css',
+            'assets/less/minorjet.less'
+        ]|theme }}" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        
+	<header id="layout-header">
+        <div class="container header-tab hidden-xs">
+            <div class="pull-left"><a href="{{ '/'|app }}"><img class="logo" src="{{ 'assets/images/logo_main.png'|theme }}" alt="mahl-logo" ></a></div>
+            <div class="pull-right header-right">
+                <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> <span><a href="tel:+66613988548">+(66) 61-398-8548 </a></span><br/>
+                <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <span><a href="mailto:salessupport@mjets.com">salessupport@mjets.com</a></span>
+            </div>
+        </div>
+        <nav id="layout-nav" class="navbar" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="navbar-header">
+                        <div class="logo pull-left"><a href="{{ '/'|app }}"><img class="logo" src="{{ 'assets/images/logo_mobile.png'|theme }}" alt="mahl-logo" ></a></div>
+                        <button type="button pull-right" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            MENU
+                        </button>
+                    </div>
+                    {% component 'headerNav' %}
+                            <!--li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">HOME</a></li>
+        					<li class="{% if (this.page.id == 'news' or this.page.id == 'newspost') %}active{% endif %}"><a href="{{ 'news'|page }}">NEWS</a></li>
+                            <li class="{% if this.page.id == 'aircraft' %}active{% endif %} dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">AIRCRAFT <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                  {% partial 'menu-aircraft' %}
+                                </ul>
+                            </li>
+                            
+                            <li class="{% if this.page.id == 'parts' %}active{% endif %}"><a href="{{ 'parts'|page }}">PARTS</a></li>
+                            <li class="{% if this.page.id == 'about-us' %}active{% endif %}"><a href="{{ 'about-us'|page }}">ABOUT US</a></li>
+                            <li class="{% if this.page.id == 'contact-us' %}active{% endif %}"><a href="{{ 'contact-us'|page }}">CONTACT US</a></li -->
+                    <div class="social pull-right hidden-xs hidden-sm">
+                           <a href="#"><img class="social_icon" src="{{ 'assets/images/social_icon/xicon-facebook.png'|theme }}" alt="Facebook" ></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Content -->
+    <section id="layout-content">
+        {% page %}
+    </section>
+
+    <!-- Footer -->
+    <footer id="layout-footer">
+        {% partial "footer" %}
+    </footer>
+    {% if this.environment == 'dev' %}
+        <script src="{{ 'assets/javascript/jquery.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/transition.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/alert.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/button.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/carousel.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/collapse.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/dropdown.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/modal.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/tooltip.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/popover.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/scrollspy.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/tab.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/bootstrap/js/affix.js' |theme }}"></script>
+        <script src="{{ 'assets/vendor/flexslider/jquery.flexslider.js' |theme }}"></script>
+        <script src="{{ 'assets/javascript/home.js' |theme }}"></script>
+        <script src="{{ 'assets/javascript/app.js' |theme }}"></script>
+    {% else %}
+        <script src="{{ [
+            'assets/javascript/jquery.js',
+            'assets/vendor/bootstrap/js/transition.js',
+            'assets/vendor/bootstrap/js/alert.js',
+            'assets/vendor/bootstrap/js/button.js',
+            'assets/vendor/bootstrap/js/carousel.js',
+            'assets/vendor/bootstrap/js/collapse.js',
+            'assets/vendor/bootstrap/js/dropdown.js',
+            'assets/vendor/bootstrap/js/modal.js',
+            'assets/vendor/bootstrap/js/tooltip.js',
+            'assets/vendor/bootstrap/js/popover.js',
+            'assets/vendor/bootstrap/js/scrollspy.js',
+            'assets/vendor/bootstrap/js/tab.js',
+            'assets/vendor/bootstrap/js/affix.js',
+            'assets/vendor/flexslider/jquery.flexslider.js',
+            'assets/javascript/home.js',
+            'assets/javascript/app.js'
+        ]|theme }}"></script>
+    {% endif %}
+    <!-- Scripts -->
+
+    
+    {% framework extras %}
+    
+    {% scripts %}
+
+    </body>
+</html>

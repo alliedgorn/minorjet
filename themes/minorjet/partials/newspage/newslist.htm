@@ -1,0 +1,21 @@
+[posts newslist]
+pageNumber = 1
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+postPage = "aircraft"
+
+[viewBag]
+snippetCode = "newslist"
+==
+{% set posts = newslist.posts %}
+
+<ul class="post-list">
+    {% for post in posts %}
+    <li class="newsbox">
+        <a href="{{ '/news/post'|app }}/{{ post.slug }}">{{ post.title }}</a><span class="pub-dt"> - {{ post.published_at|date('d M Y') }}</span>
+    </li>
+    {% else %}
+    <li class="newsbox no-data">{{ noPostsMessage }}</li>
+    {% endfor %}
+</ul>

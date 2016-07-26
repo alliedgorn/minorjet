@@ -1,0 +1,11 @@
+name: mainMenu
+items:
+    -
+        title: Home
+        type: cms-page
+        code: '{% if this.page.id == ''home'' %}active{% endif %}'
+        reference: main
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

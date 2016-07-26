@@ -1,0 +1,12 @@
+[viewBag]
+==
+{% for aircraft in aircrafts %}
+    <div class="col-md-3 col-sm-4">
+        <div class="aircraft-item">
+            <div class="aircraft-name"><a href="{{ aircraft.url }}">{{ aircraft.title }}</a></div>
+            <div><a href="{{ aircraft.url }}"><img class="aircraft-pic img-responsive" alt="{{ post.title }}" src="{{ aircraft.content_image.path }}" ></a></div>
+            <div class="footer"><a href="{{ aircraft.url }}">Read more</a></div>
+        </div>
+    </div>
+
+{% endfor %}

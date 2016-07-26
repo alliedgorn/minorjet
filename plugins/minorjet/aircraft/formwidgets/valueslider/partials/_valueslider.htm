@@ -1,0 +1,24 @@
+<?php
+	$primaryRatio = $ratio;
+	$secondaryRatio = 12 - $ratio;
+?>
+<div class="minorjet-slider" data-control="minorjet-slider" data-value="<?=$ratio?>" data-min="<?=$min?>" data-max="<?=$max?>">
+	<div data-control="slider"></div>
+	<div data-control="slider-indicator" class="row content-preview">
+		<?php 
+			if ( $primaryRatio > 0 ) { 
+		?>
+		<div data-content="left" data-type="primary" class="col-xs-<?=$primaryRatio?>">
+			<div class="content"><?=$primaryRatio?></div>
+		</div>
+		<?php } ?>
+		<?php 
+			if ( $secondaryRatio > 0 ) { 
+		?>
+		<div data-content="right" data-type="secondary" class="col-xs-<?=$secondaryRatio?>">
+			<div class="content"><?=$secondaryRatio?></div>
+		</div>
+		<?php } ?>
+	</div>
+	<input  name="<?=$name?>" id="<?=$this->alias?>" type="hidden" value="<?=$ratio?>" />
+</div>

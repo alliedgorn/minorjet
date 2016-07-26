@@ -1,0 +1,12 @@
+[viewBag]
+==
+{% if aircraftCategories.categories %}
+    <div>
+        <div>
+        {% partial "aircrafts/category-head"
+            categories = aircraftCategories.categories
+            currentCategorySlug = aircraftCategories.currentCategorySlug
+        %}
+        </div>
+    </div>
+{% endif %}

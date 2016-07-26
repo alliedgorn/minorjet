@@ -1,0 +1,22 @@
+[viewBag]
+==
+<div class="post-list">
+    {% for post in posts %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="newsthumb pull-left hidden-xs" 
+                    style="background-image:url('{% if post.image  %}/storage/app/media{{ post.image }}{% else %}{{'assets/images/news-icon.png'|theme}}{% endif %}')">
+            </div>
+            <div class="contentbox pull-left">
+                <h3><a href="{{ '/news/post'|app }}/{{ post.slug }}" title="{{post.title}}" >{{ post.title }}</a></h3>
+                <div class="content">{% if post.introductory %}{{ html_strip(post.introductory) }} {% else %}{{ post.content|striptags }}{% endif %}</div>
+                <div class="fade-overlay hidden-xs"></div>
+                <div class="read-more"><span><a href="{{ '/news/post'|app }}/{{ post.slug }}" title="{{post.title}}" >Read more</a></span></div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="no-data">{{ noPostsMessage }}</div>
+    {% endfor %}
+    
+</div>

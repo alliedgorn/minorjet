@@ -1,0 +1,46 @@
+title = "Aircrafts Catgory"
+url = "/aircrafts"
+layout = "main"
+description = "Aircraft category list"
+is_hidden = 0
+
+[aircraftList]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "priority asc"
+categoryPage = "aircraft-subcategory"
+postPage = "aircraft"
+
+[carousel]
+id = 1
+
+[aircraftCategories]
+slug = "{{ :slug }}"
+categoryFilter = "aircraft"
+displayEmpty = 1
+getRoot = 0
+withAircrafts = 1
+categoryPage = "aircraft-subcategory"
+postPage = "aircraft"
+==
+<div class="container aircrafts">
+    <div class="row">
+        <div id="banner" class="carousel slide col-xs-12">
+            {% component 'carousel' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="{{ '/'|app }}">MAHL</a></li>
+                <li class="active">Aircraft</li>
+            </ol>
+        </div>
+        <div class="col-sm-12">
+            <center><h1>Aircraft</h1></center>
+            {% partial 'aircrafts/all-categories' %}
+        </div>
+    </div>
+    
+</div>

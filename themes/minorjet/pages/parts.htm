@@ -1,0 +1,67 @@
+title = "Parts"
+url = "/parts"
+layout = "main"
+is_hidden = 0
+
+[carousel]
+id = 1
+
+[contactForm]
+injectBootstrapAssets = 1
+==
+<div class="container parts">
+    <div class="row">
+        <div id="banner" class="carousel slide col-sm-12">
+            {% component 'carousel' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3>Parts</h3>
+                    <div class="underline"></div>
+                </div>
+                <div class="col-sm-8 col-lg-9">
+                    <p>
+                    <strong>MAHL support:</strong>
+                    <ul>
+                        <li>Parts for all models of Cessna prop and Jet aircraft</li>
+                        <li>Cessna New Aircraft warranty</li>
+                        <li>Parts Factory warranty</li>
+                    </ul>
+                    Contact our expert sales team for a Quote now!<br/>
+                    </p>
+                    <p>
+                    <strong>Email:</strong> Salessupport@mjets.com<br/>
+                    <strong>Tel:</strong> +(66) 61-398-8548<br/>
+                    <strong>Fax:</strong> +(66) 2-792-9450
+                    </p>
+                    <p>
+                        <strong>Submit enquiry form</strong><br/>
+                        For any enquiries, please use the form below to contact us and in as much details as possible.<br/> 
+                        Our specialists will endeavour to reply as swiftly as possible.
+                    </p>
+                    <div class="row visible-xs">
+                        <div class="col-xs-12">
+                            <div class="cessna-logo-container">
+                                <img class="cessna-logo" src="{{ 'assets/images/cessna_auth.png'|theme }}" >
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="contact-form">
+                        {% partial 'contact-us.htm' %}
+                    </div>
+    
+                </div>
+                <div class="col-sm-4 col-lg-3 col-right">
+                    <div class=" cessna-logo-container hidden-xs">
+                        <img class="cessna-logo" src="{{ 'assets/images/cessna_auth.png'|theme }}" >
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    title:
+        label: minorjet.aircraft::lang.aircraft.title
+        span: left
+        placeholder: minorjet.aircraft::lang.aircraft.title_placeholder
+
+    slug:
+        label: minorjet.aircraft::lang.aircraft.slug
+        span: right
+        placeholder: minorjet.aircraft::lang.aircraft.slug_placeholder
+        preset:
+            field: title
+            type: slug
+
+    toolbar:
+        type: partial
+        path: post_toolbar
+        cssClass: collapse-visible
+
+secondaryTabs:
+    stretch: true
+    fields:
+        content:
+            tab: minorjet.aircraft::lang.aircraft.tab_edit
+            type: Minorjet\Aircraft\FormWidgets\BlogMarkdown
+            cssClass: field-slim blog-post-preview
+            stretch: true
+            mode: split
+
+        secondary_content:
+            tab: minorjet.aircraft::lang.aircraft.tab_edit2
+            type: Minorjet\Aircraft\FormWidgets\BlogMarkdown
+            cssClass: field-slim blog-post-preview
+            stretch: true
+            mode: split
+
+        categories:
+            tab: minorjet.aircraft::lang.aircraft.tab_categories
+            type: relation
+            commentAbove: minorjet.aircraft::lang.aircraft.categories_comment
+            placeholder: minorjet.aircraft::lang.aircraft.categories_placeholder
+
+        features:
+            tab: minorjet.aircraft::lang.aircraft.tab_features
+            type: relation
+            commentAbove: minorjet.aircraft::lang.aircraft.features_comment
+            placeholder: minorjet.aircraft::lang.aircraft.features_placeholder
+            select: concat ( title, ' | ', ' ID: ', id, ' (Created at: ', created_at, ')' ) 
+
+        focused:
+            tab: minorjet.aircraft::lang.aircraft.tab_manage
+            label: minorjet.aircraft::lang.aircraft.focused_remark
+            span: left
+            type: checkbox
+
+        priority:
+            tab: minorjet.aircraft::lang.aircraft.tab_manage
+            label: minorjet.aircraft::lang.aircraft.priority
+            span: left
+            type: text
+
+        published:
+            tab: minorjet.aircraft::lang.aircraft.tab_manage
+            label: minorjet.aircraft::lang.aircraft.published
+            span: left
+            type: checkbox
+
+        published_at:
+            tab: minorjet.aircraft::lang.aircraft.tab_manage
+            label: minorjet.aircraft::lang.aircraft.published_on
+            span: left
+            cssClass: checkbox-align
+            type: datepicker
+            mode: date
+            trigger:
+                action: enable
+                field: published
+                condition: checked
+        content_ratio:
+            tab: minorjet.aircraft::lang.aircraft.tab_manage
+            label: minorjet.aircraft::lang.aircraft.content_ratio
+            type: Minorjet\Aircraft\FormWidgets\ValueSlider
+            span: left
+            min: 0
+            max: 12
+
+        excerpt:
+            tab: minorjet.aircraft::lang.aircraft.tab_manage
+            label: minorjet.aircraft::lang.aircraft.excerpt
+            type: textarea
+            size: small
+
+        content_image:
+            tab: minorjet.aircraft::lang.aircraft.tab_manage
+            label: minorjet.aircraft::lang.aircraft.content_image
+            type: fileupload
+            mode: image
+            imageWidth: 200
+            imageHeight: 200
+
+        featured_images:
+            tab: minorjet.aircraft::lang.aircraft.tab_manage
+            label: minorjet.aircraft::lang.aircraft.featured_images
+            type: fileupload
+            mode: image
+            imageWidth: 400
+            imageHeight: 133.333333333
+
+        gallery_images:
+            tab: minorjet.aircraft::lang.aircraft.tab_manage
+            label: minorjet.aircraft::lang.aircraft.gallery_images
+            type: fileupload
+            mode: image

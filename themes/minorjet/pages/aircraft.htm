@@ -1,0 +1,61 @@
+title = "Aircraft"
+url = "/aircraft/:slug"
+layout = "main"
+is_hidden = 0
+
+[aircraftWithFeatures]
+slug = "{{ :slug }}"
+categoryPage = "aircraft"
+
+[aircraftList]
+pageNumber = "{{ :page }}"
+focusItem = 1
+postsPerPage = 0
+noPostsMessage = "No posts found"
+sortOrder = "priority asc"
+categoryPage = "aircraft-subcategory"
+postPage = "aircraft"
+
+[aircraftCarousel]
+slug = "{{ :slug }}"
+
+[aircraftCategories]
+slug = "{{ :slug }}"
+categoryFilter = "aircraft"
+displayEmpty = 1
+getRoot = 0
+withAircrafts = 1
+categoryPage = "about-us"
+postPage = "aircraft"
+
+[aircraftGallery]
+slug = "{{ :slug }}"
+==
+<div class="container aircraft-page">
+    <div class="row">
+        <div class="col-xs-12">
+            {% component 'aircraftCarousel' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <ol class="breadcrumb">
+                <li><a href="{{ '/'|app }}">MAHL</a></li>
+                <li><a href="{{ '/aircrafts'|app }}">Aircraft</a></li>
+                <li><a href="{{ '/aircrafts/'|app }}/{{  aircraftWithFeatures.post.categories[0].slug }}">{{ aircraftWithFeatures.post.categories[0].name }}</a></li>
+                <li class="active">{{ aircraftWithFeatures.post.title }}</li>
+            </ol>
+        </div>
+        <div class="col-sm-3 hidden-xs">
+            {% partial 'aircraft/left-menu' %}
+        </div>
+        <div class="col-sm-9">
+            <div class="title-header">
+                <div><img class="aircraft-pic" alt="{{ aircraftWithFeatures.post.title }}" src="{{ aircraftWithFeatures.post.content_image.path }}" ></div>
+                <div class="aircraft-title"><h1>{{ aircraftWithFeatures.post.title }}</h1></div>
+                <div class="underline"></div>
+            </div>
+            {% partial 'aircraft/aircraft_features' %}
+        </div>
+    </div>
+</div>

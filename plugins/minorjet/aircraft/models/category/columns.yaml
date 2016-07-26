@@ -1,0 +1,13 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: minorjet.aircraft::lang.category.name
+        searchable: true
+
+    post_count:
+        label: minorjet.aircraft::lang.category.posts
+        sortable: false
