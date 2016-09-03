@@ -31,6 +31,15 @@ postPage = "aircraft"
 [aircraftGallery]
 slug = "{{ :slug }}"
 ==
+<?php
+use Minorjet\Aircraft\Models\Aircraft;
+
+function onEnd() {
+    
+    $this->page->title = Aircraft::whereSlug($this->param('slug'))->first()->title;
+}
+?>
+==
 <div class="container aircraft-page">
     <div class="row">
         <div class="col-xs-12">
