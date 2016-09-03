@@ -9,6 +9,15 @@ id = 1
 [post newspost]
 slug = "{{ :slug }}"
 ==
+<?php
+use Indikator\News\Models\Posts;
+
+function onEnd() {
+    
+    $this->page->title = Posts::whereSlug($this->param('slug'))->first()->title;
+}
+?>
+==
 <div class="container news-post">
     <div class="row">
         <div id="banner" class="carousel slide col-xs-12">

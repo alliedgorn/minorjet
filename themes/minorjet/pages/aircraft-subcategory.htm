@@ -24,6 +24,15 @@ withAircrafts = 1
 categoryPage = "aircraft-subcategory"
 postPage = "aircraft"
 ==
+<?php
+use Minorjet\Aircraft\Models\Category;
+
+function onEnd() {
+    
+    $this->page->title = Category::whereSlug($this->param('slug'))->first()->name;
+}
+?>
+==
 <div class="container aircrafts">
     <div class="row">
         <div id="banner" class="carousel slide col-xs-12">
