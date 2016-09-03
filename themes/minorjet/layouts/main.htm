@@ -12,13 +12,24 @@ code = "header-nav"
 [requestLog]
 slug = "{{ :slug }}"
 ==
+<?php
+function onEnd() {
+    if ( !$this->page->meta_description ) {
+        $this->page->meta_description = 'Minor Aircraft Holding Limited is the Authorized Sales Representative for Cessna aircraft in Thailand.';
+    }
+    
+    if ( !$this->page->meta_title ) {
+        $this->page->meta_title = $this->page->title;
+    }
+}
+?>
+==
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>MAHL Minor Aircraft - {{ this.page.title }}</title>
-        <meta name="description" content="{{ this.page.meta_description }}">
-        <meta name="keywords" content="mahl,minor,minor aircraft,minoraircraft">
+        <title>MAHL - {{ this.page.title }}</title>
+        <meta name="Description" content="{{ this.page.meta_description }}">
         <meta name="title" content="{{ this.page.meta_title }}">
         <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -35,8 +35,10 @@ slug = "{{ :slug }}"
 use Minorjet\Aircraft\Models\Aircraft;
 
 function onEnd() {
-    
-    $this->page->title = Aircraft::whereSlug($this->param('slug'))->first()->title;
+    $aircraft = Aircraft::whereSlug($this->param('slug'))->first();
+    $this->page->title = $aircraft->title;
+    $this->page->meta_title = $aircraft->title;
+    $this->page->meta_description = $aircraft->content;
 }
 ?>
 ==

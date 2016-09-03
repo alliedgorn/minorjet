@@ -28,8 +28,9 @@ postPage = "aircraft"
 use Minorjet\Aircraft\Models\Category;
 
 function onEnd() {
-    
-    $this->page->title = Category::whereSlug($this->param('slug'))->first()->name;
+    $category = Category::whereSlug($this->param('slug'))->first();
+    $this->page->title = $category->name;
+    $this->page->meta_title = $category->name;
 }
 ?>
 ==

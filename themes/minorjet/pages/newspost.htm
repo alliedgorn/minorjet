@@ -13,8 +13,10 @@ slug = "{{ :slug }}"
 use Indikator\News\Models\Posts;
 
 function onEnd() {
-    
-    $this->page->title = Posts::whereSlug($this->param('slug'))->first()->title;
+    $post = Posts::whereSlug($this->param('slug'))->first();
+    $this->page->title = $post->title;
+    $this->page->meta_title = $post->title;
+    $this->page->meta_description = Html::strip($post->introductory);
 }
 ?>
 ==
