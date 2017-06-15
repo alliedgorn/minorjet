@@ -65,6 +65,7 @@
     RewriteCond %{REQUEST_URI} !\.zip$
     RewriteCond %{REQUEST_URI} !docs/.*
     RewriteCond %{REQUEST_URI} !themes/.*
+    RewriteCond %{REQUEST_URI} !google1116018f560420d4\.html$
     RewriteRule ^ index.php [L,NC]
 
     ##
